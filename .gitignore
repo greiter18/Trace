@@ -20,6 +20,8 @@
 /node_modules
 /yarn-error.log
 
+/node_modules/bundle.js
+
 /public/assets
 .byebug_history
 
