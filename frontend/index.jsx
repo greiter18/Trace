@@ -11,5 +11,5 @@ document.addEventListener("DOMContentLoaded", () => {
     window.login = login;
     window.signup = signup;
     window.logout = logout;
-    ReactDOM.render(<h1>Welcome to Strava</h1>, root);
+    ReactDOM.render(<h1>Welcome to Trace</h1>, root);
 })
