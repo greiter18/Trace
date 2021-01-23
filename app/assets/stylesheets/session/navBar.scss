@@ -1,0 +1,43 @@
+
+
+.navbar .session_header{
+  display: flex;
+  justify-content: space-between;
+  // align-items: flex-start;
+}
+
+.navButton{
+  border-radius: 5px;
+  border: 1px solid gray ;
+  padding: 5px;
+  width: 50px;
+  color:white
+  
+}
+
+.navbar{
+  border-bottom: gray solid 1px;
+}
+
+.nav_session_logo{
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: orange;
+}
+
+.nav_session_logo:link{
+  color:orange;
+}
+.nav_session_logo:visited{
+  color:orange;
+}
+.nav_session_logo:hover{
+  color:orange;
+}
+.nav_session_logo:focus{
+  color:orange;
+}
+.nav_session_logo:active{
+  color:orange;
+}

@@ -9,10 +9,10 @@ const Navbar = (props) => {
     Button = <Link to="/signup">Sign Up</Link>
   }
   return(
-    <div>
-      <header className='navbar'>
-        <span><Link to="/"> Tracer </Link></span> 
-        <span className="navButton">{Button}</span> 
+    <div className='navbar'>
+      <header className="session_header">
+        <span className ='nav_session_logo'><Link to="/"> TRACE </Link></span> 
+        <button className="navButton">{Button}</button> 
       </header>
 
     </div>
