@@ -40,6 +40,14 @@ class SessionForm extends React.Component {
 
   render(){
 
+    let buttonName;
+    if (this.props.formType === 'login') {
+      buttonName = 'Log In'
+    } else {
+      buttonName = "Sign Up"
+    }
+
+
     let formName;
     if (this.props.formType === 'login'){
       formName = 'Log In'
@@ -56,33 +64,32 @@ class SessionForm extends React.Component {
 
 
     return (
-      <div className="form_container">
-        <header><NavBar/></header>
-        
-        <form  onSubmit={this.handleSubmit}>
-          <div className="session_form">
-            <h1>{formName}</h1>
-            <Link to="/demo">Demo</Link>
-
-            <section className="orSwitch">{OrSwitch}</section>
-            {this.renderErrors()}
-            <label>Email:
-          <input type="text" value={this.state.email} onChange={this.handleChange('email')}/>
-            </label>
-            <br/>
-            <label>Password:
-          <input type="password" value={this.state.password} onChange={this.handleChange('password')}/>
-            </label>
-
-          
-          <button>{this.props.formType}</button>
-          {/* <input className="sessionSubmit" type="submit" value={this.props.formType}/> */}
-
-          <div>
-              <p className="sessions_fine_print">By signing up for Trace, you agree to the <p className='white_print'> Terms of Service.</p> View our <p className='white_print'> Privacy Policy</p></p>
-          </div>
-            </div>
-        </form>
+      <div>
+      <header><NavBar/></header>
+      <body className="form_container">
+      <form  onSubmit={this.handleSubmit}>
+      <div className="session_form">
+      <br/>
+      <h1 className="form_title">{formName}</h1>
+      <div className="form_body">
+      <section className="error_message">{this.renderErrors()}</section>
+      <Link to="/demo">Demo</Link>
+      <section className="orSwitch">{OrSwitch}</section>      
+      <label>
+      <input type="text" value={this.state.email} onChange={this.handleChange('email')}  placeholder={'Your Email'}/>
+      </label>
+      <br/>
+      <label>
+      <input type="password" value={this.state.password} onChange={this.handleChange('password')}  placeholder={'Password'}/>
+      </label>
+      <button className="session_button">{buttonName}</button>
+      <div>
+      <p className="sessions_fine_print">By signing up for Trace, you agree to the <p className='white_print'> Terms of Service.</p> View our <p className='white_print'> Privacy Policy</p></p>
+      </div>
+      </div>
+      </div>
+      </form>
+      </body>
       </div>
     )
   }

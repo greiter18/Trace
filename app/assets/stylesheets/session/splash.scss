@@ -1,3 +1,8 @@
+$superLightGray:(rgb(223, 223, 231));
+$orange:(rgb(252,82,12));
+$dark:(rgb(36,36,40));
+
+
 .headLine{
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
@@ -15,11 +20,13 @@
 
 .home_image{
   left:100;
-  bottom: 400;
+  bottom: 500;
   display: inline-block;
   width: 100%;
-  max-width: 468px;
+  max-width: 400px;
   margin: 0 auto;
+  height: 100%;
+  max-height: 450px;
 }
 
 .splash_center_form{
@@ -38,6 +45,17 @@
   display: flex;
   justify-content: center ;
   border: black solid 1px;
+  text-decoration: none;
+  color: $dark;
+
+  .demoButton a{
+    text-decoration: none;
+    color: $dark;
+  }
+  a:hover{
+    background-color: red;
+  }
+
 }
 
 .sign_up_button{
@@ -47,6 +65,13 @@
   padding: 15px;
   width: 300px;
   height:   5px;
+  text-decoration: none;
+  color: $dark;
+
+  .sign_up_button a{
+    text-decoration: none;
+    color: $dark;
+  }
   
 }
 
@@ -60,13 +85,40 @@
   text-align: center;
 }
 
+.or_box{
+line-height: 1.45;
+}
+
 
 
 .footer{
-  display: flex;
-  flex-direction: row-reverse;
-  background-color: black;
-  color: white;
+  // display: flex;
+  // flex-direction: row-reverse;
+  // background-color: black;
+  // color: white;
+  // text-decoration:none;
+
+  background: black;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    height: 100px;
+
+    .head_footer{
+      color: gray;
+    }
+
+  .footer a{
+    text-decoration:none;
+    color: white;
+  }
+
+  li {
+    display: flex;
+    flex-direction: row-reverse;
+  }
 }
 
 

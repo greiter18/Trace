@@ -9,7 +9,8 @@ const footer = () => {
 
       <div>
         <ul>
-          <li>GET STARTED</li> 
+          <li className="head_footer">GET STARTED</li> 
+          <br/>
           <li><Link to="/signup">SIGN UP</Link></li> 
           <li><Link to="/login">LOG IN</Link></li> 
         </ul>

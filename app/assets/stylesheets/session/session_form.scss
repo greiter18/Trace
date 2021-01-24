@@ -1,11 +1,61 @@
-.session_form{
-  background-color: darkgray;
-  box-sizing: border-box;
+$superLightGray:(rgb(223, 223, 231));
+$orange:(rgb(252,82,12));
+
+
+
+.form_container{
+   
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  
+  position: relative;
+  top: 150px;
+  width: 400px;
+  height: 500px;
+}
+
+.form_title{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  background-color: black;
+  opacity: 0.7;
+  font-size: 75px;
+}
+
+.form_body{
+  background-color: black;
+  opacity: 0.5;
+}
+
+.session_form{
+  display: flex;
+  flex-direction: column;
   align-content: center;
   text-align: center;
-  width: 400px;git add .session_form
+  
+  z-index: -2;
+  color: white;
+}
+
+.session_button{
+  background-color:$orange;
+  color: white;
+  z-index: 1;
+  text-decoration: none;
+
+  .session_button{
+    text-decoration: none;
+  }
+}
+
+
+.error_messages{
+  border: red solid;
+  color: white;
+  background-color: red;
+  font-family: Arial, Helvetica, sans-serif;
+  z-index: 2;
 }

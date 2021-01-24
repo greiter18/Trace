@@ -8,6 +8,7 @@ const Navbar = (props) => {
   } else {
     Button = <Link to="/signup">Sign Up</Link>
   }
+  
   return(
     <div className='navbar'>
       <header className="session_header">
