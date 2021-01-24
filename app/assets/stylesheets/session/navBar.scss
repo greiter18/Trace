@@ -1,43 +1,44 @@
-
+$superLightGray:(rgb(184, 181, 181));
 
 .navbar .session_header{
   display: flex;
   justify-content: space-between;
-  // align-items: flex-start;
+  position: relative;
+  top: 25px;
+  border-bottom: $superLightGray solid  1px;
+  
 }
 
-.navButton{
+.navButton {
   border-radius: 5px;
   border: 1px solid gray ;
   padding: 5px;
   width: 50px;
-  color:white
-  
+  color:white;
+  position: relative;
+  right: 50px;
+  width: 70px;
+  font-weight: 600;
 }
 
-.navbar{
-  border-bottom: gray solid 1px;
-}
+  .navButton a{
+    text-decoration: none;
+  }
 
-.nav_session_logo{
+
+.nav_session_logo {
   font-size: 25px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   color: orange;
+  position: relative;
+  left: 50px;
+  text-decoration: none;
+
+  .nav_session_logo a{
+  color: orange;
+  text-decoration: none;
+  }
 }
 
-.nav_session_logo:link{
-  color:orange;
-}
-.nav_session_logo:visited{
-  color:orange;
-}
-.nav_session_logo:hover{
-  color:orange;
-}
-.nav_session_logo:focus{
-  color:orange;
-}
-.nav_session_logo:active{
-  color:orange;
-}
+

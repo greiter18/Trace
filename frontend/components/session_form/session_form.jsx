@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from './nav_bar'
+import { Link, withRouter } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -43,28 +44,44 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'login'){
       formName = 'Log In'
     } else {
-      formName = 'Sign Up'
+      formName = "Join Trace today, it's Free."
+    }
+
+    let OrSwitch;
+    if(this.props.formType === 'login'){
+      OrSwitch = 'Or log in with email'
+    } else {
+      OrSwitch = 'or sign up with your email address'
     }
 
 
     return (
       <div className="form_container">
         <header><NavBar/></header>
-        <h1>{formName}</h1>
-        <form onSubmit={this.handleSubmit}>
-          {this.renderErrors()}
-          <label>Email:
-        <input type="text" value={this.state.email} onChange={this.handleChange('email')}/>
-          </label>
-          <br/>
-          <label>Password:
-        <input type="password" value={this.state.password} onChange={this.handleChange('password')}/>
-          </label>
-
         
-        <button>{this.props.formType}</button>
-        {/* <input className="sessionSubmit" type="submit" value={this.props.formType}/> */}
+        <form  onSubmit={this.handleSubmit}>
+          <div className="session_form">
+            <h1>{formName}</h1>
+            <Link to="/demo">Demo</Link>
 
+            <section className="orSwitch">{OrSwitch}</section>
+            {this.renderErrors()}
+            <label>Email:
+          <input type="text" value={this.state.email} onChange={this.handleChange('email')}/>
+            </label>
+            <br/>
+            <label>Password:
+          <input type="password" value={this.state.password} onChange={this.handleChange('password')}/>
+            </label>
+
+          
+          <button>{this.props.formType}</button>
+          {/* <input className="sessionSubmit" type="submit" value={this.props.formType}/> */}
+
+          <div>
+              <p className="sessions_fine_print">By signing up for Trace, you agree to the <p className='white_print'> Terms of Service.</p> View our <p className='white_print'> Privacy Policy</p></p>
+          </div>
+            </div>
         </form>
       </div>
     )

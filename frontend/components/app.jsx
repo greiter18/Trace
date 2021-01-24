@@ -16,7 +16,6 @@ const App = () => {
 	return(
 		<div>
       <header className="header">
-        
         {/* <h1 className="logo">Trace</h1> */}
       </header>
       <Route exact path="/" component={Splash}/>

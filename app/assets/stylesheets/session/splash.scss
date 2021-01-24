@@ -1,20 +1,36 @@
 .headLine{
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 25px;
+  position: relative;
+  top: 40px;
+  font-size: 40px;
+  text-align: center;
 }
 
-.sign_up_buttom{
-   display: flex;
-  justify-content: center ;
-  border: black solid 1px
+.splash_form{
+  position: relative;
+  top: 25px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
+
+.home_image{
+  left:100;
+  bottom: 400;
+  display: inline-block;
+  width: 100%;
+  max-width: 468px;
+  margin: 0 auto;
+}
 
 .splash_center_form{
+  position: relative;
+  left: 200px;
+  bottom: 300px;
   display: flex;
   justify-content: center ;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 
@@ -24,16 +40,31 @@
   border: black solid 1px;
 }
 
-.splash_fine_print{
-    display: flex;
+.sign_up_button{
+   display: flex;
   justify-content: center ;
-  flex-direction: column;
-  align-items: center;
+  border: black solid 1px;
+  padding: 15px;
+  width: 300px;
+  height:   5px;
+  
+}
+
+.splash_fine_print{
+  width: 300px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.or_box_or{
+  text-align: center;
 }
 
 
 
 .footer{
+  display: flex;
+  flex-direction: row-reverse;
   background-color: black;
   color: white;
 }
