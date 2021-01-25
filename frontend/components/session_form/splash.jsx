@@ -16,13 +16,13 @@ const Splash = (props) =>{
             <img className="home_image"src="https://d3nn82uaxijpm6.cloudfront.net/assets/website/show_simple/devices-header-3349320fa849e6a297a3b0d64a6dfdef7307b0fe50f6329a459a0105b76ffff8.jpg" />
           <div className="splash_center_form">
             <div className="splash_center_form_buttons">
-              <Link className="sign_up_button" to="/signup">Sign Up</Link>
+              <Link className="splash_buttons" id="sign_up_button" to="/signup">Sign Up</Link>
                 <div className="or-box">
                   <span className="or_box_line"></span>
                   <span className="or_box_or"> or </span>
                   <span className="or_box_line"></span>
                 </div>
-              <span className="splash_demo_button"  onClick={() => {props.login( { email: 'guest', password: 'password' }) }}> Demo User </span>
+              <span className="splash_buttons" id="splash_demo_button"  onClick={() => {props.login( { email: 'guest', password: 'password' }) }}> Demo User </span>
             </div>
             <div className="splash_fine_print">
               <br/>

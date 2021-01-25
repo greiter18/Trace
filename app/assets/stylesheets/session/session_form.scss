@@ -1,6 +1,6 @@
 $superLightGray:(rgb(223, 223, 231));
 $orange:(rgb(252,82,12));
-
+$dark:(rgb(36,36,40));
 
 
 .form_container{
@@ -16,8 +16,8 @@ $orange:(rgb(252,82,12));
   opacity: 0.8;
   margin: 0 auto;
   font-family: Arial, Helvetica, sans-serif;
-  
   border: black solid;
+  border-radius: 2px;
 }
 
 .form_title{
@@ -36,6 +36,16 @@ $orange:(rgb(252,82,12));
   border: black solid;
 }
 
+.session_form_lines{
+  width: 300px;
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 25px 0px;
+  opacity: 1;
+}
+
 .form_body{
     margin: auto 0;
     background-color: black;
@@ -48,66 +58,64 @@ $orange:(rgb(252,82,12));
     text-align: center;
 }
 
-
-.session_form_demo{
+#session_form_demo{
   color: black;
   text-decoration: none;
   background-color: white;
-  padding-left: 75px;
-  padding-right: 75px;
-  border-radius: 4px;
-
-  .session_form_demo a{
+  opacity: 1;
+}
+ #session_form_demo a{
     color: black;
     text-decoration: none;
-    
   }
-  .session_form_demo a:hover{
+ .session_form_lines a:hover{
     cursor: pointer;
   }
- 
-}
 
-.session_form{
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: space-between;
-  text-align: center;
-  color: white;
+// .session_form{
+//   display: flex;
+//   flex-direction: column;
+//   align-content: center;
+//   justify-content: space-between;
+//   text-align: center;
+//   color: white;
   
-}
+// }
 
-.form_input{
+#form_input{
   background:black ;
   border: $superLightGray solid 1px;
   border-radius: 2px;
   color: white;
-  font-weight: 400px;
+  font-weight: 200;
 }
 
 .orSwitch{
-  font-size: 11px;
+  font-size: 20px;
+  color: white;
 }
 
-.session_button{
+#session_button{
   background-color:$orange;
   color: white;
   text-decoration: none;
   margin: 25px;
-  padding-left: 50px;
-  padding-right: 50px;
-  border-radius: 2px;
+  text-align: center;
+  align-items: center;
 
-  .session_button a{
+}
+  #session_button a{
     text-decoration: none;
     border-radius: 2px;
+    text-align: center;
+    font-weight: 50px;
+    font-size:15;
   }
 
-  .session_button a:hover{
+
+ #session_button a:hover{
     cursor: pointer;
   }
-}
 
 .background_image{
   background-image: image_url('jog.jpg');
@@ -115,7 +123,6 @@ $orange:(rgb(252,82,12));
   background-position: center;
   height: 900px;
   position: relative;
-  top: 26px;
   
 }
 

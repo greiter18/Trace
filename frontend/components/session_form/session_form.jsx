@@ -89,17 +89,16 @@ class SessionForm extends React.Component {
           <form className="session_form" onSubmit={this.handleSubmit}>
             <br/>
             <div className="form_body">
-              <section className="error_message">{this.renderErrors()}</section>
-              <Link className="session_form_demo" to="/demo">Demo</Link>
-                <button onClick={() => { this.props.login({ email: 'guest', password:'password'})}}> Demo User </button> 
+              <section className="session_form_lines" id="error_message">{this.renderErrors()}</section>
+                <span className="session_form_lines" id="session_form_demo" onClick={() => { this.props.login({ email: 'guest', password:'password'})}}> Demo User </span> 
               <br/>
               <section className="orSwitch">{OrSwitch}</section>    
               <br/>  
-              <input className="form_input" type="text" value={this.state.email} onChange={this.handleChange('email')}  placeholder={'Your Email'}/>
+                <input className="session_form_lines" id="form_input" type="text" value={this.state.email} onChange={this.handleChange('email')}  placeholder={'Your Email'}/>
               <br/>
-                <input className="form_input" type="password" value={this.state.password} onChange={this.handleChange('password')}  placeholder={'Password'}/>
+                <input className="session_form_lines" id="form_input" type="password" value={this.state.password} onChange={this.handleChange('password')}  placeholder={'Password'}/>
               <br/>
-              <button className="session_button">{buttonName}</button>
+                <button className="session_form_lines" id="session_button">{buttonName}</button>
             </div>  
             <p className='session_fine_print'>{finePrint}</p>
           </form>    

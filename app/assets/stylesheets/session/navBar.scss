@@ -28,11 +28,21 @@ $dark:(rgb(36,36,40));
   color: $dark;
   font-weight: 600;
   text-decoration: none;
+  text-align: center;
+  padding: 7px;
+  right: 10px;
 }
-  .splash_log_in a{
+
+.splash_log_in a{
    text-decoration: none;
    color: $dark;
-  }
+}
+
+.splash_log_in a:hover{
+   background-color: $superLightGray;
+   cursor: pointer;
+}
+  
 
 
 .nav_session_logo_header {
@@ -40,6 +50,7 @@ $dark:(rgb(36,36,40));
   font-weight: bold;
   color:$orange ;
   text-decoration: none;
+  padding-left: 120px;
 
   .nav_session_logo a{
   
