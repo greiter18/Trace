@@ -1,0 +1,150 @@
+$superLightGray:(rgb(223, 223, 231));
+$orange:(rgb(252,82,12));
+$dark:(rgb(36,36,40));
+
+
+// .headLine{
+//   font-family: Arial, Helvetica, sans-serif;
+//   position: relative;
+//   top: 40px;
+//   font-size: 40px;
+//   text-align: center;
+  
+// }
+.headLine{
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  top: 40px;
+  font-size: 48px;
+  text-align: center;
+  
+}
+
+.splash_middle{
+  display: flex;
+  justify-content: space-around;
+  padding: 75px 70px;
+  
+
+}
+
+// .home_image{
+//   left:100;
+//   bottom: 500;
+//   display: inline-block;
+//   width: 100%;
+//   max-width: 400px;
+//   margin: 0 auto;
+//   height: 100%;
+//   max-height: 450px;
+  
+// }
+
+
+.splash_center_form{
+  // position: flex;
+  // left: 200px;
+  // bottom: 300px;
+  display: flex;
+  justify-content: space-around ;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 40px 0px;
+  
+
+}
+
+// .splash_form{
+//   position: relative;
+//   top: 25px;
+//   font-family: Arial, Helvetica, sans-serif;
+  
+// }
+
+.splash_buttons{
+  border: $dark solid 1px;
+  color: $dark;
+  width: 300px;
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 25px 0px;
+}
+
+
+#splash_demo_button{
+  
+  #splash_demo_button a{
+    text-decoration: none;
+    color: $dark;
+    border:$superLightGray solid 1px;
+  }
+  #splash_demo_button a:hover{
+    background-color:$orange;
+  }
+
+}
+
+#sign_up_button{
+  text-decoration: none;
+
+  #sign_up_button a{
+    text-decoration: none;
+    color: $dark;
+    border:$superLightGray solid 1px;
+  }
+}
+
+.splash_fine_print{
+  width: 300px;
+  text-align: center;
+  font-size: 10px;
+  margin: 20px 0px;
+}
+
+.or_box_or{
+  text-align: center;
+}
+
+.or_box{
+  border-top: $dark solid 1px;
+  line-height: 1.45;
+}
+
+
+
+.footer{
+  // display: flex;
+  // flex-direction: row-reverse;
+  // background-color: black;
+  // color: white;
+  // text-decoration:none;
+
+  background: black;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    height: 100px;
+
+    .head_footer{
+      color: gray;
+    }
+
+  .footer a{
+    text-decoration:none;
+    color: white;
+  }
+
+  li {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+
+
+
