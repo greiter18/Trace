@@ -2,44 +2,43 @@ $superLightGray:(rgb(223, 223, 231));
 $orange:(rgb(252,82,12));
 $dark:(rgb(36,36,40));
 
-.navbar .session_header{
-  display: flex;
+
+.session_header{
+  display:flex;
   justify-content: space-between;
-  position: relative;
-  top: 25px;
-  border-bottom: $superLightGray solid  1px;
-  
+  padding: 15px 20px;
+  border-bottom: $superLightGray solid 1px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.navButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+// .navbar .session_header{
+//   display: flex;
+//   justify-content: space-between;
+//   position: relative;
+//   top: 25px;
+//   border-bottom: $superLightGray solid  1px;
+  
+// }
+
+.splash_log_in {
   border-radius: 5px;
   border: 1px solid gray ;
   padding: 5px;
   width: 50px;
   color: $dark;
-  position: relative;
-  right: 50px;
-  width: 70px;
   font-weight: 600;
   text-decoration: none;
 }
-
-  .navButton a{
+  .splash_log_in a{
    text-decoration: none;
    color: $dark;
   }
 
 
-.nav_session_logo {
+.nav_session_logo_header {
   font-size: 30px;
-  font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   color:$orange ;
-  position: relative;
-  left: 300px;
   text-decoration: none;
 
   .nav_session_logo a{

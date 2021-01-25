@@ -2,6 +2,7 @@ import React from 'react';
 import NavBar from './nav_bar'
 import { Link, withRouter } from 'react-router-dom';
 import { render } from 'react-dom';
+import { REMOVE_SESSION_ERROR } from '../../actions/session_actions';
 
 
 class SessionForm extends React.Component {
@@ -14,6 +15,11 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.renderErrors = this.renderErrors.bind(this)
+  }
+
+
+  componentWillUnmount(){
+    this.props.removeErrors(); // clear errors
   }
 
   handleSubmit(e){
@@ -85,6 +91,7 @@ class SessionForm extends React.Component {
             <div className="form_body">
               <section className="error_message">{this.renderErrors()}</section>
               <Link className="session_form_demo" to="/demo">Demo</Link>
+                <button onClick={() => { this.props.login({ email: 'guest', password:'password'})}}> Demo User </button> 
               <br/>
               <section className="orSwitch">{OrSwitch}</section>    
               <br/>  
@@ -93,9 +100,10 @@ class SessionForm extends React.Component {
                 <input className="form_input" type="password" value={this.state.password} onChange={this.handleChange('password')}  placeholder={'Password'}/>
               <br/>
               <button className="session_button">{buttonName}</button>
-                <p className='session_fine_print'>{finePrint}</p>
-            </div>
-          </form>
+            </div>  
+            <p className='session_fine_print'>{finePrint}</p>
+          </form>    
+          
         </body>
       </div>
       </div>

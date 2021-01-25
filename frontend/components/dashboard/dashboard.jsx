@@ -7,7 +7,7 @@ const Dashboard = (props) => {
       return(
         <div>
           <MainNavContainer/>
-          <body className="dash_main">
+          <body className="dash_body">
            
           </body>
         </div>

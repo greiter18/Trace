@@ -3,7 +3,7 @@ import Navbar from './nav_bar';
 import { Link } from 'react-router-dom';
 import Footer from './footer';
 
-const Splash = () =>{
+const Splash = (props) =>{
 
   return (
     <div>
@@ -22,7 +22,7 @@ const Splash = () =>{
                   <span className="or_box_or"> or </span>
                   <span className="or_box_line"></span>
                 </div>
-              <Link className="demoButton" to="">Demo User</Link>
+              <span className="splash_demo_button"  onClick={() => {props.login( { email: 'guest', password: 'password' }) }}> Demo User </span>
             </div>
             <div className="splash_fine_print">
               <br/>

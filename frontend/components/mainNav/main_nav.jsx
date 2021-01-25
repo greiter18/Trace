@@ -6,7 +6,7 @@ const MainNav = ({logout}) => {
   return (
     <div className='mainNav'> 
       <header className="main_nav_head">
-        <Link className='nav_session_logo' to="/dashboard"> TRACE </Link>
+        <Link className='nav_main_logo' to="/dashboard"> TRACE </Link>
         <ul>
           <li><Link to="">My Workouts</Link></li>
           <li><Link to="">My Routes</Link></li>

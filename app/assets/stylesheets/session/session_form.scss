@@ -37,9 +37,15 @@ $orange:(rgb(252,82,12));
 }
 
 .form_body{
-  background-color: black;
-  opacity: 1;
-  border: black solid;
+    margin: auto 0;
+    background-color: black;
+    opacity: 1;
+    border: black solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
 }
 
 
@@ -80,11 +86,14 @@ $orange:(rgb(252,82,12));
   font-weight: 400px;
 }
 
+.orSwitch{
+  font-size: 11px;
+}
+
 .session_button{
   background-color:$orange;
   color: white;
   text-decoration: none;
-  border: black solid;
   margin: 25px;
   padding-left: 50px;
   padding-right: 50px;
@@ -92,7 +101,6 @@ $orange:(rgb(252,82,12));
 
   .session_button a{
     text-decoration: none;
-    border: black solid;
     border-radius: 2px;
   }
 

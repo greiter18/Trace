@@ -3,6 +3,14 @@ $orange:(rgb(252,82,12));
 $dark:(rgb(36,36,40));
 
 
+// .headLine{
+//   font-family: Arial, Helvetica, sans-serif;
+//   position: relative;
+//   top: 40px;
+//   font-size: 40px;
+//   text-align: center;
+  
+// }
 .headLine{
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
@@ -50,14 +58,14 @@ $dark:(rgb(36,36,40));
 }
 
 
-.demoButton{
+.splash_demo_button{
   display: flex;
   justify-content: center ;
   text-decoration: none;
   color: $dark;
   border:$superLightGray solid 1px;
 
-  .demoButton a{
+  .splash_demo_button a{
     text-decoration: none;
     color: $dark;
     border:$superLightGray solid 1px;

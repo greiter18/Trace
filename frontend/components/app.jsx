@@ -9,8 +9,9 @@ import {
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
-import Splash from './session_form/splash';
+import SplashContainer from './session_form/splash_container';
 import DashboardContainer from './dashboard/dashboard_container';
+// import WorkOutShow from './workouts/workout_show'
 
 const App = () => {
 	return(
@@ -19,7 +20,7 @@ const App = () => {
         {/* <h1 className="logo">Trace</h1> */}
       </header>
       
-      <Route exact path="/" component={Splash}/>
+      <AuthRoute exact path="/" component={SplashContainer}/>
       <AuthRoute exact path="/login"  component={LogInFormContainer}/>
       <AuthRoute exact path="/signup"  component={SignUpFormContainer}/>
       <ProtectedRoute exact path="/dashboard" component={DashboardContainer}/>
