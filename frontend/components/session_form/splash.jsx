@@ -7,7 +7,7 @@ const Splash = () =>{
 
   return (
     <div>
-      <header><Navbar/></header>
+      <Navbar/>
       <div className="splash_form">
         <p className="headLine">The #1 app for runners and cyclists</p>
         <br/>

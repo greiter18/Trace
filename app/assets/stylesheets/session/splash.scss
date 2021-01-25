@@ -9,12 +9,14 @@ $dark:(rgb(36,36,40));
   top: 40px;
   font-size: 40px;
   text-align: center;
+  
 }
 
 .splash_form{
   position: relative;
   top: 25px;
   font-family: Arial, Helvetica, sans-serif;
+  
 }
 
 
@@ -27,6 +29,7 @@ $dark:(rgb(36,36,40));
   margin: 0 auto;
   height: 100%;
   max-height: 450px;
+  
 }
 
 .splash_center_form{
@@ -38,19 +41,21 @@ $dark:(rgb(36,36,40));
   flex-direction: column;
   align-items: center;
   text-align: center;
+
 }
 
 
 .demoButton{
   display: flex;
   justify-content: center ;
-  border: black solid 1px;
   text-decoration: none;
   color: $dark;
+  border:$superLightGray solid 1px;
 
   .demoButton a{
     text-decoration: none;
     color: $dark;
+    border:$superLightGray solid 1px;
   }
   a:hover{
     background-color: red;
@@ -61,16 +66,19 @@ $dark:(rgb(36,36,40));
 .sign_up_button{
    display: flex;
   justify-content: center ;
-  border: black solid 1px;
+  border:$superLightGray solid 1px;
   padding: 15px;
   width: 300px;
   height:   5px;
   text-decoration: none;
   color: $dark;
+  align-items: center;
+  
 
   .sign_up_button a{
     text-decoration: none;
     color: $dark;
+    border:$superLightGray solid 1px;
   }
   
 }

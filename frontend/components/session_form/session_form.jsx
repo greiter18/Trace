@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from './nav_bar'
 import { Link, withRouter } from 'react-router-dom';
+import { render } from 'react-dom';
 
 
 class SessionForm extends React.Component {
@@ -26,6 +27,7 @@ class SessionForm extends React.Component {
       this.setState({[field]: e.target.value})
     }
   }
+
 
   renderErrors() {
     return (
@@ -67,24 +69,28 @@ class SessionForm extends React.Component {
     return (
       <div>
       <NavBar/>
+      <div className="background_image">
         <body className="form_container">
-          <section className='session_back_image'>
-          </section>  
+          {/* <section>
+            <img className="session_image" />
+          </section>   */}
           <h1 className="form_title">{formName}</h1>    
           <form className="session_form" onSubmit={this.handleSubmit}>
             <br/>
             <div className="form_body">
               <section className="error_message">{this.renderErrors()}</section>
-              <Link to="/demo">Demo</Link>
+              <Link className="session_form_demo" to="/demo">Demo</Link>
               <section className="orSwitch">{OrSwitch}</section>      
               <input type="text" value={this.state.email} onChange={this.handleChange('email')}  placeholder={'Your Email'}/>
               <br/>
               <input type="password" value={this.state.password} onChange={this.handleChange('password')}  placeholder={'Password'}/>
+              <br/>
               <button className="session_button">{buttonName}</button>
               <p className="sessions_fine_print">By signing up for Trace, you agree to the <p className='white_print'> Terms of Service.</p> View our <p className='white_print'> Privacy Policy</p></p>
             </div>
           </form>
         </body>
+      </div>
       </div>
     )
   }
