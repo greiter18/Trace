@@ -18,6 +18,7 @@ const App = () => {
       <header className="header">
         {/* <h1 className="logo">Trace</h1> */}
       </header>
+      
       <Route exact path="/" component={Splash}/>
       <AuthRoute exact path="/login"  component={LogInFormContainer}/>
       <AuthRoute exact path="/signup"  component={SignUpFormContainer}/>
