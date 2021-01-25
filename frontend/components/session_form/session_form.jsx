@@ -65,6 +65,11 @@ class SessionForm extends React.Component {
       OrSwitch = 'or sign up with your email address'
     }
 
+    let finePrint;
+    if (this.props.formType === 'signup') {
+      finePrint = 'By signing up for Trace, you agree to the.Terms of Service.View our Privacy Policy'
+    } 
+
 
     return (
       <div>
@@ -80,13 +85,15 @@ class SessionForm extends React.Component {
             <div className="form_body">
               <section className="error_message">{this.renderErrors()}</section>
               <Link className="session_form_demo" to="/demo">Demo</Link>
-              <section className="orSwitch">{OrSwitch}</section>      
-              <input type="text" value={this.state.email} onChange={this.handleChange('email')}  placeholder={'Your Email'}/>
               <br/>
-              <input type="password" value={this.state.password} onChange={this.handleChange('password')}  placeholder={'Password'}/>
+              <section className="orSwitch">{OrSwitch}</section>    
+              <br/>  
+              <input className="form_input" type="text" value={this.state.email} onChange={this.handleChange('email')}  placeholder={'Your Email'}/>
+              <br/>
+                <input className="form_input" type="password" value={this.state.password} onChange={this.handleChange('password')}  placeholder={'Password'}/>
               <br/>
               <button className="session_button">{buttonName}</button>
-              <p className="sessions_fine_print">By signing up for Trace, you agree to the <p className='white_print'> Terms of Service.</p> View our <p className='white_print'> Privacy Policy</p></p>
+                <p className='session_fine_print'>{finePrint}</p>
             </div>
           </form>
         </body>

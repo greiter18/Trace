@@ -25,9 +25,9 @@ $orange:(rgb(252,82,12));
   justify-content:center;
   align-items: flex-start;
   background-color: black;
-  
-  opacity: 0.7;
+  opacity: 0.9;
   font-size: 34px;
+  font-weight: 500px;
   position: absolute;
   top: 0px;
   color: white;
@@ -69,8 +69,15 @@ $orange:(rgb(252,82,12));
   justify-content: space-between;
   text-align: center;
   color: white;
-  border: black solid;
   
+}
+
+.form_input{
+  background:black ;
+  border: $superLightGray solid 1px;
+  border-radius: 2px;
+  color: white;
+  font-weight: 400px;
 }
 
 .session_button{
@@ -112,4 +119,12 @@ $orange:(rgb(252,82,12));
   font-family: Arial, Helvetica, sans-serif;
   z-index: 2;
   border: black solid;
+}
+
+.session_fine_print{
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+  position: relative;
+  top: 100px
 }
