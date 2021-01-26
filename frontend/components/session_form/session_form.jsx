@@ -79,32 +79,38 @@ class SessionForm extends React.Component {
 
     return (
       <div>
-      <NavBar/>
-      <div className="background_image">
-        <body className="form_container">
-          {/* <section>
-            <img className="session_image" />
-          </section>   */}
-          <h1 className="form_title">{formName}</h1>    
-          <form className="session_form" onSubmit={this.handleSubmit}>
-            <br/>
-            <div className="form_body">
-              <section className="session_form_lines" id="error_message">{this.renderErrors()}</section>
-                <span className="session_form_lines" id="session_form_demo" onClick={() => { this.props.login({ email: 'guest', password:'password'})}}> Demo User </span> 
-              <br/>
-              <section className="orSwitch">{OrSwitch}</section>    
-              <br/>  
-                <input className="session_form_lines" id="form_input" type="text" value={this.state.email} onChange={this.handleChange('email')}  placeholder={'Your Email'}/>
-              <br/>
-                <input className="session_form_lines" id="form_input" type="password" value={this.state.password} onChange={this.handleChange('password')}  placeholder={'Password'}/>
-              <br/>
-                <button className="session_form_lines" id="session_button">{buttonName}</button>
-            </div>  
-            <p className='session_fine_print'>{finePrint}</p>
-          </form>    
-          
-        </body>
-      </div>
+        <NavBar/>
+        <div className="background_image">
+         
+          <div className="form_background">
+            
+            <body className="form_container">
+              {/* <section>
+                <img className="session_image" />
+              </section>   */}
+              <div className="form_title">
+                <h1 >{formName}</h1>  
+              </div>
+              <form className="session_form" onSubmit={this.handleSubmit}>
+                <br/>
+                <div className="form_body">
+                    <span className="session_form_lines" id="session_form_demo" onClick={() => { this.props.login({ email: 'guest', password:'password'})}}> Demo User </span> 
+                  <br/>
+                  <section className="orSwitch">{OrSwitch}</section>    
+                  <br/> 
+                  
+                  <input className="session_form_lines" id="form_input" type="text" value={this.state.email} onChange={this.handleChange('email')}  placeholder={'  Your Email'}/>
+                    
+                    <input className="session_form_lines" id="form_input" type="password" value={this.state.password} onChange={this.handleChange('password')}  placeholder={'  Password'}/>
+                  <br/>
+                  <section className="session_form_lines" id="error_message">{this.renderErrors()}</section> 
+                    <button className="session_form_lines" id="session_button">{buttonName}</button>
+                </div>  
+                <p className='session_fine_print'>{finePrint}</p>
+              </form>    
+            </body>
+          </div>
+        </div>
       </div>
     )
   }

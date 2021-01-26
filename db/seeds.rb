@@ -12,8 +12,8 @@ User.delete_all
 Workout.delete_all
 
 u1 = User.create!(
-  email: 'guest',
-  password: 'password'
+  {email: 'guest',
+  password: 'password'}
 )
 
 

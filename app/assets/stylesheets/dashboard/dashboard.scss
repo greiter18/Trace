@@ -3,5 +3,16 @@ $orange:(rgb(252,82,12));
 $dark:(rgb(36,36,40));
 
 .dash_body{
-  background-color: $superLightGray;
+  display: flex;
+  justify-content: space-around;
+  font-size: 24px;
+  
+  
 }
+
+// body {
+//     background: $superLightGray;
+//     width: 100%;
+//     min-height:100vh;
+//     background-size: cover; 
+//   }
