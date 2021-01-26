@@ -17,14 +17,15 @@ u1 = User.create!(
 )
 
 
-# r1 = Route.create!( 
-#     title: 'Park Run',
-#     start_long: -122.511281,
-#     start_lat: 37.769996,
-#     end_long:-122.511341,
-#     end_lat:37.769395,
+r1 = Route.create!( 
+    title: 'Park Run',
+    start_long: -122.511281,
+    start_lat: 37.769996,
+    end_long:-122.511341,
+    end_lat:37.769395,
+    user_id: 23
 
-# )
+)
 
 # w1 = Workout.create!(
 #   title: 'morning run',
