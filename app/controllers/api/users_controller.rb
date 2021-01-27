@@ -12,11 +12,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-<<<<<<< HEAD
-        @user = User.find_by(id: params[:id])
-=======
     @user = User.find_by(id: params[:id])
->>>>>>> routes
   end
 
   private
