@@ -24,29 +24,41 @@ const Splash = (props) =>{
                     <span className="or_box_or"> or </span>
                     <span className="or_box_line"></span>
                   </div>
-                <span className="splash_buttons" id="splash_demo_button" onClick={() => { props.login({ email: 'guest', password: 'password' }) }}>Demo User </span>
+                <Link className="splash_buttons" id="splash_demo_button" onClick={() => { props.login({ email: 'guest', password: 'password' }) }}>Demo User </Link>
               </div>
             </div>
             <div className="splash_fine_print">
               <br/>
                 <span>By signing up for Trace, you agree to the Terms of Service. View our Privacy Policy.</span> 
               <br/>
-                <span className="already_a_member">Already a member? <Link to="/login">Log In</Link></span>
+                <span className="already_a_member">Already a member? <Link className="member_link" to="/login">Log In</Link></span>
             </div>
           </div>
         </div>
           <br/>
       </div>
-          <footer>
-            <div className="session_footer">
-              <p className="footer_logo">TRACE</p>
-              <ul>
-                <li className="footer_top_list">GET STARTED</li>
-                <li><Link to="/signup">SIGN UP</Link></li>
-                <li><Link to="/login">LOG IN</Link></li> 
-              </ul>
-            </div>
-          </footer>
+        <footer>
+          <div className="session_footer">
+            <p className="footer_logo">TRACE</p>
+            <ul>
+              <li className="footer_top_list">Skills</li>
+              <li className="footer_list">JavaScript</li>
+              <li className="footer_list">Ruby on Rails</li>
+              <li className="footer_list">React / Redux</li>
+              <li className="footer_list">HTML / CSS</li>
+            </ul>
+            <ul>
+              <li className="footer_top_list">Social Media</li>
+              <li className="footer_list">Instagram</li>
+              <li className="footer_list">FaceBook</li>
+            </ul>
+            <ul>
+              <li className="footer_top_list">GET STARTED</li>
+              <li className="footer_list"><Link to="/signup">SIGN UP</Link></li>
+              <li className="footer_list"><Link to="/login">LOG IN</Link></li> 
+            </ul>
+          </div>
+        </footer>
     </div>
   )  
 }

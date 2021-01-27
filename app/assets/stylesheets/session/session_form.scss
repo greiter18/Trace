@@ -29,7 +29,7 @@ $dark:(rgb(36,36,40));
   position: relative;
   top: 150px;
   width: 400px;
-  height: 500px;
+  height: auto;
   background:rgba(0,0,0,0.75);
   font-family: Arial, Helvetica, sans-serif;
   border: black solid;
@@ -41,7 +41,10 @@ $dark:(rgb(36,36,40));
   font-size: 34px;
   color: white;
   text-align: center;
-  width:395px
+  width:-webkit-fill-available;
+  padding-top: 25px;
+  padding-bottom: 20px;
+
 }
 
 .session_form_lines{
@@ -91,7 +94,7 @@ $dark:(rgb(36,36,40));
 // }
 
 #form_input{
-  background:black ;
+  background:rgba(0,0,0,0.5);;
   border: $superLightGray solid 1px;
   border-radius: 2px;
   color: white;
@@ -99,11 +102,14 @@ $dark:(rgb(36,36,40));
   opacity: 1;
   display: flex;
   flex-direction: column;
+  padding-top: 7px;
+  margin-bottom: 16px;
 }
 
 .orSwitch{
   font-size: 17px;
-  color: white;
+  color:rgba(235, 235, 235, .8);
+  margin-bottom: 25px;
 }
 
 #session_button{
@@ -114,6 +120,7 @@ $dark:(rgb(36,36,40));
   text-align: center;
   align-items: center;
   font-weight: bold;
+  margin-top: 50px;
 
 }
   #session_button a{
@@ -136,16 +143,21 @@ $dark:(rgb(36,36,40));
   
 }
 
-#error_message{
-  position: absolute;
-  color: red;
+.error_message{
+  // position: absolute;
+  color: white;
+  background: red;
   font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  width: -webkit-fill-available;
+
 }
 
 .session_fine_print{
-  display: flex;
-  flex-direction: column;
+//   display: flex;
+//   flex-direction: column;
   font-size: 10px;
-  position: relative;
-  top: 100px
+//   position: relative;
+//   top: 100px;
+  color: white;
 }

@@ -12,15 +12,13 @@ class Api::WorkoutsController < ApplicationController
     @workout = Workout.create(workout_params)
   end
 
-
-
   def workout_params
     params.require(:workout).permit(
       :title,
       :description,
       :date,
       :time,
-      :type,
+      :run_type,
       :route_id
     )
   end

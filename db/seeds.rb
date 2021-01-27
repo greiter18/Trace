@@ -15,25 +15,28 @@ u1 = User.create!(
   {email: 'guest',
   password: 'password'}
 )
+u2 = User.create!(
+  {email: 'guest1',
+  password: 'password'}
+)
 
 
-# r1 = Route.create!( 
-#     title: 'Park Run',
-#     start_long: -122.511281,
-#     start_lat: 37.769996,
-#     end_long:-122.511341,
-#     end_lat:37.769395,
+r1 = Route.create!( 
+    title: 'Park Run',
+    start_long: -122.511281,
+    start_lat: 37.769996,
+    end_long:-122.511341,
+    end_lat:37.769395,
+    user_id: a.id
+)
 
-# )
-
-# w1 = Workout.create!(
-#   title: 'morning run',
-#   description: 'barely made it',
-#   date: '2000-01-13',
-#   time: 23.22,
-#   type: 'run',
-#   route_id: r1.id,
-#   user_id: u1.id
-# )
+w1 = Workout.create!(
+  title: 'morning run',
+  description: 'barely made it',
+  date: '2020-01-13',
+  time: 23.22,
+  run_type: 'run',
+  route_id: b.id
+)
 
  

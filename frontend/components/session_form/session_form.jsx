@@ -49,6 +49,12 @@ class SessionForm extends React.Component {
 
   render(){
 
+    const errors = this.props.errors.map(error => {
+      return (<li>{error}</li>) 
+    })
+
+    const showErrors = this.props.errors.length ? <ul >{errors}</ul> : null
+
     let buttonName;
     if (this.props.formType === 'login') {
       buttonName = 'Log In'
@@ -91,6 +97,7 @@ class SessionForm extends React.Component {
               <div className="form_title">
                 <h1 >{formName}</h1>  
               </div>
+              <section className='error_message'>{showErrors}</section>
               <form className="session_form" onSubmit={this.handleSubmit}>
                 <br/>
                 <div className="form_body">
@@ -103,7 +110,7 @@ class SessionForm extends React.Component {
                     
                     <input className="session_form_lines" id="form_input" type="password" value={this.state.password} onChange={this.handleChange('password')}  placeholder={'  Password'}/>
                   <br/>
-                  <section className="session_form_lines" id="error_message">{this.renderErrors()}</section> 
+                  
                     <button className="session_form_lines" id="session_button">{buttonName}</button>
                 </div>  
                 <p className='session_fine_print'>{finePrint}</p>
