@@ -10,7 +10,7 @@ class Workout < ApplicationRecord
     foreign_key: :route_id
 
   has_one :user,
-  through: :route,
-  source: :user
+    through: :route,
+    source: :user
 
 end
