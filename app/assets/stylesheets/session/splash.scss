@@ -2,7 +2,9 @@ $superLightGray:(rgb(223, 223, 231));
 $orange:(rgb(252,82,12));
 $dark:(rgb(36,36,40));
 
-
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
 // .headLine{
 //   font-family: Arial, Helvetica, sans-serif;
 //   position: relative;
@@ -11,10 +13,15 @@ $dark:(rgb(36,36,40));
 //   text-align: center;
   
 // }
+.splash_form{
+  margin-bottom: 80px;
+  margin-top: 80px
+}
+
 .headLine{
   font-family: Arial, Helvetica, sans-serif;
-  position: relative;
-  top: 40px;
+  // position: relative;
+  // top: 40px;
   font-size: 48px;
   text-align: center;
   
@@ -22,8 +29,13 @@ $dark:(rgb(36,36,40));
 
 .splash_middle{
   display: flex;
-  justify-content: space-around;
-  padding: 75px 70px;
+  justify-content: center;
+  padding: 75px ;
+  width: 1248px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 16px;
+  padding-right: 16px;
   
 
 }
@@ -40,6 +52,10 @@ $dark:(rgb(36,36,40));
   
 // }
 
+.splash_main_form{
+display: flex;
+flex-direction: column;
+}
 
 .splash_center_form{
   // position: flex;
@@ -47,11 +63,11 @@ $dark:(rgb(36,36,40));
   // bottom: 300px;
   display: flex;
   justify-content: space-around ;
-  flex-direction: column;
   align-items: center;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   padding: 40px 0px;
+  flex-direction: column;
   
 
 }
@@ -64,20 +80,30 @@ $dark:(rgb(36,36,40));
 // }
 
 .splash_buttons{
-  border: $dark solid 1px;
+  border: $superLightGray solid 1px;
   color: $dark;
   width: 300px;
   padding: 10px 0px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   margin: 25px 0px;
+  height: 25px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.splash_buttons a{
+  text-decoration: none;
 }
 
 
 #splash_demo_button{
+  display: flex;
+  justify-content: space-between;
   
   #splash_demo_button a{
+    display: flex;
+    justify-content: space-between;
     text-decoration: none;
     color: $dark;
     border:$superLightGray solid 1px;
@@ -90,6 +116,8 @@ $dark:(rgb(36,36,40));
 
 #sign_up_button{
   text-decoration: none;
+  background-color: rgb(50, 78, 139);
+  color: white;
 
   #sign_up_button a{
     text-decoration: none;
@@ -98,53 +126,100 @@ $dark:(rgb(36,36,40));
   }
 }
 
+.member_link a{
+  text-decoration: none;
+}
+
 .splash_fine_print{
+  display: flex;
+  flex-direction: column;
   width: 300px;
   text-align: center;
-  font-size: 10px;
+  font-size: 13px;
   margin: 20px 0px;
+}
+
+.already_a_member{
+  margin-top: 5px;
+}
+
+
+.member_link a{
+  text-decoration: none;
+}
+
+
+
+.or_box{
+  display: flex;
+  justify-content: space-around;
 }
 
 .or_box_or{
   text-align: center;
 }
 
-.or_box{
-  border-top: $dark solid 1px;
-  line-height: 1.45;
+.or_box_line{
+  border-top: $superLightGray 1px solid;
+  height: 1px;
+  width: 1px;
+  padding-left: 135px;
+  position: relative;
+  top: 9px;
 }
 
 
 
-.footer{
-  // display: flex;
-  // flex-direction: row-reverse;
-  // background-color: black;
-  // color: white;
-  // text-decoration:none;
-
+.session_footer{
+  display: flex;
+  justify-content: space-around;
   background: black;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    height: 100px;
-
-    .head_footer{
-      color: gray;
-    }
-
-  .footer a{
-    text-decoration:none;
-    color: white;
-  }
-
-  li {
-    display: flex;
-    flex-direction: row-reverse;
-  }
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  text-decoration:none;
 }
+.head_footer{
+  color: gray;
+}
+.footer_top_list{
+  color: gray;
+  font-size: 12px;
+  font-weight: bold;
+}
+ .footer {
+text-decoration:none;
+color: white;
+text-decoration:none;
+}
+// .footer.footer_list a{
+//   color: white;
+//   text-decoration:none;
+// }
+
+.footer_logo{
+  color: white;
+  font-size: 24px;
+}
+
+.footer_list{
+  color: white;
+  font-size: 12px;
+}
+
+.footer_list a{
+      padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+footer li {
+  padding:9px 0px;
+}
+
+
+
 
 
 

@@ -7,8 +7,10 @@ const Dashboard = (props) => {
       return(
         <div>
           <MainNavContainer/>
+          <br/>
           <body className="dash_body">
-           
+            <p>Profile Component</p>
+            <p>Workout Feed</p>
           </body>
         </div>
       )
