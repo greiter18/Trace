@@ -1,5 +1,5 @@
-json.workouts do 
-   json.set! @workout.id do
-    json.extract! @workout, :title, :description, :date, :run_type, :route_id, :time
+json.routes do 
+   json.set! @route.id do
+    json.extract! @route, :title, :start_long, :start_lat, :end_lat, :end_long
    end
 end

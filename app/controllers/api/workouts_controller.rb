@@ -1,7 +1,7 @@
 class Api::WorkoutsController < ApplicationController
 
-  def index
-    @workout = Workout.all
+ def index
+    @workouts = Workout.where(user_id: params[:user_id])
   end
 
   def show

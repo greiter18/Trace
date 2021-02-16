@@ -7,14 +7,14 @@ class Api::RoutesController < ApplicationController
   end
 
   def show
-    @route = Routes.find_by(id: params[id])
+    @route = Route.find_by(id: params[:id])
   end
 
   def destroy
   end
 
   def index
-    @routes = Routes.where(user_id: params[:user_id])
+    @routes = Route.where(user_id: params[:user_id])
   end
 
   def route_params
@@ -26,5 +26,5 @@ class Api::RoutesController < ApplicationController
       :end_long,
       :user_id
     )
-
+  end
 end

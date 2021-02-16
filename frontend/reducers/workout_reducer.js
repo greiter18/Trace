@@ -1,6 +1,6 @@
 import {
   RECEIVE_WORKOUT,
-  RECEIVE_ALL_WORKOUT,
+  RECEIVE_ALL_WORKOUTS,
   REMOVE_WORKOUT
 } from '../actions/workout_actions';
 
@@ -9,7 +9,7 @@ const workoutReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_WORKOUT:
       return action.workouts
-    case RECEIVE_ALL_WORKOUT:
+    case RECEIVE_ALL_WORKOUTS:
       return Object.assign({}, state,{[action.workout.id]: action.workous} )
     case REMOVE_WORKOUT:
       const newState = Object.assign({},state);
