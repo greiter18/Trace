@@ -6,13 +6,12 @@ import Profile from './profile';
 
 const Dashboard = (props) => {
       return(
-        <div>
+        <div className="main_dash">
           <MainNavContainer/>
           <br/>
           
           <div className="dash_profile">
-            <p>Profile Component</p>
-            <Profile />
+            <Profile/>
             <p>Workout Feed</p>
           </div>
         </div>

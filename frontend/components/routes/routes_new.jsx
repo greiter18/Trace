@@ -1,11 +1,11 @@
 import React from 'react'
-import MainNavContainer from '../mainNav/main_nav_container'
+import RouteNav from '../routes/routes_nav'
 import { Link, withRouter } from 'react-router-dom';
 
 const RouteNew = () => {
   return (
     <div>
-      <Link to="/">Some Header</Link> 
+      <RouteNav/>
       <br/>
       <h1>Create a New Route</h1>
       <br />

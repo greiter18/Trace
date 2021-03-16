@@ -7,4 +7,14 @@ $dark:(rgb(36,36,40));
 .main_profile{
   display: flex;
   justify-content: flex-start;
+  border: white solid 1px;
+  width: 200px;
+  height: 250px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.total_activities{
+  display: flex;
+  justify-content: space-between; 
 }

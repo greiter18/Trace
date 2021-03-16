@@ -5,7 +5,7 @@ const RoutesIndex = () => {
   return (
     <div>
       <MainNavContainer />
-      <h1>Routes Show Page</h1>
+      <h1>Routes Index Page</h1>
     </div>
   )
 }

@@ -5,7 +5,7 @@ const WorkoutIndex = () => {
  return (
    <div>
      <MainNavContainer/>
-     <h1>WorkOut Show Page</h1>
+     <h1>WorkOut Index Page</h1>
    </div>
  )
 }

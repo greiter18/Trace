@@ -4,7 +4,8 @@ import dashboard from './dashboard';
 
 const mstp = ({session, entities: {users}}) => {
   return {
-    // currentUser: users[session.id]
+    currentUser: users[session.id],
+    email: users.email
   };
 };
 
