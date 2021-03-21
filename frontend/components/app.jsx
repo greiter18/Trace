@@ -11,10 +11,12 @@ import SignUpFormContainer from './session_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 import SplashContainer from './session_form/splash_container';
 import DashboardContainer from './dashboard/dashboard_container';
-import WorkOutIndex from './workouts/workout_index';
-import WorkoutForm from './workouts/workout_create';
-import RoutesIndex from './routes/routes_index'
-import RoutesNew from './routes/routes_new'
+import WorkOutIndex from './workouts/workout_index_container';
+import WorkoutForm from './workouts/workout_form_container';
+import WorkoutShow from './workouts/workout_show_container';
+import WorkoutEditFormContainer from './workouts/workout_edit_form_container';
+import RoutesIndexContainer from './routes/routes_index_container'
+import RouteForm from './routes/routes_form'
 
 const App = () => {
 	return(
@@ -29,8 +31,10 @@ const App = () => {
       <ProtectedRoute exact path="/dashboard" component={DashboardContainer}/>
       <ProtectedRoute exact path="/workouts" component={WorkOutIndex}/>
       <ProtectedRoute exact path="/workouts/new" component={WorkoutForm}/>
-      <ProtectedRoute exact path="/routes" component={RoutesIndex}/>
-      <ProtectedRoute exact path="/routes/new" component={RoutesNew}/>
+      <ProtectedRoute exact path="/workouts/:workoutId" component={WorkoutShow}/>
+      <ProtectedRoute exact path="/workouts/:workoutId/edit" component={WorkoutEditFormContainer}/>
+      <ProtectedRoute exact path="/routes" component={RoutesIndexContainer}/>
+      <ProtectedRoute exact path="/routes/new" component={RouteForm}/>
       
       {/* <ProtectedRoute exact path="/dashboard/:userId" component={DashboardContainer}/>
       <ProtectedRoute exact path="/routes/:routeId" component={RouteShowContainer}/> */}

@@ -27,7 +27,7 @@ r1 = Route.create!(
     start_lat: 37.769996,
     end_long:-122.511341,
     end_lat:37.769395,
-    user_id: a.id
+    user_id: u1.id
 )
 
 w1 = Workout.create!(
@@ -36,7 +36,7 @@ w1 = Workout.create!(
   date: '2020-01-13',
   time: 23.22,
   run_type: 'run',
-  route_id: b.id
+  route_id: r1.id
 )
 
  

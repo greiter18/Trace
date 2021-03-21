@@ -11,7 +11,8 @@ const routeReducer = (state = {}, action) => {
     case RECEIVE_ROUTE:
       return action.routes
     case RECEIVE_ALL_ROUTES:
-      return Object.assign({}, state, { [action.route.id]: action.routes })
+      console.log('action--------------',action)
+      return Object.assign({}, state, action.routes)
     case REMOVE_ROUTE:
       const newState = Object.assign({}, state);
       delete newState[action.routeId];

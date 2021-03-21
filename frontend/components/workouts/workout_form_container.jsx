@@ -1,10 +1,10 @@
 import {connect} from 'react-redux';
 import { createWorkout } from '../../actions/workout_actions';
-import WorkoutForm from './workout_create'
+import WorkoutForm from './workout_form'
 
 const mstp = (store) => {
   return {
-    workout :{title:'',description:'',date:'',time:'', run_type:''}
+    workout: {title:'',description:'',date:'',time:'', run_type:''}
   };
 };
 

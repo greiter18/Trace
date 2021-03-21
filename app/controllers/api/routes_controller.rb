@@ -1,9 +1,12 @@
 class Api::RoutesController < ApplicationController
 
-
   def create
-    @route = Route.create(route_params)
-    render :show
+    @route = Route.new(route_params)
+    if @route.save
+    render :index
+    else
+      render json: @route.errors.full_messages, status: 422
+    end
   end
 
   def show
@@ -11,10 +14,25 @@ class Api::RoutesController < ApplicationController
   end
 
   def destroy
+    @route = Route.find_by(id: params[:id])
+    if @route.destroy
+      render :index
+    else
+      render json: @route.errors.full_messages, status: 422
+    end
   end
 
   def index
     @routes = Route.where(user_id: params[:user_id])
+  end
+
+  def update
+    @route = Route.find(params[:id])
+    if @route.update(post_params)
+      render :show
+    else
+      render json: @route.errors.full_messages, status: 422
+    end
   end
 
   def route_params

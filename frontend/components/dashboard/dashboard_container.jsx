@@ -1,17 +1,22 @@
 import {connect} from 'react-redux';
-import { logout } from '../../actions/session_actions';
+import { fetchWorkouts } from '../../actions/workout_actions';
+import { fetchRoutes } from '../../actions/routes_action';
 import dashboard from './dashboard';
 
-const mstp = ({session, entities: {users}}) => {
+const mstp = ({session, entities}) => {
   return {
-    currentUser: users[session.id],
-    email: users.email
+    session: session,
+    currentUser: entities.users[session.id],
+    email: entities.users.email,
+    workoutCount: Object.values(entities.workouts).length,
+    routeCount: Object.values(entities.routes).length,
   };
 };
 
 const mdtp = dispatch => {
   return {
-    logout: () => dispatch(logout())
+    fetchWorkouts: (id) => dispatch(fetchWorkouts(id)),
+    fetchRoutes: (id) => dispatch(fetchRoutes(id)),
   }
 }
 

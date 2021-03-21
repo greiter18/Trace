@@ -22,15 +22,15 @@ export const fetchWorkout = id => (
   })
 );
 
-export const fetchWorkouts = () => (
+export const fetchWorkouts = (id) => (
  $.ajax({
     method: "Get",
-    url: `/api/workouts/`,
+    url: `/api/users/${id}/workouts`,
   })
 );
 export const deleteWorkout = (workoutId) => (
  $.ajax({
-    method: "DELTER",
+    method: "DELETE",
    url: `/api/workouts/${workoutId}`,
   })
 );

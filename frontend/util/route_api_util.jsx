@@ -25,7 +25,7 @@ export const fetchRoute = id => (
 export const fetchRoutes = (id) => (
   $.ajax({
     method: "Get",
-    url: `/api/users/${route.user_id}/routes`,
+    url: `/api/users/${id}/routes`,
   })
 );
 export const deleteRoute = (routeId) => (

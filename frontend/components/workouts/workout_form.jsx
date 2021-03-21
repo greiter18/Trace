@@ -5,7 +5,7 @@ import { Link, withRouter } from 'react-router-dom';
 class WorkoutForm extends React.Component{
   constructor(props){
     super(props)
-    this.state = {title:'',description:'',date:'',time:'', run_type:'',route_id:''}
+    this.state = this.props.workout 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
@@ -21,36 +21,13 @@ class WorkoutForm extends React.Component{
     }
   }
 
-  // handleTitle(e){
-  //   this.setState({ title: e.target.value })
-  // }
-  // handleDescription(e){
-  //   this.setState({ description: e.target.value })
-  // }
-  // handleDate(e){
-  //   this.setState({ date: e.target.value })
-  // }
-  // handleTime(e){
-  //   this.setState({ time: e.target.value })
-  // }
-  // handleType(e){
-  //   this.setState({ type: e.target.value })
-  // }
-  // handleRoute(e){
-  //   this.setState({ route_id: e.target.value })
-  // }
-  // handleDate(e){
-  //   this.setState({ date: e.target.value })
-  // }
-
-
   render(){
   return (
     <div>
       <WorkoutNav/>
       Create a New Workout
       <form onSubmit={this.handleSubmit}>
-        Title <input type="text" onChange={this.handleChange('title')}/>
+        Title <input type="text" value={this.props.title} onChange={this.handleChange('title')}/>
         Date <input type="date" onChange={this.handleChange('date')} 
         min="2021-01-01" max="2030-12-31"/>
         Description <input type="text"  onChange={this.handleChange('description')}/>
