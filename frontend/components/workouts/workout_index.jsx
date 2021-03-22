@@ -19,7 +19,12 @@ class WorkoutIndex extends React.Component{
   return (
     <div>
       <MainNavContainer/>
-      <h1>WorkOut Index Page</h1>
+      <h1>Your Workouts</h1>
+      <div className="workoutIndexHeader">
+      <h1>Title</h1>
+      <h1>Description</h1>
+      <h1>Date</h1>
+      </div>
       {workoutList}
     </div>
   )

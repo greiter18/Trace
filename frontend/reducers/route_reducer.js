@@ -9,7 +9,7 @@ const routeReducer = (state = {}, action) => {
   Object.freeze(state)
   switch (action.type) {
     case RECEIVE_ROUTE:
-      return action.routes
+      return action.route
     case RECEIVE_ALL_ROUTES:
       console.log('action--------------',action)
       return Object.assign({}, state, action.routes)

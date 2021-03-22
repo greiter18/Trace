@@ -1,0 +1,14 @@
+$superLightGray:(rgb(223, 223, 231));
+$orange:(rgb(252,82,12));
+$dark:(rgb(36,36,40));
+
+
+.workoutIndexHeader{
+  display: flex;
+  background-color: $superLightGray;
+  justify-content: space-evenly;
+}
+.workoutList{
+  display: flex;
+  justify-content: space-evenly;
+}

@@ -44,7 +44,6 @@ export const fetchWorkouts = (user_id) => {
 }
 
 export const createWorkout = (workout) => {
-  debugger
   return dispatch => {
     return WorkoutApiUtil.createWorkout(workout)
       .then(newWorkout => {

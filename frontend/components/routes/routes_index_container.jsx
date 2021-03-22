@@ -4,15 +4,16 @@ import RoutesIndex from './routes_index'
 
 
 const mstp = (store) => {
+  console.log('store--------------',store)
   return {
-    routes: Object.values(store.routes)
+    session: store.session,
+    routes: Object.values(store.entities.routes)
   };
 };
 
 const mdtp = dispatch => {
   return {
-    fetchRoutes: () => dispatch(fetchRoutes(workout)),
-    
+    fetchRoutes: (id) => dispatch(fetchRoutes(id)),
   }
 }
 

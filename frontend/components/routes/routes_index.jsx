@@ -2,18 +2,29 @@ import React from 'react'
 import MainNavContainer from '../mainNav/main_nav_container'
 import RoutesIndexItem from './routes_index_item'
 
-const RoutesIndex = (props) => {
-  const routesList = this.routes !== undefined ?  this.routes.map(route => {
-    return <RoutesIndexItem routes={route} />
+class RoutesIndex extends React.Component{
+  constructor(props){
+    super(props)
+  }
+
+  componentDidMount(){
+    this.props.fetchRoutes(this.props.session.id)
+  }
+
+  render(){
+  const routesList = this.props.routes !== undefined ?  this.props.routes.map(route => {
+    return <RoutesIndexItem route={route} />
   }) : null
 
-  return (
-    <div>
-      <MainNavContainer />
-      <h1>Routes Index Page</h1>
-      {routesList}
-    </div>
-  )
+    return (
+      <div>
+        {console.log('coponent store-------',this.props.routes)}
+        <MainNavContainer/>
+        <h1>Your Routes</h1>
+        {routesList}
+      </div>
+    )
+  }
 }
 
 export default RoutesIndex;

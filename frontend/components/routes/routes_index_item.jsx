@@ -1,11 +1,11 @@
 import React from 'react'
 
 
-const RoutesIndexItem = (props) => {
-
+const RoutesIndexItem = ({route}) => {
   return (
     <div> 
-    Routes Index Item
+      {console.log('indexit-----------------',route)}
+    <h1>{route.title}</h1>
     </div>
   )
 }
