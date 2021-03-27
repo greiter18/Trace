@@ -1,15 +1,23 @@
 import React from 'react'
 import RouteNav from './routes_nav'
 import { Link, withRouter } from 'react-router-dom';
+import Maps from './map'
 
 class RouteForm extends React.Component{
   constructor(props){
     super(props)
     this.state = {}
+    this.handleChange = this.handleChange.bind(this)
   }
   handleSubmit(e){
-    e.preventDefault(); // stops a refresh 
+    e.preventDefault(); 
     this.props.createRoute(this.state);
+  }
+
+  handleChange(field){
+    return e => {
+        this.setState({[field]: e.target.value})
+    }
   }
 
   render(){
@@ -17,9 +25,13 @@ class RouteForm extends React.Component{
       <div>
         <RouteNav/>
         <br/>
-        <h1>Create a New Route</h1>
       <form onSubmit={this.handleSubmit}>
-        <button>Create Route</button>
+        <div className="routeFormTop">
+          <label>Title</label><br/>
+          <input type="text" onChange={this.handleChange('title')}/>
+          <button>Save</button>
+        </div>
+        <Maps/> 
       </form>
         <br />
       </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 import MainNavContainer from '../mainNav/main_nav_container'
 import RoutesIndexItem from './routes_index_item'
+import { Link, withRouter } from 'react-router-dom';
 
 class RoutesIndex extends React.Component{
   constructor(props){
@@ -20,7 +21,8 @@ class RoutesIndex extends React.Component{
       <div>
         {console.log('coponent store-------',this.props.routes)}
         <MainNavContainer/>
-        <h1>Your Routes</h1>
+        <h1>My Routes</h1>
+        <Link to="/routes/new">Create New Route</Link>
         {routesList}
       </div>
     )

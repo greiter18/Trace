@@ -1,5 +1,5 @@
 import React from 'react'
-import WorkoutNav from '../workouts/workout_nav'
+import MainNav from '../mainNav/main_nav'
 import { Link, withRouter } from 'react-router-dom';
 
 class WorkoutForm extends React.Component{
@@ -22,29 +22,44 @@ class WorkoutForm extends React.Component{
   }
 
   render(){
-  return (
-    <div>
-      <WorkoutNav/>
-      Create a New Workout
-      <form onSubmit={this.handleSubmit}>
-        Title <input type="text" value={this.props.title} onChange={this.handleChange('title')}/>
-        Date <input type="date" onChange={this.handleChange('date')} 
-        min="2021-01-01" max="2030-12-31"/>
-        Description <input type="text"  onChange={this.handleChange('description')}/>
-        Time <input type="time"  onChange={this.handleChange('time')}/>
-        {/* <input type="time" name="limittime" list="limittimeslist" step="0.001"></input> */}
-        Type <select onChange={this.handleChange('run_type')}>
-          <option>run</option>
-          <option>walk</option>
-          </select>
-        Route <select onChange={this.handleChange('route_id')}>
-          <option >Park Run</option>
-          <option >Short Run</option>
-        </select>
-        <button>Create Workout</button>
-      </form>
-    </div>
-  )
+    return (
+      <div>
+        <MainNav/>
+        Create a New Workout
+        <form onSubmit={this.handleSubmit}>
+          <div>
+            <label>Route </label> 
+            <select onChange={this.handleChange('route_id')}>
+              <option >Park Run</option>
+              <option >Short Run</option>
+            </select>
+            <div>
+              <label>Time</label>  
+              <input type="number" onChange={this.handleChange('time')}/><input type="number" onChange={this.handleChange('time')}/><input type="number" onChange={this.handleChange('time')}/>
+            </div>
+          </div>
+          <div>
+          <label >Date</label>  <br/>
+          <input type="date" onChange={this.handleChange('date')} 
+          min="2021-01-01" max="2030-12-31"/>
+          <label>Title </label> <br/>
+          <input type="text" value={this.props.title} onChange={this.handleChange('title')}/>
+          </div>
+          <div>
+           <label>Type</label> 
+            <select onChange={this.handleChange('run_type')}>
+              <option>run</option>
+              <option>walk</option>
+            </select>
+            <label>Description </label>
+            <textarea onChange={this.handleChange('description')}/>
+            <br/>
+          </div>
+          <button>Create</button>
+          <Link to='/'>Cancel</Link>
+        </form>
+      </div>
+    )
   }
 }
 

@@ -1,6 +1,5 @@
 import {connect} from 'react-redux';
-import { fetchWorkout } from '../../actions/workout_actions';
-import { deleteWorkout } from '../../util/workout_api_util';
+import { fetchWorkout, deleteWorkout  } from '../../actions/workout_actions';
 import WorkoutShow from './workout_show'
 
 const mstp = (store, ownProps) => {

@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { deleteWorkout } from '../../util/workout_api_util';
 import MainNav from '../mainNav/main_nav'
-
 
 class WorkoutShow extends React.Component{
   constructor(props){

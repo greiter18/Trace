@@ -23,8 +23,8 @@ const MainNav = ({logout}) => {
       <div className="dropdown">
         <button className="dropbtn"><i className="fas fa-plus-circle"></i></button>
         <div className="dropdown_content" id="create_dropdown">
-          <Link to='/routes/new'>New Route</Link>
-          <Link to='/workouts/new'>New Workout</Link>
+          <Link to='/new/routes'>New Route</Link>
+          <Link to='/new/workouts'>New Workout</Link>
         </div>
       </div>
     </div>

@@ -30,17 +30,13 @@ const App = () => {
       <AuthRoute exact path="/signup"  component={SignUpFormContainer}/>
       <ProtectedRoute exact path="/dashboard" component={DashboardContainer}/>
       <ProtectedRoute exact path="/workouts" component={WorkOutIndex}/>
-      <ProtectedRoute exact path="/workouts/new" component={WorkoutForm}/>
+      <ProtectedRoute exact path="/new/workouts" component={WorkoutForm}/>
       <ProtectedRoute exact path="/workouts/:workoutId" component={WorkoutShow}/>
       <ProtectedRoute exact path="/workouts/:workoutId/edit" component={WorkoutEditFormContainer}/>
       <ProtectedRoute exact path="/routes" component={RoutesIndexContainer}/>
-      <ProtectedRoute exact path="/routes/new" component={RouteForm}/>
-      
+      <ProtectedRoute exact path="/new/routes" component={RouteForm}/>
       {/* <ProtectedRoute exact path="/dashboard/:userId" component={DashboardContainer}/>
       <ProtectedRoute exact path="/routes/:routeId" component={RouteShowContainer}/> */}
-
-
-				
 		</div>
 	)
 }

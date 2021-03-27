@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails'
+gem "figaro"
 
 
 # Use ActiveStorage variant
@@ -44,6 +45,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'annotate'
   # gem 'bcrypt'
+  
 
 end
 

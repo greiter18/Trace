@@ -15,13 +15,17 @@ class Dashboard extends React.Component{
   }
 
   render(){
+      const workoutList = this.props.workouts !== undefined ? this.props.workouts.map(workout => {
+        return <li>{workout.title}</li>
+      }) :null 
     return(
       <div className="main_dash">
         <MainNavContainer/>
         <br/>
         <div className="dash_profile">
-          <Profile routeCount={this.props.routeCount} workoutCount={this.props.workoutCount}/>
+          <Profile routeCount={this.props.routeCount} workoutCount={this.props.workoutCount} email={this.props.email}/>
           <p>Workout Feed</p>
+          <ul>{workoutList}</ul>
         </div>
       </div>
     )

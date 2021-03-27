@@ -1,14 +1,26 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom';
 
-const WorkoutIndexItem = ({workout}) => {
+const WorkoutIndexItem = ({workout, deleteWorkout}) => {
 
   return (
     <div className="workoutList"> 
-    <Link to={`/workouts/${workout.id}`}>{workout.date}</Link>
-    <Link to={`/workouts/${workout.id}`}>{workout.title}</Link>
-    <Link to={`/workouts/${workout.id}`}>{workout.description}</Link>
-    <h1>{workout.description}</h1>
+      <table >
+        <tr className="workoutIndexHeader">
+          <th>Date</th>
+          <th>Title</th>
+          <th>Time</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <td>{workout.date}</td>
+          <td><Link to={`/workouts/${workout.id}`}>{workout.title}</Link></td>
+          <td>{workout.time}</td>
+          <td><Link to={`/workouts/${workout.id}/edit`}>Edit</Link></td>
+          <td onClick={()=> deleteWorkout(workout.id)}>Delete</td>
+        </tr>
+      </table>
     </div>
   )
 }
