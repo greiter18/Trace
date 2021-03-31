@@ -16,7 +16,7 @@ import WorkoutForm from './workouts/workout_form_container';
 import WorkoutShow from './workouts/workout_show_container';
 import WorkoutEditFormContainer from './workouts/workout_edit_form_container';
 import RoutesIndexContainer from './routes/routes_index_container'
-import RouteForm from './routes/routes_form'
+import RouteForm from './routes/routes_form_container'
 
 const App = () => {
 	return(

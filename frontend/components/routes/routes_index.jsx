@@ -22,7 +22,7 @@ class RoutesIndex extends React.Component{
         {console.log('coponent store-------',this.props.routes)}
         <MainNavContainer/>
         <h1>My Routes</h1>
-        <Link to="/routes/new">Create New Route</Link>
+        <Link to="/new/routes">Create New Route</Link>
         {routesList}
       </div>
     )

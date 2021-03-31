@@ -1,10 +1,13 @@
 import {connect} from 'react-redux';
-import { createWorkout } from '../../actions/workout_actions';
-import RouteForm from './workout_create'
+import { createRoute } from '../../actions/routes_action';
+import RouteForm from './routes_form'
 
 const mstp = (store) => {
+  console.log('container------',store)
+  debugger
   return {
-    route :{title:'',description:'',date:'',time:'', run_type:''}
+    session: store.session,
+    route :{}
   };
 };
 
