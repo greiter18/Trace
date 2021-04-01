@@ -1,10 +1,11 @@
-export const createRoute = route => (
+export const createRoute = route => {
+  debugger
   $.ajax({
     method: "POST",
     url: `/api/users/${route.user_id}/routes`,
     data: { route }
   })
-);
+};
 
 
 export const updateRoute = route => (

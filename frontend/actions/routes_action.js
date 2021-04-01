@@ -41,6 +41,7 @@ export const fetchRoutes = (user_id) => {
   }
 }
 export const createRoute = (route) => {
+  debugger
   return dispatch => {
     return RoutesApiUtil.createRoute(route)
       .then(newRoute => {

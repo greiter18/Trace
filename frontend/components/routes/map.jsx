@@ -6,7 +6,8 @@ class Maps extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      marks: []
+      marks: [],
+      disabled: true
     }
     this.points = this.state.marks;
     this.directionsService = new google.maps.DirectionsService();
@@ -15,7 +16,7 @@ class Maps extends React.Component {
     this.renderMarkers = this.renderMarkers.bind(this);
     this.removeLastPoint = this.removeLastPoint.bind(this);
     this.removeAllPoints = this.removeAllPoints.bind(this);
-    this.id = this.props.id;
+    this.id = this.props.session.id;
     this.openModal = this.openModal.bind(this);
   }
 
@@ -42,10 +43,7 @@ class Maps extends React.Component {
 
   renderMarkers(){
     const beginPoint = this.points[0];
-    // console.log('beginpoint--------------',beginPoint)
     let endPoint = this.points[this.points.length - 1];
-    // console.log('endpoint--------------',endPoint)
-    // console.log('point--------------',this.points)
     this.setState({["marks"]: this.points})
 
     this.directionsService.route({
@@ -79,7 +77,6 @@ class Maps extends React.Component {
   removeLastPoint(){
     this.points.pop();
     this.renderMarkers();
-    console.log('removelastpoint-----------',this.points)
   }
 
   removeAllPoints(){
@@ -93,6 +90,19 @@ class Maps extends React.Component {
     document.querySelector('.modal').classList.toggle('open-modal');
     document.querySelector('.modal-background').classList.toggle('open-modal');
   }
+
+   toggleDisable(){
+    if(this.points.length === 2){
+      this.setState({
+        disabled: false
+      })
+    } else {
+      this.setState({
+        disabled: true
+      })
+    }
+  };
+
 
   render(){
     return(
@@ -113,10 +123,10 @@ class Maps extends React.Component {
 							</form> */}
       <div className="mapButtons">
         <button className="mapOtherButtons" onClick={() => this.removeLastPoint()}><i className="fas fa-undo-alt"></i></button>
-        <button className="mapOtherButtons" onClick={() => this.removeAllPoints()}><i class="far fa-trash-alt"></i></button>
+        <button className="mapOtherButtons" onClick={() => this.removeAllPoints()}><i className="far fa-trash-alt"></i></button>
         <button className="mapSaveButtons" onClick={()=> this.openModal()}>Save</button>
       </div>
-      <div id='map' ref={(map) => (this.mapstart = map)}></div> 
+      <div id='map' ref={(map) => (this.mapstart = map)} onChange={() => this.toggleDisable}></div> 
       <div className="modal-background" onClick={() => this.openModal()}>
         <div className='modal' onClick={(e) => e.stopPropagation()} >
           <MapModal  createRoute={this.props.createRoute} cords={this.state.marks} session={this.props.session}/>

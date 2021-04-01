@@ -128,13 +128,13 @@ $dark:(rgb(36,36,40));
     margin-top: 24px;
 }
 
-.modal-description{
+#modal-description{
   height: 144px;
  
   resize: none;
 }
 
-#input-area{
+.input-area{
   border: 1px solid #dfdfe8;
   border-radius: 4px;
   font-family: inherit;

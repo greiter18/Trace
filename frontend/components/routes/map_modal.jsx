@@ -1,27 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-//  start_long:this.props.cords[0].lng || '',
-//  start_lat:this.props.cords[0].lat || '',
-//  end_long:this.props.cords[1].lng || '',
-//  end_lat:this.props.cords[1].lat || ''
-
 
 class MapModal extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      title:'',
+      title: '',
+      disabled: true
     }
     this.openModal = this.openModal.bind(this);
+    this.toggleDisable = this.toggleDisable.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    
   }
-  // componentDidUpdate(){
-  //   this.setState(
-  //     {['start_long']: this.props.cords[0]?.lng,
-  //     ['start_lat']: this.props.cords[0]?.lat,
-  //     ['end_long']: this.props.cords[1]?.lng,
-  //     ['end_lat']: this.props.cords[1]?.lat}
-  //     )
-  // }
+
   handleSubmit(e){
     e.preventDefault();
     this.props.createRoute({
@@ -39,16 +31,26 @@ class MapModal extends React.Component{
         this.setState({[field]: e.target.value})
     }
   }
-    openModal(){
+
+  openModal(){
     document.querySelector('.modal').classList.toggle('open-modal');
     document.querySelector('.modal-background').classList.toggle('open-modal');
   }
 
+  toggleDisable(e){
+    if(e.target.value.length > 0){
+      this.setState({
+        disabled: false
+      })
+    } else {
+      this.setState({
+        disabled: true
+      })
+    }
+  }
+
  
   render(){
-    // const log = this.props.cords[0].lat !== undefined ?
-    // console.log('log----------',this.props.cords[0]['lat'])
-    // : null
     let beginPoint = this.props.cords[0];
     let endPoint = this.props.cords[1];
 
@@ -56,24 +58,32 @@ class MapModal extends React.Component{
       <div className="modal-form">
         <div className='modal-top'>
           <h1 className="myRoute">My Route</h1> 
-          <i class="fas fa-running"></i>
-          <i class="far fa-star"></i>
+          <i className="fas fa-running"></i>
+          <i className="far fa-star"></i>
         </div>
-        <form onSubmit={this.handleSubmit}>
+        <form id="routeModalForm" onSubmit={this.handleSubmit}>
           <label className='modal-text'> Route name (required) <br/>
-           <input id="input-area" type="text" onChange={this.handleChange('title')}/>
+           <input id="modalTitle" className="input-area" type="text" onChange={this.handleChange('title')} onChange={this.toggleDisable}/>
           </label> <br/>
           <label className='modal-text'> Description <br/>
-            <textarea id="input-area"className ="modal-description" type="text" onChange={this.handleChange('description')} placeholder={'Add some more details or notes'}/>
+            <textarea className="input-area" id="modal-description" type="text" onChange={this.handleChange('description')} placeholder={'Add some more details or notes'}/>
           </label>
           <div className="modal-fineprint">
-            Public routes are for the whole Strava community to enjoy. 
+            Public routes are for the whole Trace community to enjoy. 
             If you ever decide to delete your account, 
-            please know that public route you create may remain. Learn More
+            please know that public route you create may remain. 
           </div>
           <div className='modal-buttons'>
             <h1 className="modal-edit-button" onClick={() => this.openModal()}>Edit Route</h1>
-            <button className="modal-save-button" >Save to My Routes</button>
+            <button id="modalSave" className="modal-save-button" disabled={this.state.disabled}>Save to My Routes</button>
+            {console.log({
+              title: this.state.title,
+              start_long:this.props.cords[0]?.lng,
+              start_lat:this.props.cords[0]?.lat,
+              end_long:this.props.cords[1]?.lng,
+              end_lat:this.props.cords[1]?.lat,
+              user_id: this.props.session?.id
+            })}
           </div>
         </form>
         {/* {console.log('modal startcords----------',beginPoint?.lng)} */}
@@ -83,3 +93,4 @@ class MapModal extends React.Component{
 }
 
 export default MapModal;
+
