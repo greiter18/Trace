@@ -12,6 +12,7 @@ class MapModal extends React.Component{
     this.state = {
       title:'',
     }
+    this.openModal = this.openModal.bind(this);
   }
   // componentDidUpdate(){
   //   this.setState(
@@ -38,6 +39,10 @@ class MapModal extends React.Component{
         this.setState({[field]: e.target.value})
     }
   }
+    openModal(){
+    document.querySelector('.modal').classList.toggle('open-modal');
+    document.querySelector('.modal-background').classList.toggle('open-modal');
+  }
 
  
   render(){
@@ -48,28 +53,30 @@ class MapModal extends React.Component{
     let endPoint = this.props.cords[1];
 
     return (
-      <div>
-        <h1>My Route</h1> 
+      <div className="modal-form">
+        <div className='modal-top'>
+          <h1 className="myRoute">My Route</h1> 
+          <i class="fas fa-running"></i>
+          <i class="far fa-star"></i>
+        </div>
         <form onSubmit={this.handleSubmit}>
-          <label> Route Name
-           <input type="text" onChange={this.handleChange('title')}/>
+          <label className='modal-text'> Route name (required) <br/>
+           <input id="input-area" type="text" onChange={this.handleChange('title')}/>
+          </label> <br/>
+          <label className='modal-text'> Description <br/>
+            <textarea id="input-area"className ="modal-description" type="text" onChange={this.handleChange('description')} placeholder={'Add some more details or notes'}/>
           </label>
-          {/* <label> Description
-            <textarea type="text" onChange={this.handleChange('description')} placeholder={'Add some more details or notes'}/>
-          </label> */}
-          <h1>Edit Route</h1>
-          <button>Save to My Routes</button>
-          {/* {console.log('modal cords----------',this.props.cords)}
-          {console.log('modal startcords----------',beginPoint)}
-          {console.log('modal endcords----------',endPoint)}
-          {console.log('modal session----------',this.props.session)} 
-          {console.log('modal startcords----------',beginPoint?.lat)}
-          {console.log('modal startcords----------',beginPoint?.lng)}
-          {console.log('modal endcords----------',endPoint?.lat)} 
-          {console.log('modal endcords----------',endPoint?.lng)}  */}
-          {console.log('modal session----------',this.props.session?.id)}  
-          
+          <div className="modal-fineprint">
+            Public routes are for the whole Strava community to enjoy. 
+            If you ever decide to delete your account, 
+            please know that public route you create may remain. Learn More
+          </div>
+          <div className='modal-buttons'>
+            <h1 className="modal-edit-button" onClick={() => this.openModal()}>Edit Route</h1>
+            <button className="modal-save-button" >Save to My Routes</button>
+          </div>
         </form>
+        {/* {console.log('modal startcords----------',beginPoint?.lng)} */}
       </div>
     )
   }

@@ -4,7 +4,6 @@ import RouteForm from './routes_form'
 
 const mstp = (store) => {
   console.log('container------',store)
-  debugger
   return {
     session: store.session,
     route :{}
