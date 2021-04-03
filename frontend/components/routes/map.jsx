@@ -7,7 +7,9 @@ class Maps extends React.Component {
     super(props);
     this.state = {
       marks: [],
-      disabled: true
+      disabled: true,
+      location: '',
+      address: ''
     }
     this.points = this.state.marks;
     this.directionsService = new google.maps.DirectionsService();
@@ -18,6 +20,8 @@ class Maps extends React.Component {
     this.removeAllPoints = this.removeAllPoints.bind(this);
     this.id = this.props.session.id;
     this.openModal = this.openModal.bind(this);
+    this.searchAddress = this.searchAddress.bind(this);
+    this.update = this.update.bind(this);
   }
 
   componentDidMount(){
@@ -64,6 +68,12 @@ class Maps extends React.Component {
     })
   }
 
+  update(field) {
+		return (e) => {
+			this.setState({ [field]: e.currentTarget.value });
+		};
+	}
+
   searchAddress(address) {
 		this.geocoder.geocode({ address: address }, (res, status) => {
 			const locationName = res[0];
@@ -107,20 +117,17 @@ class Maps extends React.Component {
   render(){
     return(
       <div>
-        	{/* <form
-								className="cr-search-bar"
-								onSubmit={() => this.searchAddress(address)}
-							>
-								<label>Choose map location</label>
-								<input
-									className="input geocoder"
-									type="text"
-									placeholder="Enter location"
-									// value={this.state.address}
-									// onChange={this.update("address")}
-								/>
-								<button id="geocoder-submit">Search</button>
-							</form> */}
+        <form className="cr-search-bar" onSubmit={() => this.searchAddress(address)}>
+          <label>Choose map location</label>
+          <input
+            className="input geocoder"
+            type="text"
+            placeholder="Enter location"
+            value={this.state.address}
+            onChange={this.update("address")}
+          />
+          <button id="geocoder-submit">Search</button>
+        </form>
       <div className="mapButtons">
         <button className="mapOtherButtons" onClick={() => this.removeLastPoint()}><i className="fas fa-undo-alt"></i></button>
         <button className="mapOtherButtons" onClick={() => this.removeAllPoints()}><i className="far fa-trash-alt"></i></button>

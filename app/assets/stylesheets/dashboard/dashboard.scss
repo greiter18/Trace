@@ -14,7 +14,19 @@ $dark:(rgb(36,36,40));
   display: flex;
   justify-content: space-around;
   font-size: 24px;
+}
 
+.dash_profile{
+  display: flex;
+}
+
+.activityFeed{
+  display: flex;
+  flex-direction: column;
+}
+
+.workoutFeedList{
+  background-color: white;
 }
 
 // body {

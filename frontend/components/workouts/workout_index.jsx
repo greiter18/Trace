@@ -20,8 +20,8 @@ class WorkoutIndex extends React.Component{
   return (
     <div>
       <MainNavContainer/>
-      <h1>My Workouts</h1>
-      <h1>{this.props.workoutCount} Workout</h1>
+      <h1 className="workoutIndexTitle">My Workouts</h1>
+      <h1 className="workoutCount">{this.props.workoutCount} Workout</h1>
       {/* <div className="workoutIndexHeader">
         <h1>Date</h1>
         <h1>Title</h1>

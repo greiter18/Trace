@@ -2,6 +2,18 @@ $superLightGray:(rgb(223, 223, 231));
 $orange:(rgb(252,82,12));
 $dark:(rgb(36,36,40));
 
+.workoutIndexTitle{
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 41px;
+  margin-top: 0;
+}
+
+.workoutCount{
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 28px;
+}
 
 .workoutIndexHeader{
   background-color: $superLightGray;

@@ -1,0 +1,50 @@
+$superLightGray:(rgb(223, 223, 231));
+$orange:(rgb(252,82,12));
+$dark:(rgb(36,36,40));
+
+.routeIndexTitle{
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 41px;
+}
+
+.routeIndexCreate{
+  background-color: #fc5200;
+  border-color: #fc5200;
+  color:white;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 6px 16px;
+  min-height: 34px;
+}
+
+.routeIndexCreate a{
+  color: white;
+  text-decoration: none;
+}
+
+.routeIndexTop{
+  display: flex;
+  justify-content:space-around
+}
+
+.routeIndexTopLeft{
+  display: flex;
+  flex-direction:column
+}
+
+.routeIndexTopRight{
+  display: flex;
+}
+
+.routeIndexList{
+  display: flex;
+  justify-content:space-around
+}
+
+.routeIndexFinePrint{
+    color: #242428;
+    font-size: 14px;
+    line-height: 1.45;
+}

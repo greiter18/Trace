@@ -21,9 +21,19 @@ class RoutesIndex extends React.Component{
       <div>
         {console.log('coponent store-------',this.props.routes)}
         <MainNavContainer/>
-        <h1>My Routes</h1>
-        <Link to="/new/routes">Create New Route</Link>
-        {routesList}
+        <div className="routeIndexTop">
+          <div className="routeIndexTopLeft">
+            <h1 className="routeIndexTitle">My Routes</h1>
+            <button className="routeIndexCreate"><Link to="/new/routes">Create New Route</Link></button>
+          </div>
+          <div className="routeIndexTopRight">
+            <section className='routeIndexFinePrint'>Learn more about sharing & exporting routes to a variety of devices.</section>
+            <img  src="https://d3nn82uaxijpm6.cloudfront.net/assets/routes/route-list-mobile-upsell-c1aec554d010e3c86411ad560615802162318875f086d1e3ed4850d6c7014b8f.png"/>
+          </div>
+        </div>
+        <div className="routeIndexList">
+          {routesList}
+        </div>
       </div>
     )
   }
