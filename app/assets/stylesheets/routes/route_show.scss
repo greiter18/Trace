@@ -1,0 +1,33 @@
+$superLightGray:(rgb(223, 223, 231));
+$orange:(rgb(252,82,12));
+$dark:(rgb(36,36,40));
+$superdarkgray:(rgb(74,74,80));
+
+.routeShowHeader{
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 41px;
+}
+
+.routeShowTitle{
+  font-size: 12px;
+}
+
+.routesShowMain{
+  display: flex;
+  font-size: 22px;
+  justify-content:space-around;
+}
+
+.icon{
+    font-size: 40px;
+  }
+
+.fa-user-circle:before{
+  font-size: 40px;
+}
+
+.routeShowMap{
+  height: 350px;
+  width: 614px;
+}

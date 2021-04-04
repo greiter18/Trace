@@ -9,7 +9,8 @@ class Maps extends React.Component {
       marks: [],
       disabled: true,
       location: '',
-      address: ''
+      address: '',
+      image: ''
     }
     this.points = this.state.marks;
     this.directionsService = new google.maps.DirectionsService();
@@ -22,6 +23,7 @@ class Maps extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.searchAddress = this.searchAddress.bind(this);
     this.update = this.update.bind(this);
+    this.getThumbnail = this.getThumbnail.bind(this);
   }
 
   componentDidMount(){
@@ -59,9 +61,13 @@ class Maps extends React.Component {
     (response, status) => {
       if (status === 'OK') {
         // const distance = response.routes[0].legs[0].distance.text;
-        // let thumbnail = this.getThumbnailUrl(response);
+        let thumbnail = this.getThumbnail(response);
         // let bounds = response.routes[0].bounds;
         this.directionsRenderer.setDirections(response);
+
+        this.setState({
+          image: thumbnail
+        })
       } else {
         window.alert("Directions request faile due to " + status);
       }
@@ -94,6 +100,19 @@ class Maps extends React.Component {
       this.points = []
     }
     this.directionsRenderer.setDirections({ routes: [] });
+  }
+
+  getThumbnail(res){
+    const start = 'https://maps.googleapis.com/maps/api/staticmap?';
+    const size = 'size=175x175'
+    const scale = 'scale=2'
+    let location = res.routes[0].overview_polyline;
+    location = "path=enc:".concat(location)
+    let key = "key='AIzaSyCAQz7jft23BLTVeESWL1pIaD_i43XEfRk'"
+    let url = []
+    url.push(start,size,scale,location,key)
+    url = url.join("&")
+    return url;
   }
 
   openModal(){
@@ -136,7 +155,7 @@ class Maps extends React.Component {
       <div id='map' ref={(map) => (this.mapstart = map)} onChange={() => this.toggleDisable}></div> 
       <div className="modal-background" onClick={() => this.openModal()}>
         <div className='modal' onClick={(e) => e.stopPropagation()} >
-          <MapModal  createRoute={this.props.createRoute} cords={this.state.marks} session={this.props.session}/>
+          <MapModal  createRoute={this.props.createRoute} cords={this.state.marks} session={this.props.session} image={this.state.image}/>
         </div>
       </div>
       </div>

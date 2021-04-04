@@ -13,17 +13,18 @@ class WorkoutShow extends React.Component{
   }
 
   render(){
+    const {workout} = this.props;
     return(
       <div>
         <MainNav/>
-        <h1>Title: {this.props.workout.title}</h1>
-        <h1>Description: {this.props.workout.description}</h1>
-        <h1>Date: {this.props.workout.date}</h1>
-        <h1>Time: {this.props.workout.time}</h1>
-        <h1>Type: {this.props.workout.run_type}</h1>
-        <Link to={`/workouts/${this.props.workout.id}/edit`}>Edit Workout</Link>
+        <h1>Title: {workout.title}</h1>
+        <h1>Description: {workout.description}</h1>
+        <h1>Date: {workout.date}</h1>
+        <h1>Time: {workout.time}</h1>
+        <h1>Type: {workout.run_type}</h1>
+        <Link to={`/workouts/${workout.id}/edit`}>Edit Workout</Link>
         <br/>
-        <button onClick={() => deleteWorkout(this.props.workout.id)}>Delete Workout</button>
+        <button onClick={() => deleteWorkout(workout.id)}>Delete Workout</button>
       </div>
     )
   }

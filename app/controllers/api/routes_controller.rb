@@ -43,7 +43,10 @@ class Api::RoutesController < ApplicationController
       :start_lat,
       :end_lat,
       :end_long,
-      :user_id
+      :user_id,
+      :description,
+      :image,
+      :distance
     )
   end
 end

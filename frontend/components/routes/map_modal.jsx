@@ -5,7 +5,8 @@ class MapModal extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      title: '',
+      title: 'test4',
+      description: 'test4 description',
       disabled: true
     }
     this.openModal = this.openModal.bind(this);
@@ -22,13 +23,16 @@ class MapModal extends React.Component{
       start_lat:this.props.cords[0]?.lat,
       end_long:this.props.cords[1]?.lng,
       end_lat:this.props.cords[1]?.lat,
-      user_id: this.props.session?.id
+      user_id: this.props.session?.id,
+      image: this.props?.image,
+      description: this.state.description,
+      distance: 4
     })
   }
 
   handleChange(field){
     return e => {
-        this.setState({[field]: e.target.value})
+        this.setState({[field]: e.currentTarget.value})
     }
   }
 
@@ -82,7 +86,10 @@ class MapModal extends React.Component{
               start_lat:this.props.cords[0]?.lat,
               end_long:this.props.cords[1]?.lng,
               end_lat:this.props.cords[1]?.lat,
-              user_id: this.props.session?.id
+              user_id: this.props.session?.id,
+              image: this.props?.image,
+              description: this.state?.description,
+              distance: 4
             })}
           </div>
         </form>
