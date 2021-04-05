@@ -16,16 +16,26 @@ class RouteShow extends React.Component{
     return(
       <div>
         <MainNav/>
-        <h1 className="routeShowTitle">My Running Routes/{route.title}</h1>
-      <h1 className="routeShowHeader">{route.title}</h1>
-      <Link to={`/routes/${route.id}/edit`}><button>Edit</button></Link> 
-      <div className="routesShowMain">
-        <img className="routeShowMap" src={route.image} />
-        <div>
-          
-          <h1> <i className="icon" className="fas fa-user-circle"></i> By {currentUser.email}</h1>
+        <div className="routeShowAll" >
+          <div className="routeShowTop">
+            <div className="routeShowTitle">
+            <Link to='/routes/' className="routeShowTitleLink"><h1 >My Running Routes/   </h1></Link> 
+            <h1 className="routeShowTitleroute">{route.title}</h1>
+            </div> 
+            <div className="routeShowHeader">
+              <i class="fas fa-star"></i>  
+              <h1 className="routeShowHeaderTitle"> {route.title}</h1>
+            </div>
+            <Link to={`/routes/${route.id}/edit`} ><button className="routesShowEdit">Edit</button></Link>
+          </div> 
+          <div className="routesShowMain">
+            {/* <img className="routeShowMap" src={route.image} /> */}
+            <img className="routeShowMap" src='https://www.mamilian.bike/wp-content/uploads/2020/07/strava-routes.png' />
+            <div>
+              <h1> <i className="icon" className="fas fa-user-circle"></i> By {currentUser.email}</h1>
+            </div>
+          </div>
         </div>
-      </div>
       </div>
     )
   }

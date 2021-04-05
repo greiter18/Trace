@@ -18,6 +18,7 @@ import WorkoutEditFormContainer from './workouts/workout_edit_form_container';
 import RoutesIndexContainer from './routes/routes_index_container'
 import RouteForm from './routes/routes_form_container'
 import RoutesShowContainer from './routes/routes_show_container'
+import RoutesEditContainer from './routes/routes_edit_container'
 
 const App = () => {
 	return(
@@ -36,6 +37,7 @@ const App = () => {
       <ProtectedRoute exact path="/workouts/:workoutId/edit" component={WorkoutEditFormContainer}/>
       <ProtectedRoute exact path="/routes" component={RoutesIndexContainer}/>
       <ProtectedRoute exact path="/routes/:routeId" component={RoutesShowContainer}/>
+      <ProtectedRoute exact path="/routes/:routeId/edit" component={RoutesEditContainer}/>
       <ProtectedRoute exact path="/new/routes" component={RouteForm}/>
       {/* <ProtectedRoute exact path="/dashboard/:userId" component={DashboardContainer}/>
       <ProtectedRoute exact path="/routes/:routeId" component={RouteShowContainer}/> */}

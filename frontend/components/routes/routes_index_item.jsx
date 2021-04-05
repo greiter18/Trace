@@ -7,12 +7,16 @@ const RoutesIndexItem = ({route, deleteRoute, session}) => {
     <div className="routeIdxItem"> 
       {console.log('indexit-----------------',route)}
       <div className="routeIdxItemImage">
-        <img src={route.image}/> 
+        {/* <img src={route.image}/>  */}
+        <Link to={`/routes/${route.id}`}>
+          <img className="routeIndexImage" 
+          src='https://www.mamilian.bike/wp-content/uploads/2020/07/strava-routes.png'/> 
+        </Link>
         <div className="dropdownRt" >
           <button className="dropbtnRt"> <i className="fas fa-wrench"></i></button>
           <div className="dropdown_contentRt">
             <a onClick={() => {deleteRoute(session.id)}}>Delete Route</a>
-            <a>Edit Route</a>
+            <Link to={`/routes/${route.id}/edit`}>Edit Route</Link>  
           </div>
         </div>
       </div>

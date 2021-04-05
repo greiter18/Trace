@@ -5,8 +5,8 @@ class MapModal extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      title: 'test4',
-      description: 'test4 description',
+      title: this.props.title,
+      description: this.props.description,
       disabled: true
     }
     this.openModal = this.openModal.bind(this);
@@ -67,7 +67,7 @@ class MapModal extends React.Component{
         </div>
         <form id="routeModalForm" onSubmit={this.handleSubmit}>
           <label className='modal-text'> Route name (required) <br/>
-           <input id="modalTitle" className="input-area" type="text" onChange={this.handleChange('title')} onChange={this.toggleDisable}/>
+           <input id="modalTitle" className="input-area" type="text" onChange={this.handleChange('title')} value={this.props.title}/>
           </label> <br/>
           <label className='modal-text'> Description <br/>
             <textarea className="input-area" id="modal-description" type="text" onChange={this.handleChange('description')} placeholder={'Add some more details or notes'}/>

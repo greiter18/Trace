@@ -6,6 +6,7 @@ class Maps extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      title: this.props.title,
       marks: [],
       disabled: true,
       location: '',
@@ -27,6 +28,10 @@ class Maps extends React.Component {
   }
 
   componentDidMount(){
+    if (this.props.formType === "Edit Route") {
+			this.renderMarkers();
+		}
+
     const options = {
       center: {lat: 40.6302923, lng: -74.1077045},
       zoom: 15,
@@ -93,6 +98,9 @@ class Maps extends React.Component {
   removeLastPoint(){
     this.points.pop();
     this.renderMarkers();
+    if (this.points.length === 1){
+      this.points = []
+    }
   }
 
   removeAllPoints(){
@@ -136,18 +144,19 @@ class Maps extends React.Component {
   render(){
     return(
       <div>
-        <form className="cr-search-bar" onSubmit={() => this.searchAddress(address)}>
-          <label>Choose map location</label>
+       
+      <div className="mapButtons">
+         <form className="cr-search-bar" onSubmit={() => this.searchAddress(address)}>
+
           <input
             className="input geocoder"
             type="text"
-            placeholder="Enter location"
+            placeholder="Coming Soon - Click on map to add markers"
             value={this.state.address}
             onChange={this.update("address")}
           />
           <button id="geocoder-submit">Search</button>
         </form>
-      <div className="mapButtons">
         <button className="mapOtherButtons" onClick={() => this.removeLastPoint()}><i className="fas fa-undo-alt"></i></button>
         <button className="mapOtherButtons" onClick={() => this.removeAllPoints()}><i className="far fa-trash-alt"></i></button>
         <button className="mapSaveButtons" onClick={()=> this.openModal()}>Save</button>
@@ -155,7 +164,7 @@ class Maps extends React.Component {
       <div id='map' ref={(map) => (this.mapstart = map)} onChange={() => this.toggleDisable}></div> 
       <div className="modal-background" onClick={() => this.openModal()}>
         <div className='modal' onClick={(e) => e.stopPropagation()} >
-          <MapModal  createRoute={this.props.createRoute} cords={this.state.marks} session={this.props.session} image={this.state.image}/>
+          <MapModal  createRoute={this.props.createRoute} cords={this.state.marks} session={this.props.session} image={this.state.image} title={this.props.title} description={this.props.description}/>
         </div>
       </div>
       </div>

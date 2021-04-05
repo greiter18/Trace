@@ -5,7 +5,8 @@ import EditWorkout from './workout_edit_form'
 const mstp = (store, ownProps) => {
   const workoutId = ownProps.match.params.workoutId
   return {
-    workout: store.entities.workouts[workoutId]
+    workout: store.entities.workouts[workoutId],
+    formType: "Edit Route"
   }
 }
 
