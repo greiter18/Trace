@@ -15,7 +15,7 @@ const RoutesIndexItem = ({route, deleteRoute, session}) => {
         <div className="dropdownRt" >
           <button className="dropbtnRt"> <i className="fas fa-wrench"></i></button>
           <div className="dropdown_contentRt">
-            <a onClick={() => {deleteRoute(session.id)}}>Delete Route</a>
+            <a onClick={() => {deleteRoute(route.id)}}>Delete Route</a>
             <Link to={`/routes/${route.id}/edit`}>Edit Route</Link>  
           </div>
         </div>

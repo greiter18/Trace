@@ -47,6 +47,10 @@ $dark:(rgb(36,36,40));
   padding: 10px 16px;
 }
 
+.mapSaveButtons:disabled{
+  background-color: gray;
+}
+
 .modal{
   display: none;
   background-color: white;
@@ -114,6 +118,9 @@ $dark:(rgb(36,36,40));
   flex: 1 1;
   margin-left: 12px;
   padding: 12px;
+}
+.modal-save-button:disabled{
+  background-color: gray;
 }
 
 .myRoute{

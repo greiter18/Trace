@@ -5,7 +5,7 @@ class MapModal extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      title: this.props.title,
+      title: this.props?.title,
       description: this.props.description,
       disabled: true
     }
@@ -67,10 +67,10 @@ class MapModal extends React.Component{
         </div>
         <form id="routeModalForm" onSubmit={this.handleSubmit}>
           <label className='modal-text'> Route name (required) <br/>
-           <input id="modalTitle" className="input-area" type="text" onChange={this.handleChange('title')} value={this.props.title}/>
+           <input id="modalTitle" className="input-area" type="text" onChange={this.handleChange('title')} value={this.props.title} />
           </label> <br/>
           <label className='modal-text'> Description <br/>
-            <textarea className="input-area" id="modal-description" type="text" onChange={this.handleChange('description')} placeholder={'Add some more details or notes'}/>
+            <textarea className="input-area" id="modal-description" type="text" onChange={this.handleChange('description')} placeholder={'Add some more details or notes'} value={this.props.description}/>
           </label>
           <div className="modal-fineprint">
             Public routes are for the whole Trace community to enjoy. 
@@ -78,8 +78,8 @@ class MapModal extends React.Component{
             please know that public route you create may remain. 
           </div>
           <div className='modal-buttons'>
-            <h1 className="modal-edit-button" onClick={() => this.openModal()}>Edit Route</h1>
-            <button id="modalSave" className="modal-save-button" disabled={this.state.disabled}>Save to My Routes</button>
+            <h1 className="modal-edit-button" onClick={this.openModal}>Edit Route</h1>
+            <button id="modalSave" className="modal-save-button" disabled={!this.state.title}>Save to My Routes</button>
             {console.log({
               title: this.state.title,
               start_long:this.props.cords[0]?.lng,
@@ -101,3 +101,15 @@ class MapModal extends React.Component{
 
 export default MapModal;
 
+// const funcName = () => { 
+//   openModal()
+// }
+// const openModal = () => {
+//   return 7
+// }
+// funcName // => 7
+// openModal // => 7
+
+// const click = (callback) => {
+//   callback() 
+// }

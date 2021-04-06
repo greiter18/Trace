@@ -1,17 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MapModal from './map_modal'
+import RouteNav from './routes_nav'
 
 class Maps extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: this.props.title,
-      marks: [],
+      showh1: false,
+      title: this.props?.route?.title,
+      description: this.props?.route?.description,
       disabled: true,
       location: '',
       address: '',
-      image: ''
+      image: '',
+      marks: 
+      this.props.formType === "Edit Route" ?
+      [{lat: this.props.route.start_lat,
+        lng: this.props.route.start_long
+      },{lat: this.props.route.end_lat,
+       lng: this.props.route.end_long
+      }] :[]
     }
     this.points = this.state.marks;
     this.directionsService = new google.maps.DirectionsService();
@@ -20,7 +29,7 @@ class Maps extends React.Component {
     this.renderMarkers = this.renderMarkers.bind(this);
     this.removeLastPoint = this.removeLastPoint.bind(this);
     this.removeAllPoints = this.removeAllPoints.bind(this);
-    this.id = this.props.session.id;
+    this.id = this.props?.session?.id;
     this.openModal = this.openModal.bind(this);
     this.searchAddress = this.searchAddress.bind(this);
     this.update = this.update.bind(this);
@@ -28,10 +37,7 @@ class Maps extends React.Component {
   }
 
   componentDidMount(){
-    if (this.props.formType === "Edit Route") {
-			this.renderMarkers();
-		}
-
+    debugger
     const options = {
       center: {lat: 40.6302923, lng: -74.1077045},
       zoom: 15,
@@ -48,12 +54,24 @@ class Maps extends React.Component {
 			this.points.push({ lat: e.latLng.lat(), lng: e.latLng.lng() });
       console.log("points----------",this.points)
       console.log("id----------",this.id)
+      this.toggleDisable()
 			this.renderMarkers();
 		});
+
+  if (this.props.formType === "Edit Route") {
+      // this.points.push({
+      //   lat: this.props.route.start_lat,
+      //   lng: this.props.route.start_long
+      // },{lat: this.props.route.end_lat,
+      //  lng: this.props.route.end_long
+      // })
+			this.renderMarkers();
   }
+}
 
   renderMarkers(){
     const beginPoint = this.points[0];
+    console.log('beginPoitn===========',beginPoint)
     let endPoint = this.points[this.points.length - 1];
     this.setState({["marks"]: this.points})
 
@@ -100,12 +118,14 @@ class Maps extends React.Component {
     this.renderMarkers();
     if (this.points.length === 1){
       this.points = []
+      this.setState({disabled: true})
     }
   }
 
   removeAllPoints(){
     if (this.points.length > 0){
       this.points = []
+      this.setState({disabled: true})
     }
     this.directionsRenderer.setDirections({ routes: [] });
   }
@@ -140,11 +160,11 @@ class Maps extends React.Component {
     }
   };
 
-
   render(){
     return(
       <div>
-       
+       {this.state.showh1 && <h1>Big ol h1</h1>}
+       <RouteNav />
       <div className="mapButtons">
          <form className="cr-search-bar" onSubmit={() => this.searchAddress(address)}>
 
@@ -157,14 +177,18 @@ class Maps extends React.Component {
           />
           <button id="geocoder-submit">Search</button>
         </form>
-        <button className="mapOtherButtons" onClick={() => this.removeLastPoint()}><i className="fas fa-undo-alt"></i></button>
-        <button className="mapOtherButtons" onClick={() => this.removeAllPoints()}><i className="far fa-trash-alt"></i></button>
-        <button className="mapSaveButtons" onClick={()=> this.openModal()}>Save</button>
+        <button className="mapOtherButtons" onClick={this.removeLastPoint}><i className="fas fa-undo-alt"></i></button>
+        <button className="mapOtherButtons" onClick={this.removeAllPoints}><i className="far fa-trash-alt"></i></button>
+        <button className="mapSaveButtons" onClick={this.openModal} disabled={this.state.disabled}>Save</button>
       </div>
-      <div id='map' ref={(map) => (this.mapstart = map)} onChange={() => this.toggleDisable}></div> 
+      <div id='map' ref={(map) => (this.mapstart = map)}></div> 
       <div className="modal-background" onClick={() => this.openModal()}>
         <div className='modal' onClick={(e) => e.stopPropagation()} >
-          <MapModal  createRoute={this.props.createRoute} cords={this.state.marks} session={this.props.session} image={this.state.image} title={this.props.title} description={this.props.description}/>
+          <MapModal  createRoute={this.props.createRoute} cords={this.state.marks} 
+          session={this.props.session} image={this.state.image} title={this.state.title} 
+          description={this.props?.route?.description}
+          route={this.props.route} formType={this.props.formType} updateRoute={this.props.updateRoute}
+          />
         </div>
       </div>
       </div>

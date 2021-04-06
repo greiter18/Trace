@@ -7,33 +7,38 @@ import React from 'react'
 class EditRouteForm extends React.Component{
   constructor(props){
     super(props)
-
-    
+  }
+  componentDidMount(){
+    const routeId = this.props.match.params.routeId;
+		if (!this.props.routes[routeId]) {
+			this.props.fetchRoute(routeId);
+		}
   }
   render(){
-    const { route, formType, updateRoute } = this.props;
+    const { routes, formType, updateRoute } = this.props;
     const routeId = this.props.match.params.routeId;
-
-    return route[routeId] ? (
+    debugger
+    return routes[routeId] ? (
       <div>
-        <Map route={route} formType={formType} updateRoute={updateRoute}/>
+        <Map route={routes[routeId]} formType={formType} updateRoute={updateRoute}/>
       </div>
-    ) : null;
+    ): null;
   }
-}
+};
 
 const mstp = (store, ownProps) => {
   console.log('container------',store)
   const routeId = ownProps.match.params.routeId
   return {
-    route :store.entities.routes[routeId]
+    routes: store.entities.routes,
+    formType: 'Edit Route'
   };
 };
 
 const mdtp = dispatch => {
   debugger
   return {
-    fetchRoute: workoutId => dispatch(fetchRoute(workoutId)),
+    fetchRoute: routeId => dispatch(fetchRoute(routeId)),
     updateRoute: routeId => dispatch(updateRoute(routeId))
   }
 }
