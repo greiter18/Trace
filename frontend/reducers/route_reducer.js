@@ -15,7 +15,8 @@ const routeReducer = (state = {}, action) => {
       console.log('action--------------',action)
       return Object.assign({}, state, action.routes)
     case REMOVE_ROUTE:
-      const newState = Object.assign({}, state);
+      console.log('action--------------',action)
+      const newState = Object.assign({}, state, action.routes);
       delete newState[action.routeId];
       return newState;
     default:

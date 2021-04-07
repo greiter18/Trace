@@ -33,7 +33,6 @@ export const fetchRoute = (routeId) => {
   }
 }
 export const fetchRoutes = (user_id) => {
-  debugger
   return dispatch => {
     return RoutesApiUtil.fetchRoutes(user_id)
       .then(routes => {
@@ -42,7 +41,6 @@ export const fetchRoutes = (user_id) => {
   }
 }
 export const createRoute = (route) => {
-  debugger
   return dispatch => {
     return RoutesApiUtil.createRoute(route)
       .then(newRoute => {
@@ -51,9 +49,11 @@ export const createRoute = (route) => {
   }
 }
 export const updateRoute = (route) => {
+  debugger
   return dispatch => {
     return RoutesApiUtil.updateRoute(route)
       .then(upRoute => {
+        debugger
         dispatch(receiveRoute(upRoute))
       })
   }
@@ -61,8 +61,8 @@ export const updateRoute = (route) => {
 export const deleteRoute = (routeId) => {
   return dispatch => {
     return RoutesApiUtil.deleteRoute(routeId)
-      .then(route => {
-        dispatch(removeRoute(route.id))
+      .then(() => {
+        dispatch(removeRoute(routeId))
       })
   }
 }

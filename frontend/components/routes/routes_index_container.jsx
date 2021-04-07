@@ -12,7 +12,6 @@ const mstp = (store) => {
 };
 
 const mdtp = dispatch => {
-  debugger
   return {
     fetchRoutes: (id) => dispatch(fetchRoutes(id)),
     deleteRoute: (id) => dispatch(deleteRoute(id))

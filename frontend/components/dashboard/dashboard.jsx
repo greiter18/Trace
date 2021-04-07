@@ -26,7 +26,7 @@ class Dashboard extends React.Component{
           <Profile routeCount={this.props.routeCount} workoutCount={this.props.workoutCount} email={this.props.email}/>
           <div className="activityFeed">
             <p>Workout Feed</p>
-            <ul className="workoutFeedList">{workoutList}</ul>
+            <ul className="workoutFeedList">{workoutList || 'You have no Workouts'} </ul>
           </div>
         </div>
       </div>

@@ -22,7 +22,7 @@ class Maps extends React.Component {
        lng: this.props.route.end_long
       }] :[]
     }
-    this.points = this.state.marks;
+    this.points = this.state?.marks;
     this.directionsService = new google.maps.DirectionsService();
     this.directionsRenderer = new google.maps.DirectionsRenderer();
     this.geocoder = new google.maps.Geocoder();
@@ -37,7 +37,6 @@ class Maps extends React.Component {
   }
 
   componentDidMount(){
-    debugger
     const options = {
       center: {lat: 40.6302923, lng: -74.1077045},
       zoom: 15,
@@ -66,6 +65,7 @@ class Maps extends React.Component {
       //  lng: this.props.route.end_long
       // })
 			this.renderMarkers();
+      this.toggleDisable()
   }
 }
 
@@ -149,6 +149,11 @@ class Maps extends React.Component {
   }
 
    toggleDisable(){
+     if(this.props.formType === 'Edit Route' && this.points.length === 2){
+       this.setState({
+         disabled: false
+       })
+     }
     if(this.points.length === 2){
       this.setState({
         disabled: false
@@ -184,11 +189,12 @@ class Maps extends React.Component {
       <div id='map' ref={(map) => (this.mapstart = map)}></div> 
       <div className="modal-background" onClick={() => this.openModal()}>
         <div className='modal' onClick={(e) => e.stopPropagation()} >
-          <MapModal  createRoute={this.props.createRoute} cords={this.state.marks} 
+          <MapModal  action={this.props?.action} cords={this.state.marks} 
           session={this.props.session} image={this.state.image} title={this.state.title} 
-          description={this.props?.route?.description}
-          route={this.props.route} formType={this.props.formType} updateRoute={this.props.updateRoute}
+          description={this.props?.route?.description} history={this.props?.history}
+          route={this.props.route} formType={this.props.formType} routeId={this.props.routeId}
           />
+          {console.log('maps action-------',this.props.action)}
         </div>
       </div>
       </div>

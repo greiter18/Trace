@@ -3,7 +3,8 @@ class Api::RoutesController < ApplicationController
   def create
     @route = Route.new(route_params)
     if @route.save
-    render :index
+      
+      render :show
     else
       render json: @route.errors.full_messages, status: 422
     end
@@ -16,7 +17,7 @@ class Api::RoutesController < ApplicationController
   def destroy
     @route = Route.find_by(id: params[:id])
     if @route.destroy
-      render :index
+      render json: {}
     else
       render json: @route.errors.full_messages, status: 422
     end
@@ -29,7 +30,8 @@ class Api::RoutesController < ApplicationController
 
   def update
     @route = Route.find(params[:id])
-    if @route.update(post_params)
+    
+    if @route.update(route_params)
       render :show
     else
       render json: @route.errors.full_messages, status: 422

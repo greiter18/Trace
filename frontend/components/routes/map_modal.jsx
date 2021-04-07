@@ -6,8 +6,9 @@ class MapModal extends React.Component{
     super(props)
     this.state = {
       title: this.props?.title,
-      description: this.props.description,
-      disabled: true
+      description: this.props?.description,
+      disabled: true,
+      id: this.props?.routeId
     }
     this.openModal = this.openModal.bind(this);
     this.toggleDisable = this.toggleDisable.bind(this);
@@ -17,7 +18,7 @@ class MapModal extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.createRoute({
+    this.props.action({
       title: this.state.title,
       start_long:this.props.cords[0]?.lng,
       start_lat:this.props.cords[0]?.lat,
@@ -26,8 +27,9 @@ class MapModal extends React.Component{
       user_id: this.props.session?.id,
       image: this.props?.image,
       description: this.state.description,
-      distance: 4
-    })
+      distance: 4,
+      id: this.state?.id
+    }).then(this.props.history?.push("/routes"));
   }
 
   handleChange(field){
@@ -67,7 +69,7 @@ class MapModal extends React.Component{
         </div>
         <form id="routeModalForm" onSubmit={this.handleSubmit}>
           <label className='modal-text'> Route name (required) <br/>
-           <input id="modalTitle" className="input-area" type="text" onChange={this.handleChange('title')} value={this.props.title} />
+           <input id="modalTitle" className="input-area" type="text" onChange={this.handleChange('title')} value={this.state.title} />
           </label> <br/>
           <label className='modal-text'> Description <br/>
             <textarea className="input-area" id="modal-description" type="text" onChange={this.handleChange('description')} placeholder={'Add some more details or notes'} value={this.props.description}/>
@@ -89,8 +91,10 @@ class MapModal extends React.Component{
               user_id: this.props.session?.id,
               image: this.props?.image,
               description: this.state?.description,
-              distance: 4
-            })}
+              distance: 4,
+              id: this.state?.id
+              
+            },'action---------',this.props?.action)}
           </div>
         </form>
         {/* {console.log('modal startcords----------',beginPoint?.lng)} */}

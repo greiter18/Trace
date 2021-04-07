@@ -2,19 +2,18 @@ import {connect} from 'react-redux';
 import { createRoute } from '../../actions/routes_action';
 import RouteForm from './routes_form'
 
-const mstp = (store) => {
-  console.log('container------',store)
+const mstp = (store, ownProps) => {
   return {
     title: '',
     session: store.session,
-    formType: "Create Route"
+    formType: "Create Route",
+    history: ownProps.history
   };
 };
 
 const mdtp = dispatch => {
-  debugger
   return {
-    createRoute: route => dispatch(createRoute(route))
+    action: route => dispatch(createRoute(route))
   }
 }
 

@@ -1,6 +1,5 @@
 export const createRoute = route => {
-  debugger
-  $.ajax({
+  return $.ajax({
     method: "POST",
     url: `/api/users/${route.user_id}/routes`,
     data: { route }
@@ -8,13 +7,14 @@ export const createRoute = route => {
 };
 
 
-export const updateRoute = route => (
-  $.ajax({
+export const updateRoute = route => {
+  debugger
+  return $.ajax({
     method: "PATCH",
     url: `/api/routes/${route.id}`,
     data: { route }
   })
-);
+};
 
 export const fetchRoute = id => (
   $.ajax({

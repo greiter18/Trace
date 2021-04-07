@@ -22,7 +22,7 @@ const RoutesIndexItem = ({route, deleteRoute, session}) => {
       </div>
       <Link to={`/routes/${route.id}`} className="rtIdxTitle">{route.title}</Link><br/>
       <div className="rtIdxDistanceGroup">
-        <h1 className="rtIdxDistanceNum">{route.distance || 0} mi</h1> 
+        <h1 className="rtIdxDistanceNum">{route.distance || 0}</h1> 
         <h1 className="rtIdxDistanceMi">mi</h1>
       </div> 
       <h1 className="rtIdxDistance">Distance</h1>

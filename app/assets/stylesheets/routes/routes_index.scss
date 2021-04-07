@@ -42,7 +42,7 @@ $superdarkgray:(rgb(74,74,80));
 
 .routeIndexList{
   display: flex;
-  justify-content:space-around
+  flex-wrap: wrap;
 }
 
 .routeIndexFinePrint{

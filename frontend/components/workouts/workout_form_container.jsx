@@ -12,7 +12,6 @@ const mstp = (store) => {
 };
 
 const mdtp = dispatch => {
-  debugger
   return {
     createWorkout: workout => dispatch(createWorkout(workout)),
     fetchRoutes: id => dispatch(fetchRoutes(id))
