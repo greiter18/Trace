@@ -8,8 +8,6 @@ class WorkoutForm extends React.Component{
     this.state = this.props.workout; 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleTime = this.handleTime.bind(this);
-    this.handleRoute = this.handleRoute.bind(this);
   }
 
   componentDidMount(){
@@ -18,40 +16,12 @@ class WorkoutForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault(); // stops a refresh 
-    this.props.createWorkout(this.state);
-    console.log('routes--------',routes)
+    this.props.createWorkout(this.state, this.props.currentUser).then(this.props.history?.push("/workouts"));
   }
 
   handleChange(field){
     return e => {
         this.setState({[field]: e.target.value})
-    }
-  }
-
-  handleRoute(){
-    return e => {
-      this.setState({run_id: e.target.value})
-    }
-  }
-
-  handleTime(field){
-    return e => {
-      if(field === 'hr'){
-        if (this.state.time % 3600 ){}
-        let hour = e.target.value * 3600
-        let currentTime = this.state.time
-        this.setState({time: currentTime += hour})
-      } 
-      if(field === 'min'){
-        let minute = e.target.value * 60
-        let currentTime = this.state.time
-        this.setState({time: currentTime += minute})
-      } 
-      if(field === 'sec'){
-        let second = e.target.value * 1
-        let currentTime = this.state.time
-        this.setState({time: currentTime += second})
-      } 
     }
   }
 
@@ -72,7 +42,9 @@ class WorkoutForm extends React.Component{
             </select>
             <div className="woTimeEntry">
               <label className="workoutFormlabel">Time</label>  
-              <input type="number" onChange={this.handleTime('hr')} placeholder={'hr'} className="timeInpute"/><input type="number" onChange={this.handleTime('min')} placeholder={'min'} className="timeInpute"/><input type="number" onChange={this.handleTime('sec')} placeholder={'s'} className="timeInpute"/>
+              <input type="number" onChange={this.handleChange('hours')} placeholder={'hr'} className="timeInpute" min="0" max="100"/>
+              <input type="number" onChange={this.handleChange('minutes')} placeholder={'min'} className="timeInpute" min="0" max="59"/>
+              <input type="number" onChange={this.handleChange('seconds')} placeholder={'s'} className="timeInpute" min="0" max="59"/>
             </div>
           </div>
           <div className="midWorkoutForm">
@@ -99,9 +71,12 @@ class WorkoutForm extends React.Component{
           title: this.state.title,
           description: this.state.description,
           date: this.state.date,
-          time: this.state.time, 
+          hours: this.state.hours, 
+          minutes: this.state.minutes, 
+          seconds: this.state.seconds, 
           run_type: this.state.run_type,
-          route_id: this.state.route_id
+          route_id: this.state.route_id,
+          current: this.props.currentUser
           })}
       </div>
     )

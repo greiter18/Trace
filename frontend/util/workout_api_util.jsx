@@ -1,7 +1,7 @@
-export const createWorkout = workout => {
+export const createWorkout = (workout, currentUser) => {
  return $.ajax({
     method: "POST",
-    url: "/api/workouts",
+    url: `/api/users/${currentUser}/workouts`,
     data: {workout}
   })
 };

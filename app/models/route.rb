@@ -13,6 +13,4 @@ belongs_to :user,
 
 has_many :workouts,
   foreign_key: :route_id
-
-
 end

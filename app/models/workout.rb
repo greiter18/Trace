@@ -3,7 +3,9 @@ class Workout < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true
   validates :date, presence: true
-  validates :time, presence: true
+  validates :hours, presence: true
+  validates :minutes, presence: true
+  validates :seconds, presence: true
   validates :run_type, presence: true
 
   belongs_to :route,

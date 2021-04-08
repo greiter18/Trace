@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_03_154317) do
+ActiveRecord::Schema.define(version: 2021_04_08_005344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,9 +43,11 @@ ActiveRecord::Schema.define(version: 2021_04_03_154317) do
     t.string "title", null: false
     t.date "date", null: false
     t.integer "route_id", null: false
-    t.float "time", null: false
     t.string "run_type", null: false
     t.text "description"
+    t.integer "hours"
+    t.integer "minutes"
+    t.integer "seconds"
     t.index ["route_id"], name: "index_workouts_on_route_id"
   end
 

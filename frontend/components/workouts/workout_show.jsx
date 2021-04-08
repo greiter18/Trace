@@ -13,18 +13,25 @@ class WorkoutShow extends React.Component{
   }
 
   render(){
-    const {workout} = this.props;
+    const {workout, route, currentUser} = this.props;
     return(
       <div>
         <MainNav/>
-        <h1>Title: {workout.title}</h1>
-        <h1>Description: {workout.description}</h1>
-        <h1>Date: {workout.date}</h1>
-        <h1>Time: {workout.time}</h1>
-        <h1>Type: {workout.run_type}</h1>
-        <Link to={`/workouts/${workout.id}/edit`}>Edit Workout</Link>
-        <br/>
-        <button onClick={() => deleteWorkout(workout.id)}>Delete Workout</button>
+        <div>
+          <h1>{route.email} - {workout.run_type} </h1>
+        </div>
+        <div className="workShowMain">
+          <div className="workShowMainLeft">
+            <i class="fas fa-user-circle"></i>
+            <div className="workShowMainLeft-inner">
+              <h1 id='workShowTitle'> {workout.title}</h1>
+              <h1>{workout.description}</h1>
+            </div>
+          </div>
+          <h1>Date: {workout.date}</h1>
+          <h1>Moving Time: {workout.hours}:{workout.minutes}:{workout.seconds}</h1>
+          <h1>Run Name: {route?.title}</h1>
+        </div>
       </div>
     )
   }

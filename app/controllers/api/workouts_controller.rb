@@ -41,7 +41,9 @@ class Api::WorkoutsController < ApplicationController
       :title,
       :description,
       :date,
-      :time,
+      :hours,
+      :minutes,
+      :seconds,
       :run_type,
       :route_id
     )

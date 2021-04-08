@@ -7,7 +7,8 @@ const mstp = (store, ownProps) => {
   console.log('store-----------',store)
   const workoutId = ownProps.match.params.workoutId
   return {
-    workout: store.entities.workouts[workoutId] || {}
+    workout: store.entities.workouts[workoutId] || {},
+    route: store.entities.workouts.route|| {},
   }
 }
 
