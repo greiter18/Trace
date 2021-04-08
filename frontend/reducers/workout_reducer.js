@@ -12,7 +12,7 @@ const workoutReducer = (state = {}, action) => {
     case RECEIVE_ALL_WORKOUTS:
       return Object.assign({}, state, action.workouts )
     case REMOVE_WORKOUT:
-      const newState = Object.assign({},state);
+      const newState = Object.assign({},state, action.workouts);
       delete newState [action.workoutId];
       return newState;
     default:

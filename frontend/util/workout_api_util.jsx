@@ -1,10 +1,10 @@
-export const createWorkout = workout => (
- $.ajax({
+export const createWorkout = workout => {
+ return $.ajax({
     method: "POST",
     url: "/api/workouts",
     data: {workout}
   })
-);
+};
 
 
 export const updateWorkout = workout => (

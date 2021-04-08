@@ -5,9 +5,11 @@ import { Link, withRouter } from 'react-router-dom';
 class WorkoutForm extends React.Component{
   constructor(props){
     super(props)
-    this.state = this.props.workout 
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.state = this.props.workout; 
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleTime = this.handleTime.bind(this);
+    this.handleRoute = this.handleRoute.bind(this);
   }
 
   componentDidMount(){
@@ -26,9 +28,36 @@ class WorkoutForm extends React.Component{
     }
   }
 
+  handleRoute(){
+    return e => {
+      this.setState({run_id: e.target.value})
+    }
+  }
+
+  handleTime(field){
+    return e => {
+      if(field === 'hr'){
+        if (this.state.time % 3600 ){}
+        let hour = e.target.value * 3600
+        let currentTime = this.state.time
+        this.setState({time: currentTime += hour})
+      } 
+      if(field === 'min'){
+        let minute = e.target.value * 60
+        let currentTime = this.state.time
+        this.setState({time: currentTime += minute})
+      } 
+      if(field === 'sec'){
+        let second = e.target.value * 1
+        let currentTime = this.state.time
+        this.setState({time: currentTime += second})
+      } 
+    }
+  }
+
   render(){
     let routesList = this.props?.routes.map(route => {
-      return <option>{route.title}</option> 
+      return <option value={route.id}>{route.title}</option> 
     })
     return (
       <div>
@@ -37,15 +66,13 @@ class WorkoutForm extends React.Component{
         <form onSubmit={this.handleSubmit}>
           <div className="topWorkoutForm">
             <label className="workoutFormlabel" className="workoutFormlabel">Route </label> 
-            <select onChange={this.handleChange('route_id')}>
-              <option value="" disabled selected>Choose a route</option>
+            <select onChange={this.handleChange('route_id')} className="routeOptions">
+              <option className="routeOptionschoices" value="" disabled selected>Choose a route</option>
               {routesList}
-              {/* <option >{Park Run}</option>
-              <option >Short Run</option> */}
             </select>
             <div className="woTimeEntry">
               <label className="workoutFormlabel">Time</label>  
-              <input type="number" onChange={this.handleChange('time')}/><input type="number" onChange={this.handleChange('time')}/><input type="number" onChange={this.handleChange('time')}/>
+              <input type="number" onChange={this.handleTime('hr')} placeholder={'hr'} className="timeInpute"/><input type="number" onChange={this.handleTime('min')} placeholder={'min'} className="timeInpute"/><input type="number" onChange={this.handleTime('sec')} placeholder={'s'} className="timeInpute"/>
             </div>
           </div>
           <div className="midWorkoutForm">
@@ -68,6 +95,14 @@ class WorkoutForm extends React.Component{
           <button className="workoutCreatebutton">Create</button>
           <Link to='/'>Cancel</Link>
         </form>
+        {console.log({ 
+          title: this.state.title,
+          description: this.state.description,
+          date: this.state.date,
+          time: this.state.time, 
+          run_type: this.state.run_type,
+          route_id: this.state.route_id
+          })}
       </div>
     )
   }

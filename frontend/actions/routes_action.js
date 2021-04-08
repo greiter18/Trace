@@ -49,11 +49,9 @@ export const createRoute = (route) => {
   }
 }
 export const updateRoute = (route) => {
-  debugger
   return dispatch => {
     return RoutesApiUtil.updateRoute(route)
       .then(upRoute => {
-        debugger
         dispatch(receiveRoute(upRoute))
       })
   }

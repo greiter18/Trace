@@ -63,8 +63,8 @@ export const updateWorkout = (workout) => {
 export const deleteWorkout = (workoutId) => {
   return dispatch => {
     return WorkoutApiUtil.deleteWorkout(workoutId)
-      .then(workout => {
-        dispatch(removeWorkout(workout.id))
+      .then(() => {
+        dispatch(removeWorkout(workoutId))
       })
   }
 }

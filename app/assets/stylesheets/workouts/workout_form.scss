@@ -19,9 +19,11 @@ $dark:(rgb(36,36,40));
 }
 .midWorkoutForm{
   display: flex;
+  padding-top: 20px;
 }
 .lowWorkoutForm{
   display: flex;
+  padding-top: 20px;
 }
 
 .workoutCreatebutton{
@@ -30,4 +32,45 @@ $dark:(rgb(36,36,40));
   padding: 6px 10px;
   border-radius: 4px;
   color: white;
+}
+
+.woTimeEntry{
+  padding: 0
+}
+
+.timeInpute{
+text-align: right;
+width: 65px;
+border: $superLightGray 1px solid;
+height: 34px;
+font-size: 14px;
+padding: 1px 32px 1px 10px 
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.routeOptions{
+  border: $superLightGray 1px solid;
+  height: 34px;
+  font-size: 14px;
+}
+
+.routeOptions .select-selected{
+  border: $superLightGray 1px solid;
+  height: 34px;
+  font-size: 14px;
+}
+.routeOptions .select-selected::after{
+  border: $superLightGray 1px solid;
+  height: 34px;
+  font-size: 14px;
+}
+.routeOptions .select-items{
+  border: $superLightGray 1px solid;
+  height: 34px;
+  font-size: 14px;
 }
