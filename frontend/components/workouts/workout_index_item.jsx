@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom';
+import EditWorkOut from './workout_edit_form_container'
+import WorkoutForm from './workout_form';
 
 class WorkoutIndexItem extends React.Component { 
   constructor(props){
@@ -8,15 +10,12 @@ class WorkoutIndexItem extends React.Component {
 
   render(){
     let {workout,deleteWorkout}  = this.props;
-
     let newHour = workout.hours < 10 ? 
-    `0${workout.hours}` : workout.hours
-
+      `0${workout.hours}` : workout.hours
     let newMin = workout.hours < 10 ? 
-    `0${workout.minutes}` : workout.minutes
-
+      `0${workout.minutes}` : workout.minutes
     let newSec = workout.hours < 10 ? 
-    `0${workout.seconds}`: workout.seconds
+      `0${workout.seconds}`: workout.seconds
     return (
       <div className="workoutList"> 
         <table>
@@ -33,12 +32,12 @@ class WorkoutIndexItem extends React.Component {
             <td>{workout.date}</td>
             <td className="workoutIdxLinks"><Link to={`/workouts/${workout.id}`}>{workout.title}</Link></td>
             <td>{newHour}:{newMin}:{newSec}</td>
-            {/* <td>{newHour}:{workout.minutes}:{workout.seconds}</td> */}
-            {/* <td>0{workout.hours}:{workout.minutes}:{workout.seconds}</td> */}
             <td className="workoutIdxLinks"><Link to={`/workouts/${workout.id}/edit`}>Edit</Link></td>
             <td className="workoutIdxLinks" onClick={()=> deleteWorkout(workout.id)}>Delete</td>
           </tr>
+          <h1>testing row</h1>
         </table>
+        {/* <EditWorkOut/> */}
       </div>
     )
   }

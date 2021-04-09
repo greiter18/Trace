@@ -7,10 +7,10 @@ export const createWorkout = (workout, currentUser) => {
 };
 
 
-export const updateWorkout = workout => (
+export const updateWorkout = (workout, id )=> (
   $.ajax({
     method: "PATCH",
-    url: `/api/workouts/${workout.id}`,
+    url: `/api/workouts/${id}`,
     data: { workout }
   })
 );
