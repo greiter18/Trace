@@ -130,18 +130,7 @@ class Maps extends React.Component {
     this.directionsRenderer.setDirections({ routes: [] });
   }
 
-  getThumbnail(res){
-    const start = 'https://maps.googleapis.com/maps/api/staticmap?';
-    const size = 'size=175x175'
-    const scale = 'scale=2'
-    let location = res.routes[0].overview_polyline;
-    location = "path=enc:".concat(location)
-    let key = "key='AIzaSyCAQz7jft23BLTVeESWL1pIaD_i43XEfRk'"
-    let url = []
-    url.push(start,size,scale,location,key)
-    url = url.join("&")
-    return url;
-  }
+
 
   openModal(){
     document.querySelector('.modal').classList.toggle('open-modal');

@@ -18,25 +18,22 @@ class WorkoutIndexItem extends React.Component {
       `0${workout.seconds}`: workout.seconds
     return (
       <div className="workoutList"> 
-        <table>
-          <tr className="workoutIndexHeader">
+        {/* <table> */}
+          {/* <tr className="workoutIndexHeader">
             <th>Sport</th>
             <th>Date</th>
             <th>Title</th>
             <th>Time</th>
             <th></th>
             <th></th>
-          </tr>
-          <tr>
+          </tr> */}
             <td>{workout.run_type}</td>
             <td>{workout.date}</td>
             <td className="workoutIdxLinks"><Link to={`/workouts/${workout.id}`}>{workout.title}</Link></td>
             <td>{newHour}:{newMin}:{newSec}</td>
             <td className="workoutIdxLinks"><Link to={`/workouts/${workout.id}/edit`}>Edit</Link></td>
             <td className="workoutIdxLinks" onClick={()=> deleteWorkout(workout.id)}>Delete</td>
-          </tr>
-          <h1>testing row</h1>
-        </table>
+        {/* </table> */}
         {/* <EditWorkOut/> */}
       </div>
     )

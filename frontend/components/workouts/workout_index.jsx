@@ -14,7 +14,7 @@ class WorkoutIndex extends React.Component{
 
   render(){
     const workoutList = this.props.workouts !== undefined ? this.props.workouts.map(workout => {
-      return <WorkoutIndexItem workout={workout} delete={deleteWorkout}/>
+      return  <WorkoutIndexItem workout={workout} delete={deleteWorkout}/>
     }) :null 
   
   return (
@@ -27,7 +27,22 @@ class WorkoutIndex extends React.Component{
         <h1>Title</h1>
         <h1>Time</h1>
       </div> */}
-      {workoutList}
+       <table>
+        <tbody>
+          <tr className="workoutIndexHeader">
+            <th>Sport</th>
+            <th>Date</th>
+            <th>Title</th>
+            <th>Time</th>
+            <th></th>
+            <th></th>
+          </tr>
+           {/* <tr>{workoutList}</tr> */}
+        
+           {workoutList}
+          
+        </tbody>
+      </table>
     </div>
   )
   }

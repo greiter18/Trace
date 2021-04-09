@@ -39,3 +39,8 @@ table, th {
   text-decoration:none ;
   color: blue;
 }
+
+.workoutindexColumn{
+  display: flex;
+  flex-direction:column;
+}
