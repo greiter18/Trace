@@ -1,29 +1,32 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom';
 
-
 const MainNav = ({logout}) => {
 
-
-
   return (
-    <div> 
-      <header className="main_nav_head">
-        <Link className='nav_main_logo' to="/dashboard"> TRACE </Link>
-        <ul>
-          <li>Activities <i class="fas fa-chevron-down"></i></li>
-          <li><Link to="/workouts">My Workouts</Link></li>
-          <li><Link to="/routes">My Routes</Link></li>
-        </ul>
-        <span className="nav_bell"><i className="fas fa-bell"></i></span>
-        <span className="nav_bell"><i className="far fa-bell"></i></span>
-        <button className="nav_logout" onClick={logout}>Log Out</button>
-        <span className="dash_plus_icon"><i className="fas fa-plus-circle"></i></span> 
-        <ul>
-          <li><Link to="/routes/new">Create Route</Link></li>
-          <li><Link to="">Create Workout</Link></li>
-        </ul>
-      </header>
+    <div className="main_nav_head"> 
+      <Link className='nav_main_logo' to="/dashboard"> TRACE </Link>
+      <div className="dropdown">
+        <button className="dropbtn">My Activities  <i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+        <div className="dropdown_content">
+          <Link to="/dashboard">Activity Feed</Link>
+          <Link to="/workouts">My Workouts</Link>
+          <Link to="/routes">My Routes</Link>
+        </div>
+      </div>
+      <div className="dropdown" >
+        <button className="dropbtn"><i className="fas fa-user"></i> <i class="fa fa-chevron-down" aria-hidden="true"></i></button>
+        <div className="dropdown_content">
+          <a href="#" onClick={logout}>Log Out</a>
+        </div>
+      </div>
+      <div className="dropdown">
+        <button className="dropbtn"><i className="fas fa-plus-circle"></i></button>
+        <div className="dropdown_content" id="create_dropdown">
+          <Link to='/new/routes'> <i className="fas fa-angle-up"></i>  Create Route</Link>
+          <Link to='/new/workouts'><i className="fas fa-arrow-circle-up"></i>  Create Workout</Link>
+        </div>
+      </div>
     </div>
   )
 }

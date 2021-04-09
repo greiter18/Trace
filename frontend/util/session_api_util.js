@@ -20,3 +20,7 @@ export const logout = () => (
         url: '/api/session'
     })
 );
+
+// const request = (info) => {
+//   return 'info.method, info.url, '/' , info.data'
+// }

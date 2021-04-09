@@ -1,0 +1,76 @@
+$superLightGray:(rgb(223, 223, 231));
+$orange:(#fc5200);
+$dark:(rgb(36,36,40));
+
+.woFormTitle{
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 41px;
+  margin-top: 0;
+}
+.workoutFormlabel{
+  color: #242428;
+  font-size: 12px;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.topWorkoutForm{
+  display: flex;
+}
+.midWorkoutForm{
+  display: flex;
+  padding-top: 20px;
+}
+.lowWorkoutForm{
+  display: flex;
+  padding-top: 20px;
+}
+
+.workoutCreatebutton{
+  background-color: #fc5200;
+  border-color: #fc5200;
+  padding: 6px 10px;
+  border-radius: 4px;
+  color: white;
+}
+
+.woTimeEntry{
+  padding: 0
+}
+
+.timeInpute{
+text-align: right;
+width: 65px;
+border: $superLightGray 1px solid;
+height: 34px;
+font-size: 14px;
+padding: 1px 32px 1px 10px 
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.routeOptions{
+  border: $superLightGray 1px solid;
+  height: 34px;
+  font-size: 14px;
+}
+
+.routeOptions .select-selected{
+  border: $superLightGray 1px solid;
+  height: 34px;
+  font-size: 14px;
+}
+.routeOptions .select-selected::after{
+  border: $superLightGray 1px solid;
+  height: 34px;
+  font-size: 14px;
+}
+.routeOptions .select-items{
+  border: $superLightGray 1px solid;
+  height: 34px;
+  font-size: 14px;
+}

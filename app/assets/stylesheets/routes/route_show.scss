@@ -1,0 +1,71 @@
+$superLightGray:(rgb(223, 223, 231));
+$orange:(rgb(252,82,12));
+$dark:(rgb(36,36,40));
+$superdarkgray:(rgb(74,74,80));
+
+.routeShowAll{
+  display: flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  
+}
+
+.routeShowAll > child{
+  padding: 20px 5px;
+}
+.routeShowTop{
+  justify-content: flex-start;
+}
+
+.routeShowHeader{
+  display: flex;
+}
+
+.routeShowHeaderTitle{
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 41px;
+}
+
+.routeShowTitleLink {
+  text-decoration: none;
+  color: black;
+}
+.routeShowTitleroute{
+  font-weight: bold;
+}
+
+.routeShowTitle{
+  font-size: 12px;
+  display: flex;
+}
+.routesShowEdit{
+  background-color: white;
+  align-items: center;
+  border: 1px solid $superLightGray;
+  border-radius: 4px;
+  color: #000;
+  font-weight: 700;
+  padding: 6px 12px;
+}
+
+.routesShowMain{
+  display: flex;
+  font-size: 22px;
+  justify-content:center;
+  align-items:center
+}
+
+.icon{
+    font-size: 40px;
+  }
+
+.fa-user-circle:before{
+  font-size: 40px;
+}
+
+.routeShowMap{
+  height: 350px;
+  width: 614px;
+}

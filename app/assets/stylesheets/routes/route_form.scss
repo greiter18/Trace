@@ -1,0 +1,149 @@
+$superLightGray:(rgb(223, 223, 231));
+$orange:(rgb(252,82,12));
+$dark:(rgb(36,36,40));
+
+#map{
+  width: 100%;
+  height: 800px;
+  margin: auto;
+}
+
+#map :hover {
+  cursor: crosshair;
+}
+
+
+#removeLast a :hover{
+  cursor: pointer;
+}
+
+.mapButtons{
+  display: flex;
+  justify-content:flex-end;
+  font-size: 12px;
+}
+
+.mapOtherButtons{
+  background-color: white;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  font-size: 15px;
+  height: 100%;
+  padding: 12px;
+  transition: background-color 150ms ease,
+  border-color 150ms ease, color 150ms ease;
+}
+
+.mapSaveButtons{
+  background-color: $orange;
+  border: none;
+  border-radius: 2px;
+  font-size: 11px;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 16px;
+  padding: 10px 16px;
+}
+
+.mapSaveButtons:disabled{
+  background-color: gray;
+}
+
+.modal{
+  display: none;
+  background-color: white;
+  position: absolute;
+  right: 1%;
+  bottom: 50%;
+  width: 433px;
+  margin-right: 16px;
+  margin-top: 124px;
+  padding: 24px;
+  
+}
+
+.modal-background {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.open-modal{
+  display:block;
+  z-index: 10;
+}
+
+.modal-top{
+  display: flex;
+  justify-content:space-around
+}
+
+.modal-buttons{
+  display: flex;
+  justify-content:space-between;
+  flex-direction: row;
+}
+
+.modal-form{
+  display: flex;
+  flex-direction:column;
+}
+
+.modal-edit-button{
+  border: $orange solid 1px;
+  color: $orange;
+  border-radius: 3px;
+  padding: 12px;
+}
+
+.modal-fineprint{
+  color: #6d6d78;
+  font-size: 10px;
+  letter-spacing: normal;
+  line-height: 12px;
+}
+
+.modal-save-button{
+  background-color: $orange;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  flex: 1 1;
+  margin-left: 12px;
+  padding: 12px;
+}
+.modal-save-button:disabled{
+  background-color: gray;
+}
+
+.myRoute{
+  font-size: 22px;
+}
+
+.modal-text{
+    color: #6d6d78;
+    font-size: 11px;
+    line-height: 13px;
+    margin-bottom: 6px;
+    margin-top: 24px;
+}
+
+#modal-description{
+  height: 144px;
+ 
+  resize: none;
+}
+
+.input-area{
+  border: 1px solid #dfdfe8;
+  border-radius: 4px;
+  font-family: inherit;
+  width: 100%;
+}

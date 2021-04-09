@@ -1,7 +1,7 @@
 import * as WorkoutApiUtil from '../util/workout_api_util';
 
 export const RECEIVE_WORKOUT = 'RECEIVE_CURRENT_WORKOUT';
-export const RECEIVE_ALL_WORKOUT = 'RECEIVE_ALL_WORKOUT';
+export const RECEIVE_ALL_WORKOUTS = 'RECEIVE_ALL_WORKOUTS';
 export const REMOVE_WORKOUT = 'REMOVE_WORKOUT';
 
 export const receiveWorkout = workout => {
@@ -13,7 +13,7 @@ export const receiveWorkout = workout => {
 
 export const receiveWorkouts = workouts => {
   return {
-    type: RECEIVE_ALL_WORKOUT,
+    type: RECEIVE_ALL_WORKOUTS,
     workouts
   }
 }
@@ -34,9 +34,9 @@ export const fetchWorkout = (workoutId) => {
       })
   }
 }
-export const fetchWorkouts = () => {
+export const fetchWorkouts = (user_id) => {
   return dispatch => {
-    return WorkoutApiUtil.fetchWorkouts()
+    return WorkoutApiUtil.fetchWorkouts(user_id)
       .then(workouts => {
         dispatch(receiveWorkouts(workouts))
       })
@@ -63,8 +63,8 @@ export const updateWorkout = (workout) => {
 export const deleteWorkout = (workoutId) => {
   return dispatch => {
     return WorkoutApiUtil.deleteWorkout(workoutId)
-      .then(workout => {
-        dispatch(receiveWorkout(workout.id))
+      .then(() => {
+        dispatch(removeWorkout(workoutId))
       })
   }
 }

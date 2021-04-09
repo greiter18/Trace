@@ -49,8 +49,8 @@ const Splash = (props) =>{
             </ul>
             <ul>
               <li className="footer_top_list">Social Media</li>
-              <li className="footer_list">Instagram</li>
-              <li className="footer_list">FaceBook</li>
+              <li className="footer_list"> <a href="https://www.linkedin.com/in/gabriel-reiter-7352b2b7/" target="_blank"> Linked-In</a></li>
+              <li className="footer_list"><a href="https://angel.co/u/gabriel-reiter" target="_blank">Angel List</a></li>
             </ul>
             <ul>
               <li className="footer_top_list">GET STARTED</li>

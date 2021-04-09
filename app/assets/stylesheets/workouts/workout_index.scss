@@ -1,0 +1,41 @@
+$superLightGray:(rgb(223, 223, 231));
+$orange:(rgb(252,82,12));
+$dark:(rgb(36,36,40));
+
+.workoutIndexTitle{
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 41px;
+  margin-top: 0;
+}
+
+.workoutCount{
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.workoutIndexHeader{
+  background-color: $superLightGray;
+}
+
+.workoutList{
+  margin: auto 0;
+}
+
+th, td {
+  padding: 15px
+};
+
+table, th {
+  border-bottom: 1px solid rgb(198, 198, 204); 
+};
+
+.workoutIdxLinks {
+  color: blue;
+}
+
+.workoutIdxLinks a{
+  text-decoration:none ;
+  color: blue;
+}

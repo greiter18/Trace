@@ -1,7 +1,5 @@
-index
-json.workouts do
-  @workouts.each do |workout|
-    json.set! workout.id do
-    json.extract! workout, :title, 
+@routes.each do |route|
+  json.set! route.id do
+    json.extract! route, :id, :title, :start_long, :start_lat, :end_lat, :end_long, :description, :image, :distance
   end
 end

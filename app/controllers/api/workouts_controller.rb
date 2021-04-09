@@ -1,7 +1,8 @@
 class Api::WorkoutsController < ApplicationController
 
-  def index
-    @workout = Workout.all
+ def index
+    @workouts = User.find(params[:user_id]).workouts
+    render :index
   end
 
   def show
@@ -9,7 +10,30 @@ class Api::WorkoutsController < ApplicationController
   end
 
   def create
-    @workout = Workout.create(workout_params)
+    @workout = Workout.new(workout_params)
+    if @workout.save
+      render :show
+    else
+      render json: @workout.errors.full_messages, status: 422
+    end
+  end
+
+  def destroy
+    @workout = Workout.find_by(id: params[:id])
+    if @workout.destroy
+      render :index
+    else
+      render json: @route.errors.full_messages, status: 422
+    end
+  end
+
+  def update
+    @workout = Workout.find(params[:id])
+    if @workout.update(post_params)
+      render :show
+    else
+      render json: @workout.errors.full_messages, status: 422
+    end
   end
 
   def workout_params
@@ -17,7 +41,9 @@ class Api::WorkoutsController < ApplicationController
       :title,
       :description,
       :date,
-      :time,
+      :hours,
+      :minutes,
+      :seconds,
       :run_type,
       :route_id
     )

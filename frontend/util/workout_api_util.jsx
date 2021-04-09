@@ -1,16 +1,16 @@
-export const createWorkout = workout => (
- $.ajax({
+export const createWorkout = (workout, currentUser) => {
+ return $.ajax({
     method: "POST",
-    url: "/api/workouts",
+    url: `/api/users/${currentUser}/workouts`,
     data: {workout}
   })
-);
+};
 
 
-export const updateWorkout = workout => (
+export const updateWorkout = (workout, id )=> (
   $.ajax({
     method: "PATCH",
-    url: `/api/workouts/${workout.id}`,
+    url: `/api/workouts/${id}`,
     data: { workout }
   })
 );
@@ -22,15 +22,16 @@ export const fetchWorkout = id => (
   })
 );
 
-export const fetchWorkouts = () => (
+export const fetchWorkouts = (id) => (
  $.ajax({
     method: "Get",
-    url: `/api/workouts/`,
+    url: `/api/users/${id}/workouts`,
   })
 );
+
 export const deleteWorkout = (workoutId) => (
  $.ajax({
-    method: "DELTER",
+    method: "DELETE",
    url: `/api/workouts/${workoutId}`,
   })
 );

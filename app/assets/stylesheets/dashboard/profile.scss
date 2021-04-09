@@ -1,0 +1,44 @@
+$superLightGray:(rgb(223, 223, 231));
+$offwhite:(rgb(247, 247, 250));
+$orange:(rgb(252,82,12));
+$dark:(rgb(36,36,40));
+
+
+.main_profile{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  // justify-content: flex-start;
+  border: white solid 1px;
+  width: 200px;
+  height: 250px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.total_activities{
+  display: flex;
+  justify-content: space-between; 
+}
+
+.profile_totals{
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.profile_email{
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.total_number{
+  font-size: 20px;
+}
+
+.profile_category{
+  font-size: 12px;
+  font-weight: 400;
+  color: #494950;
+  line-height: 1.2;
+}

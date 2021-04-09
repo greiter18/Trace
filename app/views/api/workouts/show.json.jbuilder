@@ -1,13 +1,9 @@
-json.workouts do 
-   json.set! @workout.id do
-    json.extract! @workout, :title, :description, :date, :run_type, :route_id, :time
-   end
+json.set! @workout.id do
+  json.extract! @workout,:id, :title, :description, :date, :run_type, :route_id, :hours, :minutes, :seconds
+end
+json.route do 
+  json.extract! @workout.route, :id, :title, :user_id
+  json.extract! @workout.route.user, :id, :email
 end
 
-#index
-# json.workouts do
-#   @workouts.each do |workout|
-#     json.set! workout.id do
-#     json.extract! workout, :title, 
-#   end
-# end
+
