@@ -4,7 +4,7 @@ const Profile = (props) => {
 
   return(
     <div className="main_profile">
-      <i className="far fa-user"></i>
+      <i className="fas fa-user-circle"></i>
       <h1 className="profile_email">{props.email}</h1>
       <br/>
       <div className="profile_totals">
