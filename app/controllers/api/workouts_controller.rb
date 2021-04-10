@@ -21,7 +21,7 @@ class Api::WorkoutsController < ApplicationController
   def destroy
     @workout = Workout.find_by(id: params[:id])
     if @workout.destroy
-      render :index
+      render json: {}
     else
       render json: @route.errors.full_messages, status: 422
     end
@@ -29,7 +29,7 @@ class Api::WorkoutsController < ApplicationController
 
   def update
     @workout = Workout.find(params[:id])
-    if @workout.update(post_params)
+    if @workout.update(workout_params)
       render :show
     else
       render json: @workout.errors.full_messages, status: 422

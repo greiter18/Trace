@@ -33,7 +33,7 @@ class Maps extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.searchAddress = this.searchAddress.bind(this);
     this.update = this.update.bind(this);
-    this.getThumbnail = this.getThumbnail.bind(this);
+    // this.getThumbnail = this.getThumbnail.bind(this);
   }
 
   componentDidMount(){

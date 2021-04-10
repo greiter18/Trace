@@ -7,13 +7,13 @@ export const createWorkout = (workout, currentUser) => {
 };
 
 
-export const updateWorkout = (workout, id )=> (
-  $.ajax({
+export const updateWorkout = (workout)=> {
+  return $.ajax({
     method: "PATCH",
-    url: `/api/workouts/${id}`,
+    url: `/api/workouts/${workout.id}`,
     data: { workout }
   })
-);
+};
 
 export const fetchWorkout = id => (
  $.ajax({
@@ -29,9 +29,10 @@ export const fetchWorkouts = (id) => (
   })
 );
 
-export const deleteWorkout = (workoutId) => (
- $.ajax({
+export const deleteWorkout = (workoutId) => {
+  debugger
+ return $.ajax({
     method: "DELETE",
-   url: `/api/workouts/${workoutId}`,
+    url: `/api/workouts/${workoutId}`,
   })
-);
+};

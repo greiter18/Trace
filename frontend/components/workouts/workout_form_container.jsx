@@ -15,7 +15,7 @@ const mstp = (store, ownProps) => {
 
 const mdtp = dispatch => {
   return {
-    createWorkout: workout => dispatch(createWorkout(workout)),
+    action: workout => dispatch(createWorkout(workout)),
     fetchRoutes: id => dispatch(fetchRoutes(id))
   }
 }

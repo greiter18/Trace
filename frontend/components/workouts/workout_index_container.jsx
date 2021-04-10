@@ -14,7 +14,7 @@ const mstp = (store) => {
 const mdtp = dispatch => {
   return {
     fetchWorkouts: (id) => dispatch(fetchWorkouts(id)),
-    deleteWorkout: () => dispatch(deleteWorkout())
+    deleteWorkout: (id) => dispatch(deleteWorkout(id))
 
   }
 }
