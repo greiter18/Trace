@@ -1,0 +1,24 @@
+$superLightGray:(rgb(223, 223, 231));
+$offwhite:(rgb(247, 247, 250));
+$orange:(rgb(252,82,12));
+$dark:(rgb(36,36,40));
+
+.activityFeed{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#feedTitle{
+  font-size: 22px;
+}
+
+#feedDescription{
+  font-size: 14px;
+}
+
+#routefeedImage{
+  width: 100%;
+  height: 218px;
+}

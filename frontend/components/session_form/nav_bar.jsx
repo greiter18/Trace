@@ -10,11 +10,9 @@ const Navbar = (props) => {
   }
   
   return(
-    <div>
-      <header className="session_header">
+    <div className="session_header">
         <Link className='nav_session_logo_header' to="/"> TRACE </Link>
         <Link className="splash_log_in">{Button}</Link> 
-      </header>
     </div>
   )
 } 

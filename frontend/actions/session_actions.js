@@ -43,11 +43,12 @@ export const login = user => {
 }
 
 
-export const logout = () =>  {
+export const logout = (user) =>  {
     return dispatch => {
-        return SessionApiUtil.logout()
+      debugger
+        return SessionApiUtil.logout(user)
         .then(user => (
-        dispatch(logoutCurrentUser())
+        dispatch(logoutCurrentUser(user))
         ))
     }
 };

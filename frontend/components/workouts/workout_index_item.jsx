@@ -16,9 +16,9 @@ class WorkoutIndexItem extends React.Component {
 
     let newHour = workout.hours < 10 ? 
       `0${workout.hours}` : workout.hours
-    let newMin = workout.hours < 10 ? 
+    let newMin = workout.minutes < 10 ? 
       `0${workout.minutes}` : workout.minutes
-    let newSec = workout.hours < 10 ? 
+    let newSec = workout.seconds < 10 ? 
       `0${workout.seconds}`: workout.seconds
 
     return (

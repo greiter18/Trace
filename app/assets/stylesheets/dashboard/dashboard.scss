@@ -36,6 +36,15 @@ $dark:(rgb(36,36,40));
 //     background-size: cover; 
 //   }
 
+.dash_profile_body{
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  position: relative;
+  left: 500px;
+ 
+}
+
 .feed{
   background-color: white;
   // border: black 1px solid;

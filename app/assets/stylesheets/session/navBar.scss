@@ -5,57 +5,52 @@ $dark:(rgb(36,36,40));
 
 .session_header{
   display:flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 15px 20px;
   border-bottom: $superLightGray solid 1px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-// .navbar .session_header{
-//   display: flex;
-//   justify-content: space-between;
-//   position: relative;
-//   top: 25px;
-//   border-bottom: $superLightGray solid  1px;
-  
-// }
-
 .splash_log_in {
-  border-radius: 5px;
+  border-radius: 4px;
   border: 1px solid $superLightGray; 
-  padding: 5px;
-  width: 67px;
   color: $dark;
   font-weight: 600;
   text-decoration: none;
   text-align: center;
-  padding: 7px;
-  right: 10px;
-  margin-right:50px ;
+  background-color: white;
+  padding: 6px 16px;
+  // position: relative;
+  // right: 400px
+
+}
+.splash_log_in:hover {
+   background-color: $superLightGray;
+   cursor: pointer;
+
+   a{
+    background-color: $superLightGray;
+    cursor: pointer;
+   }
 }
 
 .splash_log_in a{
-   text-decoration: none;
-   color: $dark;
-   padding: 5px 9px;
+  text-decoration: none;
+  color: $dark;
+  background-color: white;
+  width: 100%;
 }
-
-.splash_log_in a:hover{
-   background-color: $superLightGray;
-   cursor: pointer;
-}
-  
-
 
 .nav_session_logo_header {
   font-size: 30px;
   font-weight: bold;
   color:$orange ;
   text-decoration: none;
-  padding-left: 120px;
+  // margin-left: 120px;
+  // position: relative;
+  // left: 350px;
 
   .nav_session_logo a{
-  
   text-decoration: none;
   }
 }

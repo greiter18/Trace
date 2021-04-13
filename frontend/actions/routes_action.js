@@ -3,6 +3,7 @@ import * as RoutesApiUtil from '../util/route_api_util';
 export const RECEIVE_ROUTE = 'RECEIVE_ROUTE';
 export const RECEIVE_ALL_ROUTES = 'RECEIVE_ALL_ROUTES';
 export const REMOVE_ROUTE = 'REMOVE_ROUTE';
+export const CLEAR_ROUTES = 'CLEAR_ROUTES';
 
 
 export const receiveRoute = route => {
@@ -24,6 +25,12 @@ export const removeRoute = routeId => {
   }
 }
 
+export const clearRoutes = () => {
+	return {
+		type: CLEAR_ROUTES,
+	};
+};
+
 export const fetchRoute = (routeId) => {
   return dispatch => {
     return RoutesApiUtil.fetchRoute(routeId)
@@ -33,6 +40,7 @@ export const fetchRoute = (routeId) => {
   }
 }
 export const fetchRoutes = (user_id) => {
+  debugger
   return dispatch => {
     return RoutesApiUtil.fetchRoutes(user_id)
       .then(routes => {

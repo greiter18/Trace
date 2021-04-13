@@ -9,20 +9,32 @@ $superdarkgray:(rgb(74,74,80));
   justify-content: space-evenly;
   border-bottom: $superLightGray solid 1px;
   background: white;
+  padding-right: 16px;
+  padding-left: 16px;
+  line-height: normal;
+  font-size: 14px;
+  margin: 0px ;
 }
 
-.fas fa-user{
+.far fa-user-circle{
   color: $orange;
+  font-size: 30px;
+}
+
+#navUser {
+  font-size: 30px;
 }
 
 .nav_main_logo {
-  font-size: 30px;
+  font-size: 25px;
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
+  font-weight: 900;
   color:$orange ;
   text-decoration: none;
-  padding-left: 20px;
+  padding: 16px;
   background: white;
+  line-height: normal;
+  text-align: center;
 
   .nav_main_logo a{
   text-decoration: none;
@@ -39,11 +51,20 @@ $superdarkgray:(rgb(74,74,80));
   left: 50px;
 }
 
-/* Dropdown Button */
+  #dashboardDropdown{
+    position: relative;
+    left: 20px
+  }
+
+  #navCross{
+    font-size: 20px;
+  }
+
+/* Dropdown Button -----------------------------------------------*/
 .dropbtn {
   color: $superdarkgray;
   padding: 16px;
-  font-size: 16px;
+  font-size: 14px;
   border: none;
   background:white;
 }
@@ -52,7 +73,7 @@ $superdarkgray:(rgb(74,74,80));
 .dropdown {
   position: relative;
   display: inline-block;
-
+  font-size: 14px;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -86,9 +107,14 @@ $superdarkgray:(rgb(74,74,80));
   color:$orange
 }  
 
+#logOut_dropdown{
+  position:absolute;
+  right: 0px;
+}
+
 #create_dropdown {
   position:absolute;
-  right: 8px;
+  right: 0px;
 }
 
 .dropdown_content a:hover {

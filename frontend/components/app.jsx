@@ -26,13 +26,12 @@ const App = () => {
       <header className="header">
         {/* <h1 className="logo">Trace</h1> */}
       </header>
-      
       <AuthRoute exact path="/" component={SplashContainer}/>
       <AuthRoute exact path="/login"  component={LogInFormContainer}/>
       <AuthRoute exact path="/signup"  component={SignUpFormContainer}/>
+      <ProtectedRoute exact path="/new/workouts" component={WorkoutForm}/>
       <ProtectedRoute exact path="/dashboard" component={DashboardContainer}/>
       <ProtectedRoute exact path="/workouts" component={WorkOutIndex}/>
-      <ProtectedRoute exact path="/new/workouts" component={WorkoutForm}/>
       <ProtectedRoute exact path="/workouts/:workoutId" component={WorkoutShow}/>
       <ProtectedRoute exact path="/workouts/:workoutId/edit" component={WorkoutEditFormContainer}/>
       <ProtectedRoute exact path="/routes" component={RoutesIndexContainer}/>

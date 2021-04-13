@@ -32,7 +32,7 @@ class RouteShow extends React.Component{
             {/* <img className="routeShowMap" src={route.image} /> */}
             <img className="routeShowMap" src='https://www.mamilian.bike/wp-content/uploads/2020/07/strava-routes.png' />
             <div>
-              <h1> <i className="icon" className="fas fa-user-circle"></i> By {currentUser.email}</h1>
+              <h1> <i className="icon" id='showUserIcon' className="fas fa-user-circle"></i> By {currentUser.email}</h1>
             </div>
           </div>
         </div>

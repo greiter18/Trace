@@ -3,6 +3,8 @@ import * as WorkoutApiUtil from '../util/workout_api_util';
 export const RECEIVE_WORKOUT = 'RECEIVE_CURRENT_WORKOUT';
 export const RECEIVE_ALL_WORKOUTS = 'RECEIVE_ALL_WORKOUTS';
 export const REMOVE_WORKOUT = 'REMOVE_WORKOUT';
+export const CLEAR_WORKOUTS = 'CLEAR_WORKOUTS';
+
 
 export const receiveWorkout = workout => {
   return {
@@ -24,6 +26,12 @@ export const removeWorkout = workoutId => {
     workoutId
   }
 }
+
+export const clearWorkouts = () => {
+	return {
+		type: CLEAR_WORKOUTS,
+	};
+};
 
 
 export const fetchWorkout = (workoutId) => {

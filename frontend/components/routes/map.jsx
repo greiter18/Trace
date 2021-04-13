@@ -84,7 +84,7 @@ class Maps extends React.Component {
     (response, status) => {
       if (status === 'OK') {
         // const distance = response.routes[0].legs[0].distance.text;
-        let thumbnail = this.getThumbnail(response);
+        // let thumbnail = this.getThumbnail(response);
         // let bounds = response.routes[0].bounds;
         this.directionsRenderer.setDirections(response);
 

@@ -11,8 +11,8 @@ class Dashboard extends React.Component{
   }
 
   componentDidMount(){
-    this.props.fetchWorkouts(this.props.session.id)
-    this.props.fetchRoutes(this.props.session.id)
+    this.props.fetchWorkouts(this.props?.session.id)
+    this.props.fetchRoutes(this.props?.session.id)
   }
 
   render(){
@@ -24,7 +24,9 @@ class Dashboard extends React.Component{
         <MainNavContainer/>
         <br/>
         <div className="dash_profile">
-          <Profile routeCount={this.props.routeCount} workoutCount={this.props.workoutCount} email={this.props.email}/>
+          <div className="dash_profile_body">
+            <Profile routeCount={this.props.routeCount} workoutCount={this.props.workoutCount} email={this.props.email}/>
+          </div>
           <div className="activityFeed">
             <p>Workout Feed</p>
             <ul>{workoutList} </ul>

@@ -1,8 +1,11 @@
 class Api::WorkoutsController < ApplicationController
 
  def index
-    @workouts = User.find(params[:user_id]).workouts
-    render :index
+    #@workouts = User.find(params[:user_id]).workouts
+    
+    @routes = Route.where(user_id: params[:user_id])
+    #@workouts = Workout.where(route_id: params[@route.id])
+    render :index 
   end
 
   def show
@@ -49,3 +52,15 @@ class Api::WorkoutsController < ApplicationController
     )
   end
 end
+
+
+# @workouts.each do |workout|
+#   json.set! workout.id do
+#    json.extract! workout, :id, :title, :description, :date, :run_type, :route_id, :hours, :minutes, :seconds
+#       json.route do 
+#         json.extract! workout.route, :id, :title, :user_id
+#         json.extract! workout.route.user, :id, :email
+#       end
+#   end
+# end
+
