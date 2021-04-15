@@ -74,12 +74,12 @@ class WorkoutForm extends React.Component{
                 </label> 
               </div>
               <label className="workoutFormlabel">Title 
-                <input type="text" value={this.state.title} onChange={this.handleChange('title')} className="wOforminput" placeholder={'Afternoon Run'}/>
+                <input className="workinput" type="text" value={this.state.title} onChange={this.handleChange('title')} className="wOforminput" placeholder={'Afternoon Run'}/>
               </label> <br/>
             </div>
             <div className="lowWorkoutForm">
               <label className="workoutFormlabel">Description 
-                <textarea id="workDescBox" onChange={this.handleChange('description')} value={this.state.description} placeholder={'How did it go? Were you tired or rested? How was the weather'}/>
+                <textarea  className="workinput" id="workDescBox" onChange={this.handleChange('description')} value={this.state.description} placeholder={'How did it go? Were you tired or rested? How was the weather?'}/>
               </label>
               <br/>
             </div>

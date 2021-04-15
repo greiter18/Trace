@@ -5,7 +5,7 @@ import WorkoutForm from './workout_form'
 
 const mstp = (store, ownProps) => {
   return {
-    workout: {title: '', description: '', date: '',hours: 0, minutes: 0, seconds: 0, run_type: 'run', route_id:' '},
+    workout: {title: '', description: '', date: '',hours: '', minutes: '', seconds: '', run_type: 'run', route_id:' '},
     routes: Object.values(store.entities.routes),
     session: store.session,
     history: ownProps.history,

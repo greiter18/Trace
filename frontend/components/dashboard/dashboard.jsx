@@ -43,7 +43,7 @@ class Dashboard extends React.Component{
             <Profile routeCount={this.props.routeCount} workoutCount={this.props.workoutCount} email={this.props.email}/>
           </div>
           <div className="activityFeed">
-            <p id="workoutfeed">Workout Feed</p>
+            <p id="workoutfeed">Your Activities <i class="fas fa-chevron-down"></i></p>
             <ul>{workoutList} </ul>
           </div>
           <div id="dashExtras">

@@ -63,10 +63,22 @@ font-size: 14px;
 #routefeedImage{
   width: 96%;
   height: 218px;
-  padding-top: 20px;
+  margin-top: 50px;
+  border: solid 1px $superLightGray;
 }
 
 #feedCardTop{
   display: flex;
   padding-top: 10px;
+}
+
+#feedCardMid{
+  display: flex;
+}
+
+#trophy{
+  font-size: 27px;
+  margin-left: 215px;
+  margin-top: 20px;
+
 }

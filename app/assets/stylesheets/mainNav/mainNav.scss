@@ -6,14 +6,20 @@ $superdarkgray:(rgb(74,74,80));
 
 .main_nav_head{
   display: flex;
-  justify-content: space-evenly;
-  border-bottom: $superLightGray solid 1px;
+  justify-content: space-between;
+  border-bottom: #dfdfe7 solid 1px;
   background: white;
-  padding-right: 16px;
-  padding-left: 16px;
   line-height: normal;
-  font-size: 14px;
-  margin: 0px ;
+  height: 55px;
+}
+
+.nav-left{
+  margin-left:400px;
+  margin-top: 14px;
+}
+
+.nav-right{
+  margin-right: 455px;
 }
 
 .far fa-user-circle{
@@ -29,12 +35,8 @@ $superdarkgray:(rgb(74,74,80));
   font-size: 25px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 900;
-  color:$orange ;
+  color: #fc520c;
   text-decoration: none;
-  padding: 16px;
-  background: white;
-  line-height: normal;
-  text-align: center;
 
   .nav_main_logo a{
   text-decoration: none;
@@ -63,7 +65,7 @@ $superdarkgray:(rgb(74,74,80));
 /* Dropdown Button -----------------------------------------------*/
 .dropbtn {
   color: $superdarkgray;
-  padding: 16px;
+  padding: 12px;
   font-size: 14px;
   border: none;
   background:white;
@@ -82,7 +84,7 @@ $superdarkgray:(rgb(74,74,80));
   position: absolute;
   background:white;
   min-width: 160px;
-  z-index: 1;
+  z-index: 50;
   border-bottom: $superLightGray solid 1px;
   border-right: $superLightGray solid 1px;
   border-left: $superLightGray solid 1px;

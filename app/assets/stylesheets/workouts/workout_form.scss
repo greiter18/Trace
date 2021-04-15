@@ -18,6 +18,9 @@ $dark:(rgb(36,36,40));
   position: relative;
   right: 155px;
 }
+.workinput{
+  padding-left: 10px;
+}
 .workoutFormlabel{
   color: #242428;
   font-size: 12px;
@@ -112,6 +115,7 @@ input::-webkit-inner-spin-button {
   border: $superLightGray 1px solid;
   height: 34px;
   font-size: 16px;
+  padding-left: 10px;
  }
 
  #workDescBox{

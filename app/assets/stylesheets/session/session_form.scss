@@ -77,6 +77,10 @@ $dark:(rgb(36,36,40));
   text-decoration: none;
   background-color: white;
 }
+#session_form_demo:hover{
+  cursor: pointer;
+  background-color: $superLightGray;
+}
  #session_form_demo a{
     color: black;
     text-decoration: none;
@@ -129,8 +133,13 @@ $dark:(rgb(36,36,40));
   font-weight: bold;
   margin-top: 50px;
   border-radius: 2px;
-
 }
+
+#session_button:hover{
+  cursor: pointer;
+  background-color: rgb(227, 62, 21);
+}
+
   #session_button a{
     text-decoration: none;
     border-radius: 2px;

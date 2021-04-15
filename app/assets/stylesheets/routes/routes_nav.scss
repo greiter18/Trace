@@ -1,6 +1,7 @@
 $superLightGray:(rgb(223, 223, 231));
 $orange:(rgb(252,82,12));
 $dark:(rgb(36,36,40));
+$blue:(rgb(56,153,193));
 
 
 .route_nav_head{
@@ -12,11 +13,23 @@ $dark:(rgb(36,36,40));
 
 .nav-routes-left-route{
   font-size: 20px;
+  font-weight: 700;
+  padding-left: 20px;
 }
 
 .nav-routes-right a{
   text-decoration: none;
-  color: blue;
+  color: $blue;
   font-size: 13px;
   margin-left: 16px;
+}
+
+.nav-routes-right{
+  margin-right: 40px;
+}
+
+
+.nav-routes-left{
+  display: flex;
+  margin-left: 40px;
 }

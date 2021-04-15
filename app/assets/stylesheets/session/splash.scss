@@ -5,14 +5,7 @@ $dark:(rgb(36,36,40));
 *{
   font-family: Arial, Helvetica, sans-serif;
 }
-// .headLine{
-//   font-family: Arial, Helvetica, sans-serif;
-//   position: relative;
-//   top: 40px;
-//   font-size: 40px;
-//   text-align: center;
-  
-// }
+
 .splash_form{
   margin-bottom: 80px;
   margin-top: 80px
@@ -20,10 +13,9 @@ $dark:(rgb(36,36,40));
 
 .headLine{
   font-family: Arial, Helvetica, sans-serif;
-  // position: relative;
-  // top: 40px;
   font-size: 48px;
   text-align: center;
+  font-weight: 700;
 }
 
 .splash_middle{
@@ -34,21 +26,8 @@ $dark:(rgb(36,36,40));
   margin-right: auto;
   margin-left: auto;
   padding-left: 16px;
-  padding-right: 16px;
-  
+  padding-right: 16px;  
 }
-
-// .home_image{
-//   left:100;
-//   bottom: 500;
-//   display: inline-block;
-//   width: 100%;
-//   max-width: 400px;
-//   margin: 0 auto;
-//   height: 100%;
-//   max-height: 450px;
-  
-// }
 
 .splash_main_form{
 display: flex;
@@ -56,9 +35,6 @@ flex-direction: column;
 }
 
 .splash_center_form{
-  // position: flex;
-  // left: 200px;
-  // bottom: 300px;
   display: flex;
   justify-content: space-around ;
   align-items: center;
@@ -67,13 +43,6 @@ flex-direction: column;
   padding: 40px 0px;
   flex-direction: column;
 }
-
-// .splash_form{
-//   position: relative;
-//   top: 25px;
-//   font-family: Arial, Helvetica, sans-serif;
-  
-// }
 
 .splash_buttons{
   border: $superLightGray solid 1px;
@@ -84,30 +53,22 @@ flex-direction: column;
   flex-direction: column;
   margin: 25px 0px;
   text-decoration: none;
+  font-size: 14px;
 }
 
 .splash_buttons a{
   text-decoration: none;
 }
 
-
 #splash_demo_button{
   display: flex;
-  justify-content: space-between;
-  
-  #splash_demo_button a{
-    display: flex;
-    justify-content: space-between;
-    text-decoration: none;
-    color: $dark;
-    border:$superLightGray solid 1px;
-
-    #splash_demo_button a:hover{
-    background-color:$orange;
-    }
-  }
-  
-
+  background-color: white;
+  text-align: center;
+  align-items: center;
+}
+#splash_demo_button:hover{
+  cursor: pointer;
+  background-color: $superLightGray;
 }
 
 #sign_up_button{
@@ -121,8 +82,8 @@ flex-direction: column;
   border:$superLightGray solid 1px;
 }
 
-#sign_up_button :hover{
-  background-color: rgb(18, 30, 58);
+#sign_up_button:hover{
+  background-color: rgb(39, 58, 102);
 }
 
 .member_link a{
@@ -142,12 +103,9 @@ flex-direction: column;
   margin-top: 5px;
 }
 
-
 .member_link a{
   text-decoration: none;
 }
-
-
 
 .or_box{
   display: flex;
@@ -166,8 +124,6 @@ flex-direction: column;
   position: relative;
   top: 9px;
 }
-
-
 
 .session_footer{
   display: flex;
@@ -192,10 +148,6 @@ text-decoration:none;
 color: white;
 text-decoration:none;
 }
-// .footer.footer_list a{
-//   color: white;
-//   text-decoration:none;
-// }
 
 .footer_logo{
   color: white;
@@ -208,9 +160,9 @@ text-decoration:none;
 }
 
 .footer_list a{
-      padding: 10px;
-    color: white;
-    text-decoration: none;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
 }
 
 footer li {

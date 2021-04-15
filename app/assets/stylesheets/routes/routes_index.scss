@@ -11,7 +11,6 @@ $superdarkgray:(rgb(74,74,80));
 .routeIndexTitle{
   font-size: 34px;
   font-weight: 700;
-  line-height: 41px;
   padding-bottom: 20px;
 }
 
@@ -41,7 +40,8 @@ $superdarkgray:(rgb(74,74,80));
 
 .routeIndexTopLeft{
   display: flex;
-  flex-direction:column;
+  flex-direction:column;    
+  margin-right: 350px;
 }
 
 .routeIndexTopRight{
@@ -63,8 +63,10 @@ $superdarkgray:(rgb(74,74,80));
   float: left;
   padding-left: 15px;
   padding-right: 15px;
-  position: relative;
   width: 60%;
+  position: relative;
+  right: 80px;
+  top: 20px;
 }
 
 #routeIndexFinePrint{

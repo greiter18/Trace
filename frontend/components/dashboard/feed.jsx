@@ -14,9 +14,12 @@ const Feed = ({workout, email}) => {
         <Link to={`/workouts/${workout.id}`} id="feedTitle"> {workout?.title}</Link>
       </div>
       <h1 id="feedDescription"> {workout?.description}</h1>
-      <div id='feedTime'>
-        <h1 id='feedTimeTime'>Time</h1>
-        <h1 id='feedTimenums'> {workout?.hours}h {workout?.minutes}m {workout?.seconds}s</h1>
+      <div id="feedCardMid">
+        <div id='feedTime'>
+          <h1 id='feedTimeTime'>Time</h1>
+          <h1 id='feedTimenums'> {workout?.hours}h {workout?.minutes}m {workout?.seconds}s</h1>
+        </div>
+      <i id='trophy'class="fas fa-trophy"></i>
       </div>
       <Link to={`/workouts/${workout.id}`} ><img id="routefeedImage" 
           src='https://www.mamilian.bike/wp-content/uploads/2020/07/strava-routes.png'

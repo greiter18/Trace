@@ -1,9 +1,10 @@
 $superLightGray:(rgb(223, 223, 231));
+$superSuperLightGray:(rgb(246, 246, 249));
 $orange:(rgb(252,82,12));
 $dark:(rgb(36,36,40));
 
 #map{
-  width: 100%;
+  width: 96%;
   height: 800px;
   margin: auto;
 }
@@ -19,8 +20,12 @@ $dark:(rgb(36,36,40));
 
 .mapButtons{
   display: flex;
-  justify-content:flex-end;
+  justify-content: space-between;
   font-size: 12px;
+}
+
+#mapButtonsRight{
+  margin-right: 23px;
 }
 
 .mapOtherButtons{
@@ -45,6 +50,17 @@ $dark:(rgb(36,36,40));
   cursor: pointer;
   margin-right: 16px;
   padding: 10px 16px;
+}
+
+#search-bar{
+  border: none;
+  width: 1650px;
+  background-color: #f6f6f9;
+  padding-top: 16px;
+  margin-left: 37px;
+  border-left: 1px solid #dfdfe7;
+  padding-left: 25px;
+  font-size: 14px;
 }
 
 .mapSaveButtons:disabled{
