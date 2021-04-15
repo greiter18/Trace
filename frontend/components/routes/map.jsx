@@ -130,8 +130,6 @@ class Maps extends React.Component {
     this.directionsRenderer.setDirections({ routes: [] });
   }
 
-
-
   openModal(){
     document.querySelector('.modal').classList.toggle('open-modal');
     document.querySelector('.modal-background').classList.toggle('open-modal');
@@ -161,7 +159,6 @@ class Maps extends React.Component {
        <RouteNav />
       <div className="mapButtons">
          <form className="cr-search-bar" onSubmit={() => this.searchAddress(address)}>
-
           <input
             className="input geocoder"
             type="text"

@@ -15,17 +15,29 @@ $dark:(rgb(36,36,40));
   background-color: white;
   border-radius: 4px;
   box-shadow: 0px 8px 24px rgba(13, 13 ,18, 0.1);
+  position: relative;
+  top: 34px;
 }
 
-.total_activities{
+#profileBody{
+  padding-top: 30px;
   display: flex;
-  justify-content: space-between; 
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid $superLightGray;
+  padding-bottom: 30px;
 }
+
+// .total_activities{
+//   display: flex;
+//   justify-content: space-between; 
+// }
 
 .profile_totals{
   display: flex;
   justify-content: space-between;
   padding: 5px;
+  width: 110px;
 }
 
 .profile_email{
@@ -34,7 +46,10 @@ $dark:(rgb(36,36,40));
 }
 
 .total_number{
+  padding-top: 5px;
   font-size: 20px;
+  text-decoration: none;
+  color: black;
 }
 
 .profile_category{
@@ -47,5 +62,19 @@ $dark:(rgb(36,36,40));
 #profileUser{
   font-size: 50px;
   z-index: 20;
- 
+  position: absolute;
+  bottom: 234px;
+}
+
+.total_activities{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.total_routes{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-left: 1px solid $superLightGray;
+  padding-left: 10px;
 }

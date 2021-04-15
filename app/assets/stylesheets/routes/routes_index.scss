@@ -3,10 +3,16 @@ $orange:(rgb(252,82,12));
 $dark:(rgb(36,36,40));
 $superdarkgray:(rgb(74,74,80));
 
+#rtIdxBody{
+  width: 1200px;
+  margin: auto;
+}
+
 .routeIndexTitle{
   font-size: 34px;
   font-weight: 700;
   line-height: 41px;
+  padding-bottom: 20px;
 }
 
 .routeIndexCreate{
@@ -27,8 +33,10 @@ $superdarkgray:(rgb(74,74,80));
 
 .routeIndexTop{
   display: flex;
-  justify-content:space-around;
+  justify-content: center;
   padding-top: 20px;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 25px;
 }
 
 .routeIndexTopLeft{
@@ -43,29 +51,34 @@ $superdarkgray:(rgb(74,74,80));
 .routeIndexList{
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 50px;
 }
 
 .routeIndexFinePrint{
-    color: #242428;
-    font-size: 14px;
-    line-height: 1.45;
-    box-sizing: border-box;
-    float: left;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: relative;
-    width: 60%;
+  color: #242428;
+  font-size: 14px;
+  line-height: 1.45;
+  box-sizing: border-box;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  width: 60%;
+}
+
+#routeIndexFinePrint{
+  display: flex;
+  justify-content: flex-end;
 }
 
 .routeIdxItem{
   display: block;
   float: left;
   position: relative;
-  width: 23.4%;
   margin: 0 1.6% 40px 0;
   background-color: #f7f7f7;
 }
-
 
 .rtIdxTitle{
   font-size: 17px;
@@ -77,6 +90,12 @@ $superdarkgray:(rgb(74,74,80));
 
 .rtIdxDistanceGroup{
   display: flex;
+  padding-top: 30px;
+}
+
+#rtIdxDistanceGroup{
+  display: flex;
+  flex-direction:column
 }
 
 .rtIdxDistance{
@@ -98,10 +117,14 @@ $superdarkgray:(rgb(74,74,80));
 }
 
 .routeIndexImage{
-width: 224px;
-height: 175px;
+  width: 275px;
+  height: 200px;
+  padding-bottom: 15px;
 }
 
+#routeCardBottom{
+  margin-left: 20px;
+}
 
 //``````````````````````````````````````````dropdown setup 
 .dropbtnRt {
@@ -112,6 +135,10 @@ height: 175px;
   display: flex;
   justify-content:flex-end;
   background-color: white;
+  position: absolute;
+  z-index: 10;
+  right: 1px;
+  bottom: 115px;
 
 }
 
@@ -126,9 +153,10 @@ height: 175px;
 .dropdown_contentRt {
   display: none;
   position: absolute;
+  bottom: 68px;
   background:white;
   min-width: 160px;
-  z-index: 1;
+  z-index: 20;
   border-bottom: $superLightGray solid 1px;
   border-right: $superLightGray solid 1px;
   border-left: $superLightGray solid 1px;

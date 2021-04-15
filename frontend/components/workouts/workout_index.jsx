@@ -24,21 +24,25 @@ class WorkoutIndex extends React.Component{
     <div>
       <MainNavContainer/>
       {console.log('------------count',this.props.workoutCount)}
-      <h1 className="workoutIndexTitle">My Workouts</h1>
-      <h1 className="workoutCount">{this.props.workoutCount} {workoutOrworkouts}</h1>
-       <table className="workoutTable">
-        <tbody>
-          <tr className="workoutIndexHeader">
-            <th>Sport</th>
-            <th>Date</th>
-            <th>Title</th>
-            <th>Time</th>
-            <th></th>
-            <th></th>
-          </tr>
-           {workoutList}
-        </tbody>
-      </table>
+      <div id="workoutIdxBody">
+        <div id="workoutIdxBodyTop">
+          <h1 className="workoutIndexTitle">My Workouts</h1>
+          <h1 className="workoutCount">{this.props.workoutCount} {workoutOrworkouts}</h1>
+        </div>
+        <table className="workoutTable">
+          <tbody>
+            <tr className="workoutIndexHeader">
+              <th>Sport</th>
+              <th>Date</th>
+              <th>Title</th>
+              <th>Time</th>
+              <th></th>
+              <th></th>
+            </tr>
+            {workoutList}
+          </tbody>
+        </table>
+      </div>
     </div>
   )
   }

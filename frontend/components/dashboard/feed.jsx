@@ -2,15 +2,26 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const Feed = ({workout}) => {
+const Feed = ({workout, email}) => {
   return (
-    <div >
-      <i class="fas fa-user"></i>
-      <h1 id="feedTitle"> {workout?.title}</h1>
+    <div id="feedCard">
+      <div id="feedCardTop">
+        <i id="runnerIcon"className="fas fa-user-circle"></i>
+        <h1 id="feedEmail"> {email}</h1>
+      </div>
+      <div id="feedCardMid"> 
+        <i id="personRunning"className="fas fa-running"></i>
+        <Link to={`/workouts/${workout.id}`} id="feedTitle"> {workout?.title}</Link>
+      </div>
       <h1 id="feedDescription"> {workout?.description}</h1>
-      <h1> {workout?.hours}:{workout?.minutes}:{workout?.seconds}</h1>
-      <img id="routefeedImage" 
-          src='https://www.mamilian.bike/wp-content/uploads/2020/07/strava-routes.png'/>
+      <div id='feedTime'>
+        <h1 id='feedTimeTime'>Time</h1>
+        <h1 id='feedTimenums'> {workout?.hours}h {workout?.minutes}m {workout?.seconds}s</h1>
+      </div>
+      <Link to={`/workouts/${workout.id}`} ><img id="routefeedImage" 
+          src='https://www.mamilian.bike/wp-content/uploads/2020/07/strava-routes.png'
+      /></Link> 
+      {console.log('-------------feed',workout.id)}
     </div>
   )
 }

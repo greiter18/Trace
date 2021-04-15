@@ -17,21 +17,32 @@ class WorkoutShow extends React.Component{
     return(
       <div>
         <MainNav/>
-        <div>
-          <h1>{route.email} - {workout.run_type} </h1>
-        </div>
-        <div className="workShowMain">
-          <div className="workShowMainLeft">
-            <i class="fas fa-user-circle"></i>
-            <div className="workShowMainLeft-inner">
-              <h1 id='workShowTitle'> {workout.title}</h1>
-              <h1>{workout.description}</h1>
+        <body id="workShowBody">
+          <div id="workShowhead">
+            <h1>{route.email} - {workout.run_type} </h1>
+          </div>
+          <div className="workShowMain">
+            <div className="workShowMainLeft">
+              <i id="userWorkShow" class="fas fa-user-circle"></i>
+              <div className="workShowMainLeft-inner">
+                <h1 id='workShowTitle'> {workout.title}</h1>
+                <h1>{workout.description}</h1>
+              </div>
+            </div>
+            <div className="workShowitem">
+              <h1>{workout.date}</h1>
+              <h2>Date</h2>
+            </div>
+            <div className="workShowitem">
+              <h1>{workout.hours}:{workout.minutes}:{workout.seconds}</h1>
+              <h2>Moving Time</h2>
+            </div>
+            <div className="workShowitem">
+             <h1>{route?.title}</h1>
+             <h2>Run Name</h2>
             </div>
           </div>
-          <h1>Date: {workout.date}</h1>
-          <h1>Moving Time: {workout.hours}:{workout.minutes}:{workout.seconds}</h1>
-          <h1>Run Name: {route?.title}</h1>
-        </div>
+        </body>
       </div>
     )
   }

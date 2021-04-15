@@ -9,15 +9,18 @@ $dark:(rgb(36,36,40));
 // }
 .main_dash{
   background-color: $offwhite;
+  
 }
 .dash_body{
   display: flex;
-  justify-content: space-around;
   font-size: 24px;
+  
 }
 
 .dash_profile{
   display: flex;
+  padding-top: 20px;
+  justify-content:center
 }
 
 .activityFeed{
@@ -40,9 +43,17 @@ $dark:(rgb(36,36,40));
   display: flex;
   justify-content: center;
   // align-items: center;
-  position: relative;
-  left: 500px;
+  // position: relative;
+  // left: 500px;
  
+}
+
+#workoutfeed{
+  font-size: 17px;
+  font-weight: 400px;
+  right: 222px;
+  position: relative;
+  padding-bottom: 20px;
 }
 
 .feed{
@@ -53,6 +64,25 @@ $dark:(rgb(36,36,40));
   box-shadow: 0px 8px 24px rgba(13, 13 ,18, 0.1);
   // padding: 0px, 23;
   margin: 0px 0px 12px;
-  height:615px;
+  height:480px;
   width: 550px;
+}
+
+#dashExtras{
+  display: flex;
+  flex-direction:column;
+  flex-wrap: wrap;
+  width: 186px;
+  position: relative;
+  bottom: 30px;
+  
+}
+
+.dashExtrasTitle{
+  font-size: 15px;
+  padding-top: 70px;
+}
+.dashExtrasBody{
+  font-size: 12px;
+  padding-top: 17px;
 }

@@ -2,20 +2,64 @@ $superLightGray:(rgb(223, 223, 231));
 $orange:(rgb(252,82,12));
 $dark:(rgb(36,36,40));
 
+#workShowBody{
+  border: 1px solid $superLightGray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 800px;
+  margin: auto;
+  margin-top: 30px;
+}
+
+#workShowhead{
+  display:flex;
+  font-size: 20px;
+  border: solid 1px $superLightGray;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 50px;
+  background-color: $superLightGray;
+}
+
 .workShowMain{
   display: flex;
   justify-content: space-around;
+  padding-top: 10px;
+  
+}
+
+#userWorkShow{
+  font-size: 83px;
 }
 
 .workShowMainLeft{
-display: flex;
+  display: flex;
+  border-right: solid 1px #dfdfe7;
 }
 
 .workShowMainLeft-inner{
   display: flex;
-  flex-direction:column
+  flex-direction:column;
+  padding-left: 20px;
+  padding-right: 75px;
 }
 
 #workShowTitle{
   font-size: 28px;
+  padding: 10px 0px;
+}
+
+.workShowitem{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h1{
+    font-size: 20px;
+  }
+
+  h2{
+    font-size: 12px;
+  }
 }

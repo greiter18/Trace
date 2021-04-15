@@ -21,21 +21,23 @@ class RoutesIndex extends React.Component{
       <div>
         {console.log('component store-------',this.props.routes)}
         <MainNavContainer />
-        <div className="routeIndexTop">
-          <div className="routeIndexTopLeft">
-            <h1 className="routeIndexTitle">My Routes</h1>
-            <button className="routeIndexCreate"><Link to="/new/routes">Create New Route</Link></button>
+        <body id="rtIdxBody">
+          <div className="routeIndexTop">
+            <div className="routeIndexTopLeft">
+              <h1 className="routeIndexTitle">My Routes</h1>
+              <button className="routeIndexCreate"><Link to="/new/routes">Create New Route</Link></button>
+            </div>
+            <div id="routeIndexFinePrint">
+              <p className='routeIndexFinePrint'>Learn more about sharing & exporting routes to a variety of devices.</p>
+            </div>
+            <div>
+              <img src="https://d3nn82uaxijpm6.cloudfront.net/assets/routes/route-list-mobile-upsell-c1aec554d010e3c86411ad560615802162318875f086d1e3ed4850d6c7014b8f.png"/>
+            </div>
           </div>
-          <div>
-            <p className='routeIndexFinePrint'>Learn more about sharing & exporting routes to a variety of devices.</p>
+          <div className="routeIndexList">
+            {routesList}
           </div>
-          <div>
-            <img  src="https://d3nn82uaxijpm6.cloudfront.net/assets/routes/route-list-mobile-upsell-c1aec554d010e3c86411ad560615802162318875f086d1e3ed4850d6c7014b8f.png"/>
-          </div>
-        </div>
-        <div className="routeIndexList">
-          {routesList}
-        </div>
+        </body>
       </div>
     )
   }

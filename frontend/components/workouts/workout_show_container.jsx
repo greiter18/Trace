@@ -8,7 +8,7 @@ const mstp = (store, ownProps) => {
   const workoutId = ownProps.match.params.workoutId
   return {
     workout: store.entities.workouts[workoutId] || {},
-    route: store.entities.workouts.route|| {},
+    route: store.entities.workouts[workoutId]?.route|| {},
   }
 }
 

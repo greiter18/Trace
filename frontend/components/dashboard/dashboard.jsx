@@ -17,8 +17,23 @@ class Dashboard extends React.Component{
 
   render(){
       const workoutList = this.props.workouts !== undefined ? this.props.workouts.map(workout => {
-        return <li className="feed"><Feed workout={workout}/></li>
+        return <li className="feed"><Feed workout={workout} email={this.props.email}/></li>
       }) :null 
+
+      // const keys = this.props.workouts.map((workout) => {
+      //   return workout.id
+      // })
+      // let top = Math.max.apply(Math, keys)
+      // let workouts = this.props.workouts
+      // let latestWorkout = () =>  {
+      //   for (i = 0; i < workouts.length; i++){
+      //     console.log('---------workouts',workouts)
+      //     let workout = workouts[i]
+      //     if(workout.id === top){
+      //       return workout
+      //       }
+      //     }
+      //   }
     return(
       <div className="main_dash">
         <MainNavContainer/>
@@ -28,8 +43,31 @@ class Dashboard extends React.Component{
             <Profile routeCount={this.props.routeCount} workoutCount={this.props.workoutCount} email={this.props.email}/>
           </div>
           <div className="activityFeed">
-            <p>Workout Feed</p>
+            <p id="workoutfeed">Workout Feed</p>
             <ul>{workoutList} </ul>
+          </div>
+          <div id="dashExtras">
+            <h1 className="dashExtrasTitle">
+              Challenges
+            </h1>
+            <p className="dashExtrasBody">
+              Join a run or cycling Challenge to stay on top of your game, 
+              earn new achievements and see how you stack up.
+            </p>
+            <h1 className="dashExtrasTitle">
+              Clubs
+            </h1>
+            <p className="dashExtrasBody">
+              Why do it alone? Get more out of your 
+              Strava experience by joining or creating a Club.
+            </p>
+            <h1 className="dashExtrasTitle">
+              Try a Privacy Zone
+            </h1>
+            <p className="dashExtrasBody">
+              You can hide the location of your home, 
+              office or other private places in your activities.
+            </p>
           </div>
         </div>
       </div>

@@ -2,6 +2,19 @@ $superLightGray:(rgb(223, 223, 231));
 $orange:(rgb(252,82,12));
 $dark:(rgb(36,36,40));
 
+
+#workoutIdxBody{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+}
+
+#workoutIdxBodyTop{
+  position: relative;
+  right: 15.5%;
+}
+
 .workoutIndexTitle{
   font-size: 34px;
   font-weight: 700;
@@ -13,6 +26,8 @@ $dark:(rgb(36,36,40));
   font-size: 22px;
   font-weight: 400;
   line-height: 28px;
+  padding-top: 50px;
+  padding-bottom: 25px;
 }
 
 .workoutTable{
@@ -22,6 +37,10 @@ $dark:(rgb(36,36,40));
 
 .workoutIndexHeader{
   background-color: $superLightGray;
+}
+
+#workOutRow{
+  border-bottom: 1px solid $superLightGray;
 }
 
 .workoutList{
@@ -37,15 +56,23 @@ table, th {
 };
 
 .workoutIdxLinks {
-  color: blue;
+  color: #007FB6;
+}
+.workoutIdxLinks:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .workoutIdxLinks a{
   text-decoration:none ;
-  color: blue;
+  color:#007FB6;
 }
 
 .workoutindexColumn{
   display: flex;
   flex-direction:column;
+}
+
+th{
+  padding-right: 100px;
 }
