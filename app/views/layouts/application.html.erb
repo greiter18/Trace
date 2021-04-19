@@ -7,8 +7,7 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-
-    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyD-zUIawAgtQ3qXH71ektYyDm_DBo-CZGo&map_ids=2cf9dff401d20cef&libraries" %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['MAPS_API_KEY']}&map_ids=2cf9dff401d20cef&libraries=places" %>
     <% stylesheet_link_tag    'application', media: 'all' %>
     <% javascript_include_tag 'application' %>
     <script src="https://kit.fontawesome.com/498721e045.js" crossorigin="anonymous"></script>

@@ -8,6 +8,7 @@ class WorkoutForm extends React.Component{
     this.state = this.props.workout; 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.toggleDisable = this.toggleDisable.bind(this);
   }
 
   componentDidMount(){
@@ -20,8 +21,21 @@ class WorkoutForm extends React.Component{
   }
 
   handleChange(field){
+    // this.toggleDisable()
     return e => {
         this.setState({[field]: e.target.value})
+    }
+  }
+
+   toggleDisable(){
+   if(e.target.value.length > 0){
+      this.setState({
+        disabled: false
+      })
+    } else {
+      this.setState({
+        disabled: true
+      })
     }
   }
 
@@ -38,6 +52,7 @@ class WorkoutForm extends React.Component{
     return (
       <div>
         <MainNav/>
+        {console.log('++++++++++++++++++++++++++++',this.state)}
         <body id="workoutFormBody">
           <h1 className="woFormTitle">Workout Entry</h1>
           <form onSubmit={this.handleSubmit}>
@@ -79,11 +94,25 @@ class WorkoutForm extends React.Component{
             </div>
             <div className="lowWorkoutForm">
               <label className="workoutFormlabel">Description 
-                <textarea  className="workinput" id="workDescBox" onChange={this.handleChange('description')} value={this.state.description} placeholder={'How did it go? Were you tired or rested? How was the weather?'}/>
+                <textarea  className="workinput" id="workDescBox" 
+                onChange={this.handleChange('description')} 
+                value={this.state.description} 
+                placeholder={'How did it go? Were you tired or rested? How was the weather?'}
+                />
               </label>
               <br/>
             </div>
-            <button className="workoutCreatebutton">{formName}</button>
+            <button className="workoutCreatebutton" 
+              disabled={
+                !this.state.title || 
+                !this.state.description || 
+                !this.state.hours ||
+                !this.state.minutes ||
+                !this.state.seconds ||
+                !this.state.run_type ||
+                !this.state.date
+              }
+              >{formName}</button>
             <Link to={link} className="cancelButton">Cancel</Link>
           </form>
         </body>

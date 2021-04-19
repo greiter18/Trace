@@ -64,6 +64,11 @@ $dark:(rgb(36,36,40));
   margin-right: 22px;
 }
 
+.workoutCreatebutton:disabled{
+  background-color: gray;
+  border-color: black;
+}
+
 .woTimeEntry{
   padding: 0
 }

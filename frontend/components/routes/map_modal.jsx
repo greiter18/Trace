@@ -55,7 +55,6 @@ class MapModal extends React.Component{
     }
   }
 
- 
   render(){
     let beginPoint = this.props.cords[0];
     let endPoint = this.props.cords[1];

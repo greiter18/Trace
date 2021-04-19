@@ -34,6 +34,10 @@ class Maps extends React.Component {
     this.searchAddress = this.searchAddress.bind(this);
     this.update = this.update.bind(this);
     // this.getThumbnail = this.getThumbnail.bind(this);
+    this.startLat = this?.points[0]?.lat
+    this.startLng = this?.points[0]?.lng
+    this.endLat = this?.points[1]?.lat
+    this.endLang = this?.points[1]?.lng
   }
 
   componentDidMount(){
@@ -87,10 +91,9 @@ class Maps extends React.Component {
         // let thumbnail = this.getThumbnail(response);
         // let bounds = response.routes[0].bounds;
         this.directionsRenderer.setDirections(response);
-
-        this.setState({
-          image: thumbnail
-        })
+        // this.setState({
+        //   image: thumbnail
+        // })
       } else {
         window.alert("Directions request faile due to " + status);
       }
@@ -121,6 +124,20 @@ class Maps extends React.Component {
       this.setState({disabled: true})
     }
   }
+
+  //  getThumbnail(res){
+  //   const start = 'https://maps.googleapis.com/maps/api/staticmap?';
+  //   const size = 'size=175x175'
+  //   const scale = 'scale=2'
+  //   // let location = res.routes[0].overview_polyline;
+  //   // let location = this?.startLat|this?.startLng|this?.endLat|this?.endLang
+  //   location = "path=enc:".concat(location)
+  //   let key = "key=#{ENV['MAPS_API_KEY']}"
+  //   let url = []
+  //   url.push(start,size,scale,location,key)
+  //   url = url.join("&")
+  //   return url;
+  // }
 
   removeAllPoints(){
     if (this.points.length > 0){
@@ -155,7 +172,6 @@ class Maps extends React.Component {
   render(){
     return(
       <div>
-       {this.state.showh1 && <h1>Big ol h1</h1>}
        <RouteNav />
       <div className="mapButtons">
          <form className="search-bar" onSubmit={() => this.searchAddress(address)}>
@@ -182,7 +198,6 @@ class Maps extends React.Component {
           description={this.props?.route?.description} history={this.props?.history}
           route={this.props.route} formType={this.props.formType} routeId={this.props.routeId}
           />
-          {console.log('maps action-------',this.props.action)}
         </div>
       </div>
       </div>
