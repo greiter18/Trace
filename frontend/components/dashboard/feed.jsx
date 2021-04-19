@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 
 
 const Feed = ({workout, email}) => {
@@ -22,9 +22,10 @@ const Feed = ({workout, email}) => {
       <i id='trophy'class="fas fa-trophy"></i>
       </div>
       <Link to={`/workouts/${workout.id}`} ><img id="routefeedImage" 
-          src='https://www.mamilian.bike/wp-content/uploads/2020/07/strava-routes.png'
-      /></Link> 
-      {console.log('-------------feed',workout.id)}
+          src={workout?.route?.image} alt="route image"
+      />
+      </Link> 
+      {/* {console.log('-------------feed',workout.id)} */}
     </div>
   )
 }

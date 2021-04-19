@@ -8,7 +8,7 @@ const RouteForm = ({session, action, history}) => {
       <br/>
       <div className="routeFormTop">
       </div>
-      {console.log('routeform-------',session)}
+      {/* {console.log('routeform-------',session)} */}
       <Maps session={session} action={action} history={history} /> 
       <br/>
     </div>

@@ -4,7 +4,7 @@ import RoutesIndex from './routes_index'
 
 
 const mstp = (store) => {
-  console.log('store--------------',store)
+  // console.log('store--------------',store)
   return {
     session: store.session,
     routes: Object.values(store.entities.routes)

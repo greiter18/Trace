@@ -55,8 +55,8 @@ class Maps extends React.Component {
 			// adds lat/lng object to waypoints array
       if(this.points.length > 1) this.points.pop()
 			this.points.push({ lat: e.latLng.lat(), lng: e.latLng.lng() });
-      console.log("points----------",this.points)
-      console.log("id----------",this.id)
+      // console.log("points----------",this.points)
+      // console.log("id----------",this.id)
       this.toggleDisable()
 			this.renderMarkers();
 		});

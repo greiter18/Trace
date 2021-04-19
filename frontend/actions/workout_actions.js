@@ -61,21 +61,21 @@ export const createWorkout = (workout) => {
 }
 
 export const updateWorkout = (workout) => {
-  debugger
+  // debugger
   return dispatch => {
     return WorkoutApiUtil.updateWorkout(workout)
       .then(upWorkout => {
-        debugger
+        // debugger
         dispatch(receiveWorkout(upWorkout))
       })
   }
 }
 export const deleteWorkout = (workoutId) => {
   return dispatch => {
-    debugger
+    // debugger
     return WorkoutApiUtil.deleteWorkout(workoutId)
       .then(() => {
-        debugger
+        // debugger
         dispatch(removeWorkout(workoutId))
       })
   }

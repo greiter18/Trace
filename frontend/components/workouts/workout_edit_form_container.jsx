@@ -19,7 +19,7 @@ class EditWorkoutForm extends React.Component{
     const { currentUser, workout, formType, action, history, 
        fetchRoutes, session, routes, route } = this.props;
     const workoutId = this.props.match.params?.workoutId;
-    debugger
+    // debugger
     return workout[workoutId] ? (
       <div>
         <WorkoutForm workout={workout[workoutId]} formType={formType} action={action} history={history}

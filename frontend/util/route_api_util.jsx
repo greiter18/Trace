@@ -8,7 +8,7 @@ export const createRoute = route => {
 
 
 export const updateRoute = route => {
-  debugger
+  // debugger
   return $.ajax({
     method: "PATCH",
     url: `/api/routes/${route.id}`,

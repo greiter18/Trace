@@ -25,7 +25,7 @@ const workoutReducer = (state = {}, action) => {
     case LOGOUT_CURRENT_USER:
       return  {}
     case CLEAR_WORKOUTS:
-      debugger
+      // debugger
       return  {}
     default:
       return state;

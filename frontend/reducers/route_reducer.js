@@ -17,7 +17,7 @@ const routeReducer = (state = {}, action) => {
     case RECEIVE_ROUTE:
       return action.route
     case RECEIVE_ALL_ROUTES:
-      debugger
+      // debugger
       return Object.assign({}, state, action.routes)
     case REMOVE_ROUTE:
       const newState = Object.assign({}, state, action.routes);
@@ -26,7 +26,7 @@ const routeReducer = (state = {}, action) => {
     case LOGOUT_CURRENT_USER:
       return  {}
     case CLEAR_ROUTES:
-      debugger
+      // debugger
       return  {}
     default:
       return state;

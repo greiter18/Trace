@@ -24,7 +24,7 @@ class WorkoutShow extends React.Component{
             </div>
             <div className="workShowMain">
               <div className="workShowMainLeft">
-                <i id="userWorkShow" class="fas fa-user-circle"></i>
+                <i id="userWorkShow" className="fas fa-user-circle"></i>
                 <div className="workShowMainLeft-inner">
                   <h1 id='workShowTitle'> {workout.title}</h1>
                   <h1>{workout.description}</h1>
@@ -44,7 +44,7 @@ class WorkoutShow extends React.Component{
               </div>
             </div>
           </body>
-          <img id="workShowMap" src='https://www.mamilian.bike/wp-content/uploads/2020/07/strava-routes.png' />
+          <img id="workShowMap" src={route?.image}  alt='route image'/>
         </div> 
       </div>
     )

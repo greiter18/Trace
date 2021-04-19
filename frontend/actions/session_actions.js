@@ -45,7 +45,7 @@ export const login = user => {
 
 export const logout = (user) =>  {
     return dispatch => {
-      debugger
+      // debugger
         return SessionApiUtil.logout(user)
         .then(user => (
         dispatch(logoutCurrentUser(user))
