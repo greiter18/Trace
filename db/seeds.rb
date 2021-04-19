@@ -27,16 +27,7 @@ r1 = Route.create!(
     start_lat: 37.769996,
     end_long:-122.511341,
     end_lat:37.769395,
-<<<<<<< HEAD
-<<<<<<< HEAD
     user_id: 23
-
-=======
-    user_id: a.id
->>>>>>> routes
-=======
-    user_id: u1.id
->>>>>>> routes
 )
 
 w1 = Workout.create!(
