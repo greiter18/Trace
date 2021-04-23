@@ -1,6 +1,7 @@
 import React from 'react'
 import MainNav from '../mainNav/main_nav'
 import { Link, withRouter } from 'react-router-dom';
+import MainFooter from '../footer/main_footer'
 
 class WorkoutForm extends React.Component{
   constructor(props){
@@ -116,6 +117,7 @@ class WorkoutForm extends React.Component{
             <Link to={link} className="cancelButton">Cancel</Link>
           </form>
         </body>
+        <MainFooter/>
       </div>
     )
   }

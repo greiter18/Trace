@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MapModal from './map_modal'
-import RouteNav from './routes_nav'
+import MapModal from './map_modal';
+import RouteNav from './routes_nav';
+import MainFooter from '../footer/main_footer'
 
 class Maps extends React.Component {
   constructor(props) {
@@ -200,6 +201,7 @@ class Maps extends React.Component {
           />
         </div>
       </div>
+      <MainFooter/>
       </div>
     )
   }

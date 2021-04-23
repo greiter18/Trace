@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom';
-import MainNav from './../mainNav/main_nav'
+import MainNav from './../mainNav/main_nav';
+import MainFooter from '../footer/main_footer'
 
 
 class RouteShow extends React.Component{
@@ -36,6 +37,7 @@ class RouteShow extends React.Component{
             </div>
           </div>
         </div>
+        <MainFooter/>
       </div>
     )
   }

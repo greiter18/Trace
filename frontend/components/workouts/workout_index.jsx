@@ -2,6 +2,7 @@ import React from 'react'
 import { deleteWorkout } from '../../util/workout_api_util'
 import MainNavContainer from '../mainNav/main_nav_container'
 import WorkoutIndexItem from './workout_index_item'
+import MainFooter from '../footer/main_footer'
 
 class WorkoutIndex extends React.Component{
   constructor(props){
@@ -43,6 +44,7 @@ class WorkoutIndex extends React.Component{
           </tbody>
         </table>
       </div>
+      <MainFooter/>
     </div>
   )
   }

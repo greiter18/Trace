@@ -2,6 +2,7 @@ import React from 'react'
 import MainNavContainer from '../mainNav/main_nav_container'
 import RoutesIndexItem from './routes_index_item'
 import { Link, withRouter } from 'react-router-dom';
+import MainFooter from '../footer/main_footer';
 
 class RoutesIndex extends React.Component{
   constructor(props){
@@ -38,6 +39,7 @@ class RoutesIndex extends React.Component{
             {routesList}
           </div>
         </body>
+        <MainFooter/>
       </div>
     )
   }

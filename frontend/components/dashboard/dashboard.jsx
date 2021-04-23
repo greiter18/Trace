@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import MainNavContainer from '../mainNav/main_nav_container'
 import Profile from './profile';
 import Feed from './feed'
+import MainFooter from '../footer/main_footer'
 
 class Dashboard extends React.Component{ 
   constructor(props){
@@ -59,7 +60,7 @@ class Dashboard extends React.Component{
             </h1>
             <p className="dashExtrasBody">
               Why do it alone? Get more out of your 
-              Strava experience by joining or creating a Club.
+              Trace experience by joining or creating a Club.
             </p>
             <h1 className="dashExtrasTitle">
               Try a Privacy Zone
@@ -70,6 +71,7 @@ class Dashboard extends React.Component{
             </p>
           </div>
         </div>
+        <MainFooter/>
       </div>
     )
   }

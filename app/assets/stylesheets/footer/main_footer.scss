@@ -1,0 +1,39 @@
+$superLightGray:(rgb(223, 223, 231));
+$superSuperLightGray:(rgb(246, 246, 249));
+$orange:(rgb(252,82,12));
+$dark:(rgb(36,36,40));
+
+.main_footer{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1%;
+  background-color: $superSuperLightGray;
+}
+
+.main_footer_top_list{
+  color: rgb(64,64,70);
+  font-size: 20px;
+  text-align: center;
+}
+.main_footer_list{
+  color: rgb(98,98,108);
+  font-size: 14px;
+  text-align: center;
+}
+.main_footer_list a{
+ text-decoration: none;
+ color: $dark;
+}
+.main_footer_list a:hover {
+ color: black;
+}
+
+.main_footer_logo{
+  color: rgb(167, 167, 167);
+  font-size: 24px;
+  font-weight: 900;
+  align-items: center;
+  text-decoration: none;
+}
+
+
