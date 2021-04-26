@@ -175,16 +175,18 @@ class Maps extends React.Component {
       <div>
        <RouteNav />
       <div className="mapButtons">
-         <form className="search-bar" onSubmit={() => this.searchAddress(address)}>
-          <input id="search-bar"
-            className="input geocoder"
-            type="text"
-            placeholder="Coming Soon (Search address) - Click on map to add markers - 2 Markers needed to make route"
-            value={this.state.address}
-            onChange={this.update("address")}
-          />
-          {/* <button id="geocoder-submit">Search</button> */}
-        </form>
+        <div id="searchBarMain">
+          <form className="search-bar" onSubmit={() => this.searchAddress(address)}>
+            <input id="search-bar"
+              className="input geocoder"
+              type="text"
+              placeholder="Coming Soon (Search address) - Click on map to add markers - 2 Markers needed to make route"
+              value={this.state.address}
+              onChange={this.update("address")}
+            />
+            {/* <button id="geocoder-submit">Search</button> */}
+          </form>
+        </div>
         <div id="mapButtonsRight">
           <button className="mapOtherButtons" onClick={this.removeLastPoint}><i className="fas fa-undo-alt"></i></button>
           <button className="mapOtherButtons" onClick={this.removeAllPoints}><i className="far fa-trash-alt"></i></button>

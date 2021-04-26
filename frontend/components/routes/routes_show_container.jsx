@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {fetchRoute } from "../../actions/routes_action"
+import {fetchRoute, deleteRoute } from "../../actions/routes_action"
 import RouteShow from "./routes_show"
 
 
@@ -14,6 +14,7 @@ const mstp = (store, ownProps) => {
 const mdtp = dispatch => {
   return {
     fetchRoute: (routeId) => dispatch(fetchRoute(routeId)),
+    deleteRoute: (routeId) => dispatch(deleteRoute(routeId))
   }
 }
 

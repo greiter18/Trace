@@ -3,11 +3,20 @@ $superSuperLightGray:(rgb(246, 246, 249));
 $orange:(rgb(252,82,12));
 $dark:(rgb(36,36,40));
 
+*::selection{
+  background-color: $orange;
+  color: white;
+}
+
 .main_footer{
   display: flex;
   justify-content: space-around;
   padding-top: 1%;
-  background-color: $superSuperLightGray;
+  //# background-color: $superSuperLightGray;
+}
+
+.main_footer::selection{
+  color: $orange;
 }
 
 .main_footer_top_list{

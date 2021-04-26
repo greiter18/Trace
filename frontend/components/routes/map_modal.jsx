@@ -64,15 +64,19 @@ class MapModal extends React.Component{
         <div className='modal-top'>
           <h1 className="myRoute">My Route</h1> 
           <i className="fas fa-running"></i>
-          <i className="far fa-star"></i>
+          <i  id='star'className="fas fa-star"></i>
         </div>
         <form id="routeModalForm" onSubmit={this.handleSubmit}>
-          <label className='modal-text'> Route name (required) <br/>
-           <input id="modalTitle" className="input-area" type="text" onChange={this.handleChange('title')} value={this.state.title} />
-          </label> <br/>
-          <label className='modal-text'> Description <br/>
-            <textarea className="input-area" id="modal-description" type="text" onChange={this.handleChange('description')} placeholder={'Add some more details or notes'} value={this.props.description}/>
-          </label>
+          <div className='modal-text'>
+            <label> Route name (required) <br/>
+            <input id="modalTitle" className="input-area" type="text" onChange={this.handleChange('title')} value={this.state.title} />
+            </label> 
+          </div>
+          <div className='modal-text'>
+            <label > Description <br/>
+              <textarea className="input-area" id="modal-description" type="text" onChange={this.handleChange('description')} placeholder={'Add some more details or notes'} value={this.props.description}/>
+            </label>
+          </div>
           <div className="modal-fineprint">
             Public routes are for the whole Trace community to enjoy. 
             If you ever decide to delete your account, 

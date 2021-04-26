@@ -21,6 +21,7 @@ $dark:(rgb(36,36,40));
   display: flex;
   justify-content: space-between;
   font-size: 12px;
+  padding-top: 2%;
 }
 
 #mapButtonsRight{
@@ -51,12 +52,16 @@ $dark:(rgb(36,36,40));
   padding: 10px 16px;
 }
 
+#searchBarMain{
+  padding-left: 2%;
+}
+
 #search-bar{
   border: none;
-  width: 1650px;
+  width: 999%;
   background-color: #f6f6f9;
   padding-top: 16px;
-  margin-left: 37px;
+  // margin-left: 37px;
   border-left: 1px solid #dfdfe7;
   padding-left: 25px;
   font-size: 14px;
@@ -69,13 +74,16 @@ $dark:(rgb(36,36,40));
 .modal{
   display: none;
   background-color: white;
-  position: absolute;
-  right: 1%;
-  bottom: 50%;
-  width: 433px;
-  margin-right: 16px;
-  margin-top: 124px;
+  position: relative;
+  /* right: 5%; */
+  /* bottom: 50%; */
+  width: 19%;
+  /* margin-right: 16px; */
+  /* margin-top: 124px; */
   padding: 24px;
+  left: 77%;
+  top: 21%;
+  border-radius: 4px;
 }
 
 .modal-background {
@@ -96,13 +104,15 @@ $dark:(rgb(36,36,40));
 
 .modal-top{
   display: flex;
-  justify-content:space-around
+  justify-content: space-between;
+  padding-bottom: 5%;
 }
 
 .modal-buttons{
   display: flex;
   justify-content:space-between;
   flex-direction: row;
+  padding-top: 6%;
 }
 
 .modal-form{
@@ -114,7 +124,7 @@ $dark:(rgb(36,36,40));
   border: $orange solid 1px;
   color: $orange;
   border-radius: 3px;
-  padding: 12px;
+  padding: 3%;
 }
 
 .modal-fineprint{
@@ -130,8 +140,8 @@ $dark:(rgb(36,36,40));
   border: none;
   border-radius: 3px;
   flex: 1 1;
-  margin-left: 12px;
-  padding: 12px;
+  margin-left: 2%;
+  padding: 3%;
 }
 .modal-save-button:disabled{
   background-color: gray;
@@ -142,17 +152,18 @@ $dark:(rgb(36,36,40));
 }
 
 .modal-text{
-    color: #6d6d78;
-    font-size: 11px;
-    line-height: 13px;
-    margin-bottom: 6px;
-    margin-top: 24px;
+  color: #6d6d78;
+  font-size: 11px;
+  line-height: 13px;
+  /* margin-bottom: 6px; */
+  /* margin-top: 24px; */
+  padding-bottom: 5%;
 }
 
 #modal-description{
-  height: 144px;
- 
+  margin-top: 2%;
   resize: none;
+  padding-bottom: 38%;
 }
 
 .input-area{
@@ -160,4 +171,10 @@ $dark:(rgb(36,36,40));
   border-radius: 4px;
   font-family: inherit;
   width: 100%;
+     
+  margin-top: 2%;
+}
+
+#modalTitle{
+  padding-top: 7%;
 }

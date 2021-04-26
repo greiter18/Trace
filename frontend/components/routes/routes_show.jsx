@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, withRouter } from 'react-router-dom';
 import MainNav from './../mainNav/main_nav';
 import MainFooter from '../footer/main_footer'
+import { deleteRoute } from '../../util/route_api_util';
 
 
 class RouteShow extends React.Component{
@@ -24,16 +25,18 @@ class RouteShow extends React.Component{
             <h1 className="routeShowTitleroute">{route.title}</h1>
             </div> 
             <div className="routeShowHeader">
-              <i class="fas fa-star"></i>  
+              <i id='star'class="fas fa-star"></i>  
               <h1 className="routeShowHeaderTitle"> {route.title}</h1>
             </div>
+            <Link to={`/routes/`}> <button className="routesShowEdit" onClick={()=> deleteRoute(route.id)}>Delete</button></Link>
             <Link to={`/routes/${route.id}/edit`} ><button className="routesShowEdit">Edit</button></Link>
           </div> 
           <div className="routesShowMain">
             {/* <img className="routeShowMap" src={route.image} /> */}
             <img className="routeShowMap" src='https://www.mamilian.bike/wp-content/uploads/2020/07/strava-routes.png' />
-            <div>
+            <div id="rtShowExtra">
               <h1> <i className="icon" id='showUserIcon' className="fas fa-user-circle"></i> By {currentUser.email}</h1>
+              <h1 id='rtShowDesc'>{route.description}</h1>
             </div>
           </div>
         </div>
