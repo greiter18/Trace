@@ -23,5 +23,6 @@ Create Workouts
 
 Activity Feed
 * The users dashboard will display the users most recently made workouts.
-* ![Screen Shot 2021-04-19 at 12 05 03 PM](https://user-images.githubusercontent.com/66323451/115268348-2bb49f80-a108-11eb-94f6-5688cc557aed.png)
+* ![Screen Shot 2021-04-27 at 5 47 04 PM](https://user-images.githubusercontent.com/66323451/116317005-c3f1fa80-a780-11eb-9a98-1df708f7fe58.png)
+
 
