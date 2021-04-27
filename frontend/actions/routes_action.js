@@ -19,7 +19,7 @@ export const receiveRoutes = routes => {
   }
 }
 export const removeRoute = routeId => {
-  debugger
+  // debugger
   return {
     type: REMOVE_ROUTE,
     routeId
@@ -66,11 +66,11 @@ export const updateRoute = (route) => {
   }
 }
 export const deleteRoute = (routeId) => {
-  debugger
+  // debugger
   return dispatch => {
     return RoutesApiUtil.deleteRoute(routeId)
       .then(() => {
-        debugger
+        // debugger
         dispatch(removeRoute(routeId))
       })
   }

@@ -10,7 +10,7 @@ class RoutesIndex extends React.Component{
   }
 
   componentDidMount(){
-    debugger
+    // debugger
     this.props.fetchRoutes(this.props.session.id)
   }
 
@@ -21,7 +21,7 @@ class RoutesIndex extends React.Component{
 
     return (
       <div>
-        {console.log('component store-------',this.props.routes)}
+        {/* {console.log('component store-------',this.props.routes)} */}
         <MainNavContainer />
         <body id="rtIdxBody">
           <div className="routeIndexTop">

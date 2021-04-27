@@ -76,7 +76,7 @@ class Maps extends React.Component {
 
   renderMarkers(){
     const beginPoint = this.points[0];
-    console.log('beginPoitn===========',beginPoint)
+    // console.log('beginPoitn===========',beginPoint)
     let endPoint = this.points[this.points.length - 1];
     this.setState({["marks"]: this.points})
 

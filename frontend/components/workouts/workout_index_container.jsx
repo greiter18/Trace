@@ -3,7 +3,7 @@ import { fetchWorkouts, deleteWorkout } from '../../actions/workout_actions';
 import WorkoutIndex from './workout_index'
 
 const mstp = (store) => {
-  console.log('--------------',store)
+  // console.log('--------------',store)
   return {
     session: store.session,
     workouts: Object.values(store.entities.workouts),

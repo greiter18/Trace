@@ -24,7 +24,7 @@ class WorkoutIndex extends React.Component{
   return (
     <div>
       <MainNavContainer/>
-      {console.log('------------count',this.props.workoutCount)}
+      {/* {console.log('------------count',this.props.workoutCount)} */}
       <div id="workoutIdxBody">
         <div id="workoutIdxBodyTop">
           <h1 className="workoutIndexTitle">My Workouts</h1>
