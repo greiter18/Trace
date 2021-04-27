@@ -6,6 +6,7 @@ $dark:(rgb(36,36,40));
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: solid 1px $superLightGray;
 }
 #workShowBody{
   border: 1px solid $superLightGray;
@@ -75,4 +76,9 @@ $dark:(rgb(36,36,40));
   align-items: center;
   border: 1px solid $superLightGray;
   margin-top: 50px;
+}
+
+#mapContainer{
+  padding: 1% 2.5%;
+  border: 1px solid lightgrey;
 }

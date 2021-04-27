@@ -63,7 +63,7 @@ class MapModal extends React.Component{
       <div className="modal-form">
         <div className='modal-top'>
           <h1 className="myRoute">My Route</h1> 
-          <i className="fas fa-running"></i>
+          <i id='runningMain' className="fas fa-running"></i>
           <i  id='star'className="fas fa-star"></i>
         </div>
         <form id="routeModalForm" onSubmit={this.handleSubmit}>

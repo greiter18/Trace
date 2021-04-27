@@ -60,11 +60,12 @@ $dark:(rgb(36,36,40));
   border: none;
   width: 999%;
   background-color: #f6f6f9;
-  padding-top: 16px;
+  padding-top: 5%;
   // margin-left: 37px;
   border-left: 1px solid #dfdfe7;
   padding-left: 25px;
   font-size: 14px;
+  padding-bottom: 5%;
 }
 
 .mapSaveButtons:disabled{
@@ -164,6 +165,7 @@ $dark:(rgb(36,36,40));
   margin-top: 2%;
   resize: none;
   padding-bottom: 38%;
+  padding-left: 2%;
 }
 
 .input-area{
@@ -176,5 +178,15 @@ $dark:(rgb(36,36,40));
 }
 
 #modalTitle{
-  padding-top: 7%;
+  padding-bottom: 2%;
+  font-size: 16px;
+  font-weight: bold;
+  align-items: center;
+  padding-top: 2%;
+  padding-left: 2%;
+}
+
+#runningMan{
+  position: relative;
+  right: 23%;
 }

@@ -44,7 +44,9 @@ class WorkoutShow extends React.Component{
               </div>
             </div>
           </body>
+          <div id='mapContainer'>
           <img id="workShowMap" src={route?.image}  alt='route image'/>
+          </div>
         </div> 
       </div>
     )

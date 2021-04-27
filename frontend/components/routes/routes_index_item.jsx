@@ -8,7 +8,7 @@ const RoutesIndexItem = ({route, deleteRoute, session}) => {
       <div className="routeIdxItemImage">
         {/* <img src={route.image}/>  */}
         <Link to={`/routes/${route.id}`} className="routeIndexImage">
-          <img className="routeIndexImage" src='https://www.mamilian.bike/wp-content/uploads/2020/07/strava-routes.png' alt="route image"/> 
+          <img className="routeIndexImage" src={route.image} alt="route image"/> 
         </Link>
         <div className="dropdownRt" >
           <button className="dropbtnRt"> <i className="fas fa-wrench"></i></button>

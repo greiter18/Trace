@@ -10,7 +10,8 @@ const mstp = ({session, entities}) => {
     email: entities.users[session.id].email,
     workoutCount: Object.values(entities.workouts).length,
     routeCount: Object.values(entities.routes).length,
-    workouts: Object.values(entities.workouts)
+    workouts: Object.values(entities.workouts),
+    route: entities.routes
   };
 };
 

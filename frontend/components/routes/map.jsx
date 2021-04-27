@@ -34,7 +34,7 @@ class Maps extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.searchAddress = this.searchAddress.bind(this);
     this.update = this.update.bind(this);
-    // this.getThumbnail = this.getThumbnail.bind(this);
+    this.getThumbnail = this.getThumbnail.bind(this);
     this.startLat = this?.points[0]?.lat
     this.startLng = this?.points[0]?.lng
     this.endLat = this?.points[1]?.lat
@@ -47,7 +47,7 @@ class Maps extends React.Component {
       zoom: 15,
       mapId: '2cf9dff401d20cef',
       clickableIcons: false,
-      maxZoom: 16
+      maxZoom: 15
     };
     this.map = new google.maps.Map(this.mapstart, options);
     this.directionsRenderer.setMap(this.map)
@@ -89,12 +89,12 @@ class Maps extends React.Component {
     (response, status) => {
       if (status === 'OK') {
         // const distance = response.routes[0].legs[0].distance.text;
-        // let thumbnail = this.getThumbnail(response);
+        let thumbnail = this.getThumbnail(response);
         // let bounds = response.routes[0].bounds;
         this.directionsRenderer.setDirections(response);
-        // this.setState({
-        //   image: thumbnail
-        // })
+        this.setState({
+          image: thumbnail
+        })
       } else {
         window.alert("Directions request faile due to " + status);
       }
@@ -122,23 +122,27 @@ class Maps extends React.Component {
     this.renderMarkers();
     if (this.points.length === 1){
       this.points = []
+      this.renderMarkers();
       this.setState({disabled: true})
     }
+    this.directionsRenderer.setDirections({ routes: [] });
   }
 
-  //  getThumbnail(res){
-  //   const start = 'https://maps.googleapis.com/maps/api/staticmap?';
-  //   const size = 'size=175x175'
-  //   const scale = 'scale=2'
-  //   // let location = res.routes[0].overview_polyline;
-  //   // let location = this?.startLat|this?.startLng|this?.endLat|this?.endLang
-  //   location = "path=enc:".concat(location)
-  //   let key = "key=#{ENV['MAPS_API_KEY']}"
-  //   let url = []
-  //   url.push(start,size,scale,location,key)
-  //   url = url.join("&")
-  //   return url;
-  // }
+   getThumbnail(res){
+    const start = 'https://maps.googleapis.com/maps/api/staticmap?';
+    const size = 'size=200x200'
+    const scale = 'scale=2'
+    const markers = `markers=size:tiny|${this?.points[0]?.lat},${this?.points[0]?.lng}|${this?.points[1]?.lat},${this?.points[1]?.lng}`
+    const path = `path=color:0xff0000ff|${this?.points[0]?.lat},${this?.points[0]?.lng}|${this?.points[1]?.lat},${this?.points[1]?.lng}`
+    // let location = res.routes[0].overview_polyline;
+    // let location = this?.startLat|this?.startLng|this?.endLat|this?.endLang
+    // location = "path=enc:".concat(location)
+    let key = `key=AIzaSyD-zUIawAgtQ3qXH71ektYyDm_DBo-CZGo`
+    let url = []
+    url.push(start,size,scale,markers,path,key)
+    url = url.join("&")
+    return url;
+  }
 
   removeAllPoints(){
     if (this.points.length > 0){
@@ -173,6 +177,7 @@ class Maps extends React.Component {
   render(){
     return(
       <div>
+        {console.log('point0000000000000',this?.points[0]?.lat+','+this?.points[0]?.lng) || ''}
        <RouteNav />
       <div className="mapButtons">
         <div id="searchBarMain">
