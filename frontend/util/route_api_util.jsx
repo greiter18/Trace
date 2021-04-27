@@ -29,9 +29,10 @@ export const fetchRoutes = (id) => (
     url: `/api/users/${id}/routes`,
   })
 );
-export const deleteRoute = (routeId) => (
-  $.ajax({
+export const deleteRoute = (routeId) => {
+  debugger
+  return $.ajax({
     method: "DELETE",
     url: `/api/routes/${routeId}`,
   })
-);
+};

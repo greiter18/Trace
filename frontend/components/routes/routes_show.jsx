@@ -14,7 +14,7 @@ class RouteShow extends React.Component{
     this.props.fetchRoute(this.props.match.params.routeId)
   }
   render(){
-    const {route, currentUser} = this.props;
+    const {route, currentUser, deleteRoute} = this.props;
     return(
       <div>
         <MainNav/>

@@ -10,6 +10,7 @@ class RoutesIndex extends React.Component{
   }
 
   componentDidMount(){
+    debugger
     this.props.fetchRoutes(this.props.session.id)
   }
 
