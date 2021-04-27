@@ -137,7 +137,7 @@ class Maps extends React.Component {
     // let location = res.routes[0].overview_polyline;
     // let location = this?.startLat|this?.startLng|this?.endLat|this?.endLang
     // location = "path=enc:".concat(location)
-    let key = `key=AIzaSyD-zUIawAgtQ3qXH71ektYyDm_DBo-CZGo`
+    let key = `key=#{ENV['MAPS_API_KEY']}`
     let url = []
     url.push(start,size,scale,markers,path,key)
     url = url.join("&")
