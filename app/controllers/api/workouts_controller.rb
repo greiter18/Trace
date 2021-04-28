@@ -15,7 +15,7 @@ class Api::WorkoutsController < ApplicationController
   def create
     @workout = Workout.new(workout_params)
     if @workout.save
-      render :show
+      render :index
     else
       render json: @workout.errors.full_messages, status: 422
     end

@@ -4,6 +4,7 @@ import MapModal from './map_modal';
 import RouteNav from './routes_nav';
 import MainFooter from '../footer/main_footer'
 
+
 class Maps extends React.Component {
   constructor(props) {
     super(props);
@@ -129,15 +130,13 @@ class Maps extends React.Component {
   }
 
    getThumbnail(res){
+     debugger
     const start = 'https://maps.googleapis.com/maps/api/staticmap?';
     const size = 'size=200x200'
     const scale = 'scale=2'
     const markers = `markers=size:tiny|${this?.points[0]?.lat},${this?.points[0]?.lng}|${this?.points[1]?.lat},${this?.points[1]?.lng}`
     const path = `path=color:0xff0000ff|${this?.points[0]?.lat},${this?.points[0]?.lng}|${this?.points[1]?.lat},${this?.points[1]?.lng}`
-    // let location = res.routes[0].overview_polyline;
-    // let location = this?.startLat|this?.startLng|this?.endLat|this?.endLang
-    // location = "path=enc:".concat(location)
-    let key = `key=#{ENV['MAPS_API_KEY']}`
+    let key = `key=${window.api_key}`
     let url = []
     url.push(start,size,scale,markers,path,key)
     url = url.join("&")

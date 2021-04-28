@@ -22,7 +22,7 @@ const Feed = ({workout, email, route}) => {
       <i id='trophy'class="fas fa-trophy"></i>
       </div>
       <Link to={`/workouts/${workout.id}`} ><img id="routefeedImage" 
-          src={route[workout.route_id].image} alt="route image"
+          src={route[workout?.route_id]?.image} alt="route image"
       />
       </Link> 
       {/* {console.log('-------------feed',workout.id)} */}
