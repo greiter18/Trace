@@ -47,7 +47,7 @@ const mstp = (store, ownProps) => {
 const mdtp = dispatch => {
   return ({
     fetchWorkout: workoutId => dispatch(fetchWorkout(workoutId)),
-    action: workout => dispatch(updateWorkout(workout)),
+    action: (workout,currentUser) => dispatch(updateWorkout(workout, currentUser)),
     fetchRoutes: id => dispatch(fetchRoutes(id))
   })
 }

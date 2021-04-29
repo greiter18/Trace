@@ -4,7 +4,7 @@ class Api::RoutesController < ApplicationController
     @route = Route.new(route_params)
     if @route.save
       
-      render :index
+      render :show
     else
       render json: @route.errors.full_messages, status: 422
     end

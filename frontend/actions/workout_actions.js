@@ -51,9 +51,9 @@ export const fetchWorkouts = (user_id) => {
   }
 }
 
-export const createWorkout = (workout) => {
+export const createWorkout = (workout, id) => {
   return dispatch => {
-    return WorkoutApiUtil.createWorkout(workout)
+    return WorkoutApiUtil.createWorkout(workout, id)
       .then(newWorkout => {
         dispatch(receiveWorkout(newWorkout))
       })

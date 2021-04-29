@@ -11,13 +11,13 @@ const mstp = (store, ownProps) => {
     routes: Object.values(store.entities.routes),
     session: store.session,
     history: ownProps.history,
-    currentUser: store.entities.users.id
+    currentUser: store.session.id
   };
 };
 
 const mdtp = dispatch => {
   return {
-    action: workout => dispatch(createWorkout(workout)),
+    action: (workout, currentUser) => dispatch(createWorkout(workout,currentUser)),
     fetchRoutes: id => dispatch(fetchRoutes(id))
   }
 }

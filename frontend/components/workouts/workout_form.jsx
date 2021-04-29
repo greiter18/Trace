@@ -18,6 +18,7 @@ class WorkoutForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault(); // stops a refresh 
+    debugger
     this.props.action(this.state, this.props.currentUser).then(this.props.history?.push("/workouts"));
   }
 
@@ -53,7 +54,7 @@ class WorkoutForm extends React.Component{
     return (
       <div>
         <MainNav/>
-        {/* {console.log('++++++++++++++++++++++++++++',this.state)} */}
+        {console.log('++++++++++++++++++++++++++++',this.props.currentUser)}
         <body id="workoutFormBody">
           <h1 className="woFormTitle">Workout Entry</h1>
           <form onSubmit={this.handleSubmit}>
