@@ -19,7 +19,7 @@ const MainNav = ({logout}) => {
       <div className="nav-right">
         <div className="dropdown" >
           <button className="dropbtn"><i id="navUser"class="far fa-user-circle"></i> <i class="fa fa-chevron-down" aria-hidden="true"></i></button>
-          <div className="dropdown_content" id="logOut_dropdown">
+          <div className="dropdown_content" id="create_dropdown">
             <a onClick={logout}>Log Out</a>
           </div>
         </div>
