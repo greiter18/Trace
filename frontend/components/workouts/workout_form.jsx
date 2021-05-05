@@ -54,7 +54,7 @@ class WorkoutForm extends React.Component{
     return (
       <div>
         <MainNav/>
-        {console.log('++++++++++++++++++++++++++++',this.props.currentUser)}
+        {/* {console.log('++++++++++++++++++++++++++++',this.props.currentUser)} */}
         <body id="workoutFormBody">
           <h1 className="woFormTitle">Workout Entry</h1>
           <form onSubmit={this.handleSubmit}>

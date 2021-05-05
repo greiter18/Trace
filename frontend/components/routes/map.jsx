@@ -176,7 +176,7 @@ class Maps extends React.Component {
   render(){
     return(
       <div>
-        {console.log('point0000000000000',this?.points[0]?.lat+','+this?.points[0]?.lng) || ''}
+        {/* {console.log('point0000000000000',this?.points[0]?.lat+','+this?.points[0]?.lng) || ''} */}
        <RouteNav />
       <div className="mapButtons">
         <div id="searchBarMain">
