@@ -3,6 +3,17 @@
   <head>
     <link rel="icon" href="https://i.pcmag.com/imagery/reviews/01wBgzKlCiildlmfiJHDQ5Y-9..1569474703.jpg">
     <title> Trace</title>
+    <meta property="og:title" content="Trace" />
+    <meta property='og:image' content="<%= image_url('HomeScreen.png') %>"/>
+    <meta property="og:description"
+      content="Inspired by Strava, create your favorite running routes and workouts"
+    />
+    <meta property="og:url"
+      content="https://trace-aa.herokuapp.com/"
+    />
+    <meta property="og:author"
+      content="Gabriel Reiter"
+    />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -24,14 +35,7 @@
           };
       </script>
       <% end %>
-      <meta property="og:title" content="Trace" />
-    <meta property='og:image' content="<%= image_url('/Users/gabe/Desktop/final_project/Strava/app/assets/images/HomeScreen.png') %>"/>
-    <meta property="og:description"
-      content="Inspired by Strava, create your favorite running routes and workouts"
-    />
-    <meta property="og:url"
-      content="https://trace-aa.herokuapp.com/#/"
-    />
+  
   </head>
   <body>
     <%= yield %>
