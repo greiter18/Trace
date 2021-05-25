@@ -15,7 +15,7 @@ Users are required to create an account with an email and password to gain acces
 
 Otherwise you can use the demo button for quick and easy access.
 
-```
+```javascript
    <form className="session_form" onSubmit={this.handleSubmit}>
               <br/>
               <div className="form_body">
@@ -43,7 +43,7 @@ Users can create the favorite running routes using google maps. Click on 2 point
 Google Mapis Api is the heart of the application. Each route is saved in the database. Each route consist of a beginning and end latitude and longitude. These are just coordinated saved as integers in the database. Below shows the code to create the map and the click feature that add the waypoints on the map.  
 
 
-```
+```javascript
  componentDidMount(){
     const options = {
       center: {lat: 40.6302923, lng: -74.1077045},
@@ -70,7 +70,7 @@ Once routes are created, you can design a workout. Use one of your created route
 
 Each workout uses the user's Id to access the appropriate **user_id** that are contained in the routes.  
 
-```
+```javascript
   <form onSubmit={this.handleSubmit}>
             <div className="topWorkoutForm">
               <div>
