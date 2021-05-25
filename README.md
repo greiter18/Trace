@@ -40,7 +40,7 @@ Users can create the favorite running routes using google maps. Click on 2 point
 ![Screen Shot 2021-04-19 at 12 07 33 PM](https://user-images.githubusercontent.com/66323451/115268430-41c26000-a108-11eb-80a9-da33be4b6d51.png)  
 
 #### Google Maps Api
-Google Mapis Api is the heart of the application. Each route is saved in the database. Each route consist of a beginning and end latitude and longitude. These are just coordinated saved as integers in the database. Below shows the code to create the map and the click feature that add the waypoints on the map.  
+Google Mapis Api is the heart of the application. Each route is saved in the database. Each route consist of a beginning and end latitude and longitude. These are just coordinates saved as integers in the database. Below shows the code to create the map and the click feature that adds the waypoints on the map.  
 
 
 ```javascript
