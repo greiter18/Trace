@@ -1,7 +1,7 @@
 # README
 
 An fullstack application where you can create your favorite running routes using Google Maps API and use them to log your workouts.  
-Inspired by Strava
+Inspired by Strava.  
 
 ##### Quick Demo
 ![mapdemo](https://user-images.githubusercontent.com/66323451/119569613-fb9e9300-bd7c-11eb-861f-6d5f6aaaac0b.gif)  
