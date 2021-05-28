@@ -52,13 +52,9 @@ class Maps extends React.Component {
     };
     this.map = new google.maps.Map(this.mapstart, options);
     this.directionsRenderer.setMap(this.map)
-    //          where the map is going / options
     this.map.addListener("click", (e) => {
-			// adds lat/lng object to waypoints array
       if(this.points.length > 1) this.points.pop()
 			this.points.push({ lat: e.latLng.lat(), lng: e.latLng.lng() });
-      // console.log("points----------",this.points)
-      // console.log("id----------",this.id)
       this.toggleDisable()
 			this.renderMarkers();
 		});

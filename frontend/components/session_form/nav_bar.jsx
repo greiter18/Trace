@@ -1,6 +1,7 @@
 import {Link, withRouter} from 'react-router-dom';
 import React from 'react';
 
+
 const Navbar = (props) => {
   let Button;
   if (props.location.pathname === '/' || props.location.pathname === '/signup'){

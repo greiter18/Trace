@@ -62,7 +62,8 @@ class WorkoutForm extends React.Component{
               <div>
                 <label className="workoutFormlabel">Route 
                   <select onChange={this.handleChange('route_id')} className="routeOptions" >
-                    <option className="routeOptionschoices" value={this.state?.route?.title}  disabled selected>Choose a route</option>
+                    <option className="routeOptionschoices" 
+                    value={this.state?.route?.title}  disabled selected>Choose a route</option>
                     {routesList}
                   </select>
                 </label>

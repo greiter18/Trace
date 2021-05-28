@@ -74,7 +74,7 @@ class MapModal extends React.Component{
           </div>
           <div className='modal-text'>
             <label > Description <br/>
-              <textarea className="input-area" id="modal-description" type="text" onChange={this.handleChange('description')} placeholder={'Add some more details or notes'} value={this.props.description}/>
+              <textarea className="input-area" id="modal-description" type="text" onChange={this.handleChange('description')} placeholder={'Add some more details or notes'} value={this.state.description}/>
             </label>
           </div>
           <div className="modal-fineprint">
