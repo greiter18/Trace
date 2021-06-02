@@ -1,6 +1,6 @@
 # README
 
-An fullstack application where you can create your favorite running routes using Google Maps API and use them to log your workouts.  
+A fullstack application where you can create your favorite running routes using Google Maps API and use them to log your workouts.  
 Inspired by Strava.  
 
 ##### Quick Demo
@@ -12,14 +12,14 @@ Inspired by Strava.
 
 #### User Authorization
 
-Users are required to create an account with an email and password to gain access to the application, Otherwise you can not access the site.  
+Users are required to create an account with an email and password to gain access to the application, otherwise you can not access the site.  
 
 ![Screen Shot 2021-04-19 at 12 04 30 PM](https://user-images.githubusercontent.com/66323451/115268155-f90aa700-a107-11eb-99cb-5d69803b1297.png)
 
-Otherwise you can use the demo button for quick and easy access.
+You can also use the demo button for quick and easy access.
 
 ```javascript
-   <form className="session_form" onSubmit={this.handleSubmit}>
+  	 <form className="session_form" onSubmit={this.handleSubmit}>
               <br/>
               <div className="form_body">
                 <span className="session_form_lines" id="session_form_demo" 
@@ -35,7 +35,7 @@ Otherwise you can use the demo button for quick and easy access.
                 <button className="session_form_lines" id="session_button">{buttonName}</button>
               </div>  
               <p className='session_fine_print'>{finePrint}</p>
-            </form>    
+  	 </form>    
 ```
 #### Create Routes
 Users can create the favorite running routes using google maps. Click on 2 points of the map to see the route.  
@@ -43,7 +43,7 @@ Users can create the favorite running routes using google maps. Click on 2 point
 ![Screen Shot 2021-04-19 at 12 07 33 PM](https://user-images.githubusercontent.com/66323451/115268430-41c26000-a108-11eb-80a9-da33be4b6d51.png)  
 
 #### Google Maps Api
-Google Mapis Api is the heart of the application. Each route is saved in the database. Each route consist of a beginning and end latitude and longitude. These are just coordinates saved as integers in the database. Below shows the code to create the map and the click feature that adds the waypoints on the map.  
+Google Maps Api is the heart of the application. Each route is saved in the database. Each route consist of a beginning and end latitude and longitude. These are just coordinates saved as integers in the database. Below shows the code to create the map and the click feature that adds the waypoints on the map.  
 
 
 ```javascript
@@ -88,9 +88,9 @@ Each workout uses the user's Id to access the appropriate **user_id** that are c
               <div className="woTimeEntry" className="workoutFormlabel">
                 <label>Time 
                   <div className="timeinputAreas">
-                    <input type="number" onChange={this.handleChange('hours')} value={this.state.hours} placeholder={'hr'} className="timeInpute" min="0" max="100"/>
-                    <input type="number" onChange={this.handleChange('minutes')} value={this.state.minutes} placeholder={'min'} className="timeInpute" min="0" max="59"/>
-                    <input type="number" onChange={this.handleChange('seconds')} value={this.state.seconds} placeholder={'s'} className="timeInpute" min="0" max="59"/>
+                    <input type="number" onChange={this.handleChange('hours')} value={this.state.hours} placeholder={'hr'} className="timeInpute" min="0" 				max="100"/>
+                    <input type="number" onChange={this.handleChange('minutes')} value={this.state.minutes} placeholder={'min'} className="timeInpute" min="0" 				max="59"/>
+                    <input type="number" onChange={this.handleChange('seconds')} value={this.state.seconds} placeholder={'s'} className="timeInpute" min="0" 				max="59"/>
                   </div>
                 </label> 
               </div>
@@ -109,7 +109,7 @@ Each workout uses the user's Id to access the appropriate **user_id** that are c
                 </label> 
               </div>
               <label className="workoutFormlabel">Title 
-                <input className="workinput" type="text" value={this.state.title} onChange={this.handleChange('title')} className="wOforminput" placeholder={'Afternoon Run'}/>
+                <input className="workinput" type="text" value={this.state.title} onChange={this.handleChange('title')} className="wOforminput" placeholder=			  {'Afternoon Run'}/>
               </label> <br/>
             </div>
             <div className="lowWorkoutForm">
@@ -134,11 +134,11 @@ Each workout uses the user's Id to access the appropriate **user_id** that are c
               }
               >{formName}</button>
             <Link to={link} className="cancelButton">Cancel</Link>
-          </form>
+  </form>
 ```
 
 #### Activity Feed
-On the user's homepage, it will container the users dashboard which will display the users most recently made workouts. There is also the profile section which totals up the user's total routes and workouts.  
+On the user's homepage, it will contain the users dashboard which will display the users most recently made workouts. There is also the profile section which totals up the user's total routes and workouts.  
 
 ![Screen Shot 2021-04-27 at 5 47 04 PM](https://user-images.githubusercontent.com/66323451/116317005-c3f1fa80-a780-11eb-9a98-1df708f7fe58.png)  
 
